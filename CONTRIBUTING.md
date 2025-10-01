@@ -46,3 +46,7 @@ Voorbeelden van correcte commit messages zijn te vinden [hier](https://docs.fdnd
 regels voor naamgeving in HTML, CSS en JavaScript staan [hier beschreven](https://docs.fdnd.nl/conventies.html#naamgeving)
 
 
+## issues toegewezen
+Issues worden eerst besproken voordat ze worden toegewezen (assigned). Op deze manier zorgen we ervoor dat niet één persoon meer werk krijgt dan de ander, of dat iemand alleen de makkelijke issues oppakt.
+De issues worden toegewezen op maandag, woensdag en vrijdag. Tijdens de bespreking zorgen we ervoor dat al het werk duidelijk besproken wordt.
+
