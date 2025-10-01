@@ -20,3 +20,29 @@
 
 ## Code conventies
 Voor dit project zullen wij de [code conventies](https://docs.fdnd.nl/conventies.html) volgen van FDND.
+
+
+## git flow
+### Branching strategy
+De main branch wordt gebruikt voor het hosten van de live website. hierin werken wij niet.
+
+Wij werken in de development branch. Wanneer je iets aan het bouwen bent, maak je een nieuwe branch vanuit de development branch. Zodra de feature klaar is, kun je een pull request aanmaken. Als deze wordt goedgekeurd door het team, mag de branch worden gemerged met de development branch.
+
+Nadat een branch gemerged is, moet deze worden verwijderd om overzicht te houden over de actieve branches.
+
+
+
+## commit strategy
+Wij gebruiken conventional commits, dit zijn regels die gevolgd moeten worden bij het schrijven van een commit message.
+
+Toegestane commit types kun je vinden [hier](https://docs.fdnd.nl/conventies.html#allowed-commit-types).
+
+Aan het eind van de commit message vermeld je ook altijd het issue-nummer.
+
+Voorbeelden van correcte commit messages zijn te vinden [hier](https://docs.fdnd.nl/conventies.html#example-commits).
+
+
+## naamgeving
+regels voor naamgeving in HTML, CSS en JavaScript staan [hier beschreven](https://docs.fdnd.nl/conventies.html#naamgeving)
+
+
