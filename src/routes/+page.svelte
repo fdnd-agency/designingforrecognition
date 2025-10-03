@@ -7,7 +7,7 @@
 
 <TestLinks />
 
-<ul class="primary color-mix">
+<ul class="primary">
   <li><h2>Primary</h2></li>
   <li>
     <div></div>
@@ -29,7 +29,7 @@
   </li>
 </ul>
 
-<ul class="neutral color-mix">
+<ul class="neutral">
   <li><h2>Neutral</h2></li>
   <li>
     <div></div>
@@ -51,7 +51,7 @@
   </li>
 </ul>
 
-<ul class="accent-primary color-mix">
+<ul class="accent-primary">
   <li><h2>accent-primary</h2></li>
   <li>
     <div></div>
@@ -73,7 +73,7 @@
   </li>
 </ul>
 
-<ul class="accent-secondary color-mix">
+<ul class="accent-secondary">
   <li><h2>accent-secondary</h2></li>
   <li>
     <div></div>
