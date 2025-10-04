@@ -3,8 +3,7 @@ body {
     --color-neutral: hsl(201, 79%, 50%);
     --color-accent-primary: hsl(165, 50%, 50%);
     --color-accent-secondary: hsl(353, 78%, 66%);
-    
-    /* comment this to check HSL colors*/
+
     @supports (color: oklch(50% 0.1 120)) {
         --oklch-primary: oklch(86% 0 0);
         --oklch-neutral: oklch(61% 0.21 250);
@@ -23,7 +22,6 @@ body {
     --light-1: color-mix(in hsl, var(--color) 80%, white 20%);
     --light-2: color-mix(in hsl, var(--color) 65%, white 35%);
 
-    /* OKLCH*/
     --dark-3: color-mix(in oklch, var(--color) 80%, black 50%);
     --dark-2: color-mix(in oklch, var(--color) 65%, black 35%);
     --dark-1: color-mix(in oklch, var(--color) 80%, black 20%);
