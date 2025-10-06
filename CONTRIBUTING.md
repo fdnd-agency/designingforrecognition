@@ -26,7 +26,7 @@ Voor dit project zullen wij de [code conventies](https://docs.fdnd.nl/conventies
 ### Branching strategy
 De main branch wordt gebruikt voor het hosten van de live website. hierin werken wij niet.
 
-Wij werken in de development branch. Wanneer je iets aan het bouwen bent, maak je een nieuwe branch vanuit de development branch. Zodra de feature klaar is, kun je een pull request aanmaken. Als deze wordt goedgekeurd door het team, mag de branch worden gemerged met de development branch.
+Wij werken in de dev branch. Wanneer je iets aan het bouwen bent, maak je een nieuwe branch vanuit de dev branch. Zodra de feature klaar is, kun je een pull request aanmaken. Als deze wordt goedgekeurd door het team, mag de branch worden gemerged met de dev branch.
 
 Nadat een branch gemerged is, moet deze worden verwijderd om overzicht te houden over de actieve branches.
 
