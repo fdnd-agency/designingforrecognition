@@ -20,3 +20,9 @@ After that, you can start the website on localhost with:
 ```
 npm run dev
 ```
+
+## Omschrijving van het project
+
+## Ontwerpkeuzes uitleggen
+
+##Functionaliteiten uitleg
