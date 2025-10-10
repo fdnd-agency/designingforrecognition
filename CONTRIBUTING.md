@@ -56,10 +56,10 @@ De issues worden toegewezen op maandag, woensdag en vrijdag. Tijdens de bespreki
 
 ## Viresh
 ### Round of Admiration
-**Mikiyas**  
+**Mikiyas**      
 Wat ik het meest aan jou bewonder, is de kwaliteit van het werk dat je oplevert. Je schetsen en hi-fi-designs zagen er echt heel goed uit.
 
-**Inez**  
+**Inez**     
 Wat ik het meest aan jou bewonder, is dat je altijd probeert iets te doen, ook als je er nog weinig van weet. Zoals bij het maken van het datamodel (met de koppeltabel), zag ik dat je niet zeker wist hoe dat moest, maar je hebt het toch geprobeerd.
 
 ### The Good, the Bad and the Ugly 
@@ -68,11 +68,11 @@ Wat ik het meest aan jou bewonder, is dat je altijd probeert iets te doen, ook a
 - Het bespreken en uitwisselen van ideeën ging altijd goed.
 - We maakten duidelijke afspraken over wat er af moest zijn voor de volgende keer dat we samenkwamen.
 
-**The bad**
-- Op de dagen dat we niet samenkwamen, was de communicatie minder goed. Ik was niet altijd op de hoogte van wat er gedaan was of hoe ver iedereen was met zijn taken. Bijvoorbeeld toen jullie ziek waren en de hi-fi-designs later dan afgesproken binnen kwamen.
+**The bad**   
+Op de dagen dat we niet samenkwamen, was de communicatie minder goed. Ik was niet altijd op de hoogte van wat er gedaan was of hoe ver iedereen was met zijn taken. Bijvoorbeeld toen jullie ziek waren en de hi-fi-designs later dan afgesproken binnen kwamen.
 
-**The ugly**
-- Wij drie zagen denk ik allemaal dat de communicatie niet vlot verliep, maar tijdens de sprint hebben wij dit niet aangehaald.
+**The ugly**   
+Wij drie zagen denk ik allemaal dat de communicatie niet vlot verliep, maar tijdens de sprint hebben wij dit niet aangehaald.
 
 ### Wish granted
 Dat iedereen zelf de verantwoordelijkheid neemt om elkaar op de hoogte te houden, en ook meldt wanneer iets langer duurt dan verwacht.
@@ -90,27 +90,32 @@ Ik wil jullie bedanken voor jullie inzet deze sprint. In de komende sprint wil i
 
 ## Mikiyas
 ### Round of admiration (#76)
-**Viresh**
-  Hij kan goed structuur brengen binnen het project als Scum Master. Hij is technisch goed.
+**Viresh**   
+Hij kan goed structuur brengen binnen het project als Scum Master. Hij is technisch goed.
 
-**Inez**
-  Leergierheid, van dingen dat je niet heb begrepen zoals de datamodel heb je je best gedaan. Je laat je niet buitengesloten voelen doordat je je eigen input brengt in het project.
+**Inez**   
+Leergierheid, van dingen dat je niet heb begrepen zoals de datamodel heb je je best gedaan. Je laat je niet buitengesloten voelen doordat je je eigen input brengt in het project.
   
 ### The good the bad and the uglie (#121)
-**The good**
-We kunnen onze plannen goed bespreekbaar maken. We kunnen onze taken goed verdelen. We voeren de taken kwalitatief uit. Als we op school zijn maken we de problemen waar we tegen aanlopen bespreekbaar.
+**The good**   
+- We kunnen onze plannen goed bespreekbaar maken.
+- We kunnen onze taken goed verdelen.
+- We voeren de taken kwalitatief uit.
+- Als we op school zijn maken we de problemen waar we tegen aanlopen bespreekbaar.
 
-**The bad**
+**The bad**   
 Onze achterstand maken we niet concreet. Onze communicatie is niet altijd goed. 
 
-**The Ugly**
+**The Ugly**   
 We weten dat er problemen zijn (The bad) maar we negeren de problemen als we niet op school zijn. 
 
 ### Wish granted 
 Het bespreekbaar maken dat een persoon meer taken kan aanpakken, dat we meer focussen op de issues die we gewogen hebben en we moeten meer focus leggen op de projectboard op de dingen waar we rekening mee moeten houden.
 
 ### Pitch 
-Kunnen we whatsapp gebruiken omdat iedereen daar wat meer bereikbaar kan zijn? Elke dag dat we sowieso kijken naar de projectboard wat gedaan moet worden en het meteen bespreken. Vaker seintjes geven als iemand vast loopt en pull requests niet laten hangen.
+- Kunnen we whatsapp gebruiken omdat iedereen daar wat meer bereikbaar kan zijn? 
+- Elke dag dat we sowieso kijken naar de projectboard wat gedaan moet worden en het meteen bespreken.
+- Vaker seintjes geven als iemand vast loopt en pull requests niet laten hangen.
 
 ### You and me 
 Goeie samenwerking. Meer focus op het voortgang op het project.
@@ -119,21 +124,20 @@ Goeie samenwerking. Meer focus op het voortgang op het project.
 
 ## Inez
 ### Round of admiration 
-**Viresh**
-  Wat ik goed van viresh vind is dat hij goed een overzicht kan maken van alle taken en ik vind dat hij heel doelgericht te werk kan gaan
-  hij bewijst zichzelf op een goede manier
+**Viresh**   
+Wat ik goed van viresh vind is dat hij goed een overzicht kan maken van alle taken en ik vind dat hij heel doelgericht te werk kan gaan hij bewijst zichzelf op een goede manier
 
-**Mikiyas**
+**Mikiyas**   
 Ik vind dat je altijd de juiste dingen kunt zeggen en observatief bent bijv. als we iets bespreken breng je altijd kwaliteit met de dingen die je te zeggen hebt zoals toen we een gesprek hadden over kleuren contrasten je brengt altijd meer opties en denkt dan al direct aan de voordelen en nadelen. en ik vind het goed dat je altijd met het initief kwam om te bespreken wat iedereen ging doen en af moest hebben voor de volgende les zodat we daar dan samen naar konden kijke
   
 ### The good the bad and the uglie 
-**The good**
-Ik vond de samenwerking goed gaan als we bijv samen werkte op school zorgde we ervoor dat alles bespreekbaar was en wat ik ook goed vond is dat wanneer we besproken wat iedereen moest gaan doen dat we het ook altijd af hadden en dat dan ook bespreekbaar maakte. 
+**The good**   
+Ik vond de samenwerking goed gaan, bijvoorbeeld asl we samen werkte op school zorgde we ervoor dat alles bespreekbaar was en wat ik ook goed vond is dat wanneer we besproken wat iedereen moest gaan doen, dat we het ook altijd af hadden en dat dan ook bespreekbaar maakte. 
 
-**The bad**
+**The bad**   
 Online ging de communicatie moeizaam 
 
-**The Ugly**
+**The Ugly**   
 Er werd niet goed gecommuniceert waar iedereen was tijdens het uitwerken van zijn taken
 
 ### Wish granted 
