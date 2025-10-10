@@ -94,7 +94,7 @@ Ik wil jullie bedanken voor jullie inzet deze sprint. In de komende sprint wil i
 Hij kan goed structuur brengen binnen het project als Scum Master. Hij is technisch goed.
 
 **Inez**   
-Leergierheid, van dingen dat je niet heb begrepen zoals de datamodel heb je je best gedaan. Je laat je niet buitengesloten voelen doordat je je eigen input brengt in het project.
+Je bent leergierig van dingen dat je niet heb begrepen zoals de datamodel heb je je best gedaan. Je laat je niet buiten sluiten doordat je jouw eigen input brengt in het project.
   
 ### The good the bad and the uglie (#121)
 **The good**   
