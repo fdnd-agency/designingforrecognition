@@ -3,7 +3,7 @@
 </script>
 
 <article class="neutral color-mix">
-    <h2>Beeld herkenning</h2>
+    <h3>Beeld herkenning</h3>
     <img src="{ projectImage }" alt="afbeelding voor beeld herkenning" width="100%" height="auto">
     <p>2020/2025</p>
     <p>Since the autumn of 2023, we followed a citizens panel getting engaged with the municipality’s development of a new smart city technology: the scan bike. In a series of sessions, we discussed ethics around implementing such technology and brainstormed on topics like privacy, blurring algorithms and other forms of data minimalization.</p>
@@ -18,9 +18,10 @@
         border-radius: 15px;
         margin: 1em 0.5em;
         padding: 1em;
+        /* width: 350px; */
     }
 
-    h2 {
+    h3 {
         grid-row: 3;
         line-height: 2rem;
         margin: 0 0 0.3em 5px;
