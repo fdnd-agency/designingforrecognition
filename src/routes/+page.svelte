@@ -1,5 +1,5 @@
 <script>
-    import { TestLinks, ProjectCard } from '$lib'
+    import { TestLinks, ContainerProjectCard } from '$lib'
 </script>
 
 <h1>Welcome to overview page</h1>
@@ -7,4 +7,5 @@
 
 <TestLinks />
 
-<ProjectCard />
+<ContainerProjectCard />
+

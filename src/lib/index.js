@@ -2,3 +2,4 @@
 // Components
 export { default as TestLinks } from './components/Test.svelte'
 export { default as ProjectCard } from './components/ProjectCard.svelte'
+export { default as ContainerProjectCard } from './components/ContainerProjectCard.svelte'
