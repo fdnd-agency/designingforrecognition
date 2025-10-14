@@ -26,8 +26,8 @@
 			grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
 		}
 
-		@media (min-width: 1880px) {
-			grid-template-columns: repeat(2, minmax(600px, 1fr));
+		@media (min-width: 2500px) {
+			grid-template-columns: repeat(3, minmax(600px, 1fr));
 		}
 	}
 

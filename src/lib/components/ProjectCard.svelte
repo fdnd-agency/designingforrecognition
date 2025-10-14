@@ -32,15 +32,6 @@
 			min-width: 600px;
 			max-width: 850px;
 		}
-
-		@media (min-width: 1880px) {
-			&:nth-child(odd) {
-				justify-self: start;
-			}
-			&:nth-child(even) {
-				justify-self: end;
-			}
-		}
 	}
 
 	h3 {
