@@ -18,7 +18,7 @@
         border-radius: 15px;
         margin: 1em 0.5em;
         padding: 1em;
-        /* width: 350px; */
+        max-width: 450px;
     }
 
     h3 {
