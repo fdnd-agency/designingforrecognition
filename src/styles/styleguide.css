@@ -18,21 +18,16 @@ body {
     font-size: var(--font-size-primary);
     font-weight: var(--font-weight-regular);
     
-
     /* font-size */
-    --font-size-primary: 1.25rem;
+    --font-size-primary: clamp(1rem, 4vw, 1.25rem);
     /* 64px */
-    --font-size-title-page: 4rem;
-    --font-size-responsive-title-page: clamp(3rem, calc(8.5vw + 1rem), 4rem);
+    --font-size-title-page: clamp(3rem, calc(8.5vw + 1rem), 4rem);
     /* 48px */
-    --font-size-title-section: 3rem;
-    --font-size-responsive-title-section: clamp(2.25rem, calc(6vw + 1rem), 3rem);
+    --font-size-title-section: clamp(2.25rem, calc(6vw + 1rem), 3rem);
     /* 36px */
-    --font-size-title-card: 2.25rem;
-    --font-size-responsive-title-card: clamp(2rem, calc(5vw + 1rem), 2.25rem);
+    --font-size-title-card: clamp(2rem, calc(5vw + 1rem), 2.25rem);
     /* 28px */
-    --font-size-title-paragraph: 1.75rem;
-    --font-size-responsive-title-paragraph: clamp(1.35rem, calc(3vw + 1rem), 1.75rem);
+    --font-size-title-paragraph: clamp(1.35rem, calc(3vw + 1rem), 1.75rem);
 
     /* font-weight */
     --font-weight-regular: 400;
