@@ -35,7 +35,11 @@ body {
 }
 
 /* ====================================================== COLORS ====================================================== */
-.color-mix {
+.primary,
+.dark,
+.neutral,
+.accent-primary,
+.accent-secondary {
     --dark-3: color-mix(in hsl, var(--color) 70%, black 30%);
     --dark-2: color-mix(in hsl, var(--color) 60%, black 20%);
     --dark-1: color-mix(in hsl, var(--color) 85%, black 15%);
