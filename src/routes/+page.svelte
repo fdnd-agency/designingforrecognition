@@ -134,7 +134,7 @@ ul {
 }
 
 h2 {
-  width: 5em;
+  width: 6em;
 }
 
 div {
@@ -143,3 +143,11 @@ div {
 /*   border: 2px solid; */
 }
 </style>
+
+<!-- fonts -->
+<h1>H1 element</h1>
+<h2>H2 element</h2>
+<h3>H3 element</h3>
+<h4>H4 element</h4>
+
+<p>Civic Interaction Design is an interdisciplinary research group at the Amsterdam University of Applied Sciences. Together with students, designers, technology developers, policymakers, (local) governments, academic researchers, and citizens, we explore how design & technology can contribute to civic life: the numerous and varied interactions through which people in a society come together to strive towards collective well-being.</p>

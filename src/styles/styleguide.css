@@ -1,43 +1,57 @@
 body {
-    --color-primary: hsl(0 0% 100%);;
-    --color-dark: hsl(0, 0%, 0%);
-    --color-neutral: hsl(201, 72%, 18%);
-    --color-accent-primary: hsl(167, 38%, 67%);
-    --color-accent-secondary: hsl(34, 49%, 85%);
-
+    /* define colors */
+    --color-primary: hsl(0 0% 86%);
+    --color-neutral: hsl(201, 79%, 50%);
+    --color-accent-primary: hsl(165, 50%, 50%);
+    --color-accent-secondary: hsl(353, 78%, 66%);
+    
+    /* comment this to check HSL colors*/
     @supports (color: oklch(50% 0.1 120)) {
-        --oklch-primary: oklch(100.00% 0.000 0);
-        --oklch-dark: oklch(0.00% 0.000 0);
-        --oklch-neutral: oklch(32.79% 0.063 237.53);
-        --oklch-accent-primary: oklch(79.49% 0.068 179.24);
-        --oklch-accent-secondary: oklch(89.63% 0.035 74.39);
+        --oklch-primary: oklch(86% 0 0);
+        --oklch-neutral: oklch(61% 0.21 250);
+        --oklch-accent-primary: oklch(71% 0.13 180);
+        --oklch-accent-secondary: oklch(64% 0.26 20);
     }
+
+    /* font */
+    font-family: 'Geomanist', sans-serif;
+    font-size: var(--font-size-primary);
+    font-weight: var(--font-weight-regular);
+    
+    /* font-size */
+    --font-size-primary: 1.125rem;
+    /* 64px */
+    --font-size-title-page: clamp(3rem, calc(8.5vw + 1rem), 4rem);
+    /* 48px */
+    --font-size-title-section: clamp(2.25rem, calc(6vw + 1rem), 3rem);
+    /* 36px */
+    --font-size-title-card: clamp(2rem, calc(5vw + 1rem), 2.25rem);
+    /* 28px */
+    --font-size-title-paragraph: clamp(1.35rem, calc(3vw + 1rem), 1.75rem);
+
+    /* font-weight */
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
 }
 
-.primary,
-.dark,
-.neutral,
-.accent-primary,
-.accent-secondary {
-    --dark-2: color-mix(in hsl, var(--color) 65%, black 35%);
-    --dark-1: color-mix(in hsl, var(--color) 75%, black 25%);
-    --light-1: color-mix(in hsl, var(--color) 90%, white 10%);
-    --light-2: color-mix(in hsl, var(--color) 80%, white 20%);
+/* ====================================================== COLORS ====================================================== */
+.color-mix {
+    --dark-3: color-mix(in hsl, var(--color) 70%, black 30%);
+    --dark-2: color-mix(in hsl, var(--color) 60%, black 20%);
+    --dark-1: color-mix(in hsl, var(--color) 85%, black 15%);
+    --light-1: color-mix(in hsl, var(--color) 80%, white 20%);
+    --light-2: color-mix(in hsl, var(--color) 65%, white 35%);
 
-    @supports (color: oklch(50% 0.1 120)) {
-        --dark-2: oklch(from var(--color) calc(l - 0.10) calc(c - 0.02) h);
-        --dark-1: oklch(from var(--color) calc(l - 0.04) calc(c - 0.01) h);
-        --light-1: oklch(from var(--color) calc(l + 0.02) calc(c + 0.01) h);
-        --light-2: oklch(from var(--color) calc(l + 0.04) calc(c + 0.02) h);
-    }
+    /* OKLCH*/
+    --dark-3: color-mix(in oklch, var(--color) 80%, black 50%);
+    --dark-2: color-mix(in oklch, var(--color) 65%, black 35%);
+    --dark-1: color-mix(in oklch, var(--color) 80%, black 20%);
+    --light-1: color-mix(in oklch, var(--color) 70%, white 30%);
+    --light-2: color-mix(in oklch, var(--color) 40%, white 60%);
 }
 
 .primary {
     --color: var(--oklch-primary, var(--color-primary));
-}
-
-.dark {
-    --color: var(--oklch-dark, var(--color-dark));
 }
 
 .neutral {
@@ -50,4 +64,58 @@ body {
 
 .accent-secondary {
     --color: var(--oklch-accent-secondary, var(--color-accent-secondary));
+}
+
+/* ====================================================== FONTS ====================================================== */
+@font-face {
+    font-family: 'Merriweather';
+    src: url('/fonts/Merriweather-Regular.f56f3e.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('/fonts/geomanist-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('/fonts/geomanist-bold-webfont.29a44a.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('/fonts/geomanist-regular-italic-webfont.woff2') format('woff2');
+    font-style: italic;
+    font-display: swap;
+}
+
+h1 {
+    font-size: var(--font-size-title-page);
+    font-weight: var(--font-weight-regular);
+    font-style: italic;
+}
+
+h2 {
+    font-size: var(--font-size-title-section);
+    font-weight: var(--font-weight-bold);
+}
+
+h3 {
+    font-size: var(--font-size-title-card);
+    font-weight: var(--font-weight-regular);
+}
+
+h4 {
+    font-size: var(--font-size-title-paragraph);
+    font-weight: var(--font-weight-bold);
+    font-style: italic;
 }
