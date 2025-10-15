@@ -7,11 +7,8 @@
 
 <TestLinks />
 
-<ul class="primary color-mix">
-  <li><h2 style="font-weight: 400;">Primary</h2></li>
-  <li>
-    <div></div>
-  </li>
+<ul class="primary">
+  <li><h2>Primary</h2></li>
   <li>
     <div></div>
   </li>
@@ -29,11 +26,27 @@
   </li>
 </ul>
 
-<ul class="neutral color-mix">
-  <li><h2 style="font-weight: 500;" >Neutral</h2></li>
+<ul class="dark">
+  <li><h2>Dark</h2></li>
   <li>
     <div></div>
   </li>
+  <li>
+    <div></div>
+  </li>
+  <li>
+    <div></div>
+  </li>
+    <li>
+    <div></div>
+  </li>
+  <li>
+    <div></div>
+  </li>
+</ul>
+
+<ul class="neutral">
+  <li><h2>Neutral</h2></li>
   <li>
     <div></div>
   </li>
@@ -51,11 +64,8 @@
   </li>
 </ul>
 
-<ul class="accent-primary color-mix">
-  <li><h2 style="font-weight: 600;" >accent-primary</h2></li>
-  <li>
-    <div></div>
-  </li>
+<ul class="accent-primary">
+  <li><h2>accent-primary</h2></li>
   <li>
     <div></div>
   </li>
@@ -73,11 +83,8 @@
   </li>
 </ul>
 
-<ul class="accent-secondary color-mix">
-  <li><h2 style="font-style: italic;" >accent-secondary</h2></li>
-  <li>
-    <div></div>
-  </li>
+<ul class="accent-secondary">
+  <li><h2>accent-secondary</h2></li>
   <li>
     <div></div>
   </li>
@@ -103,29 +110,26 @@ ul {
   list-style-type: none;
 
   li:nth-of-type(2) div {
-    background-color: var(--dark-3);
-  }
-  
-  li:nth-of-type(3) div {
     background-color: var(--dark-2);
   }
   
-  li:nth-of-type(4) div {
+  li:nth-of-type(3) div {
     background-color: var(--dark-1);
   }
   
-  li:nth-of-type(5) div{
+  li:nth-of-type(4) div {
     background-color: var(--color);
     border: 1px solid red;
   }
   
-  li:nth-of-type(6) div {
+  li:nth-of-type(5) div{
     background-color: var(--light-1);
+
   }
   
-  li:nth-of-type(7) div {
+  li:nth-of-type(6) div {
     background-color: var(--light-2);
-    border: 1px solid;
+    /* border: 1px solid; */
   }
 }
 
