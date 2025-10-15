@@ -170,9 +170,10 @@ Ik vind dat we meer als team moeten samenwerken inplaats van dat iedereen zijn e
 
 
 ## Definition of Ready
+- the user story is written as `as ... I would like ... so that ...`
 - Weigh User stories
 - Create sub issues to split each user story into tasks
-- Prioritize the user stories
+- Prioritize the user stories (MoSCoW)
 
 
 ## Definition of Done
@@ -182,6 +183,8 @@ Ik vind dat we meer als team moeten samenwerken inplaats van dat iedereen zijn e
   - lighthouse test
   - device test
   - user test
+  - responsiveness
+  - accessibilty test ([a11y checklist](https://www.a11yproject.com/checklist/))
 - **code**
   - followed FDND conventies
   - delete commented code
