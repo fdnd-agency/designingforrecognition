@@ -19,7 +19,7 @@ body {
     font-weight: var(--font-weight-regular);
     
     /* font-size */
-    --font-size-primary: clamp(1rem, 4vw, 1.25rem);
+    --font-size-primary: 1.125rem;
     /* 64px */
     --font-size-title-page: clamp(3rem, calc(8.5vw + 1rem), 4rem);
     /* 48px */
@@ -99,23 +99,23 @@ body {
 }
 
 h1 {
-    font-size: var(--font-size-responsive-title-page);
+    font-size: var(--font-size-title-page);
     font-weight: var(--font-weight-regular);
     font-style: italic;
 }
 
 h2 {
-    font-size: var(--font-size-responsive-title-section);
+    font-size: var(--font-size-title-section);
     font-weight: var(--font-weight-bold);
 }
 
 h3 {
-    font-size: var(--font-size-responsive-title-card);
+    font-size: var(--font-size-title-card);
     font-weight: var(--font-weight-regular);
 }
 
 h4 {
-    font-size: var(--font-size-responsive-title-paragraph);
+    font-size: var(--font-size-title-paragraph);
     font-weight: var(--font-weight-bold);
     font-style: italic;
 }
