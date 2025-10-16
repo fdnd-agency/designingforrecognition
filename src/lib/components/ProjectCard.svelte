@@ -3,15 +3,10 @@
 </script>
 
 <article class="neutral">
-	<h3>Beeld herkenning</h3>
+	<a href="#"><h3>Beeld herkenning</h3></a>
 	<img src={projectImage} alt="afbeelding voor beeld herkenning" width="250" height="165">
 	<p>2020/2025</p>
-	<p>
-		Since the autumn of 2023, we followed a citizens panel getting engaged with the municipality’s
-		development of a new smart city technology: the scan bike. In a series of sessions, we discussed
-		ethics around implementing such technology and brainstormed on topics like privacy, blurring
-		algorithms and other forms of data minimalization.
-	</p>
+	<p>Since the autumn of 2023, we followed a citizens panel getting engaged with the municipality’s development of a new smart city technology: the scan bike. In a series of sessions, we discussed ethics around implementing such technology and brainstormed on topics like privacy, blurring algorithms and other forms of data minimalization. </p>
 </article>
 
 <style>
@@ -19,6 +14,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(4, min-content);
+		position: relative;
 		background-color: var(--light-2);
 		color: var(--color-primary);
 		border-radius: 15px;
@@ -46,9 +42,30 @@
 		}
 	}
 
+	a {
+		color: var(--color-primary);
+		text-decoration: none;
+		margin-left: 0.3em;
+
+		&:hover {
+			color: var(--color-accent-secondary);
+		}
+
+		&:focus {
+			outline: 3px solid var(--color-accent-secondary);
+			border-radius: 5px;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+		}
+	}
+
 	h3 {
 		grid-row: 3;
-		line-height: 2rem;
+		line-height: 2.8rem;
 		margin: 0 0 0.3em 0;
 
 		@media (min-width: 1130px) {
