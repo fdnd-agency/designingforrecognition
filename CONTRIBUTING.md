@@ -167,3 +167,32 @@ Ik vond de samenwerking heel fijn en de samenwerking gaf mij ook meer motivatie 
 
 ## Samenwerken
 Ik vind dat we meer als team moeten samenwerken inplaats van dat iedereen zijn eigen taken heeft: hierdoor kom je tekort met de inzet die je in het project hebt en weeg je taken niet goed af. **Juist** als we als team per onderdeel samen aanpakken hebben we meer overzicht in ons project en kunnen we elkaar beter helpen.
+
+
+## Definition of Ready
+- the user story is written as `as ... I would like ... so that ...`
+- Weigh User stories
+- Create sub issues to split each user story into tasks
+- Prioritize the user stories (MoSCoW)
+
+
+## Definition of Done
+- **Testing**
+  - HTML validator test
+  - Browser test
+  - lighthouse test
+  - device test
+  - user test
+  - responsiveness
+  - accessibilty test ([a11y checklist](https://www.a11yproject.com/checklist/))
+- **code**
+  - followed FDND conventies
+  - delete commented code
+  - prevent repeated code (DRY)
+- **pull requests**
+  - close sub issues when finished
+  - add the user story to the review column
+  - write a detailed pull request, and ask feedback on specific parts
+    - add all needed information, for the review, in the pull request
+  - check if you're merging into the correct branch (`dev`)
+  - archive closed branches
