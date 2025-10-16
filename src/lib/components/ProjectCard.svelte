@@ -41,7 +41,7 @@
 		@media (min-width: 1130px) {
 			grid-template-columns: 13em 1fr;
 			grid-template-rows: min-content min-content 1fr;
-			min-width: 600px;
+			min-width: 650px;
 			max-width: 860px;
 		}
 	}
@@ -91,8 +91,6 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0 0.2em;
-
-		overflow: auto;
 
 		@media (min-width: 1130px) {
 			grid-column: 2;

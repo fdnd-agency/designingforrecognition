@@ -24,7 +24,7 @@
 		}
 
 		@media (min-width: 1130px) {
-			grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
 		}
 
 		@media (min-width: 2500px) {
