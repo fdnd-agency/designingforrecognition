@@ -1,10 +1,6 @@
-<script>
-	import projectImage from '$lib/assets/project-cards-test-image.jpeg';
-</script>
-
 <article class="neutral">
 	<a href="#"><h3>Beeld herkenning</h3></a>
-	<img src={projectImage} alt="afbeelding voor beeld herkenning" width="250" height="165">
+	<img src="https://humanvaluesforsmartercities.nl/wp-content/uploads/sites/2/2024/11/SCANFIETSEXPERIMENT_ML-22-1024x683.jpeg" alt="afbeelding voor beeld herkenning" width="250" height="165">
 	<p>2020/2025</p>
 	<p>Since the autumn of 2023, we followed a citizens panel getting engaged with the municipality’s development of a new smart city technology: the scan bike. In a series of sessions, we discussed ethics around implementing such technology and brainstormed on topics like privacy, blurring algorithms and other forms of data minimalization. </p>
 </article>
