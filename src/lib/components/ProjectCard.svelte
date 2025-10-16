@@ -4,7 +4,7 @@
 
 <article class="neutral">
 	<h3>Beeld herkenning</h3>
-	<img src={projectImage} alt="afbeelding voor beeld herkenning" width="100%" height="auto" />
+	<img src={projectImage} alt="afbeelding voor beeld herkenning" width="250" height="165">
 	<p>2020/2025</p>
 	<p>
 		Since the autumn of 2023, we followed a citizens panel getting engaged with the municipality’s
@@ -61,7 +61,9 @@
 	img {
 		grid-row: 1;
 		border-radius: 5px;
+		width: 100%;
 		max-width: 380px;
+		height: auto;
 		justify-self: center;
 
 		@media (min-width: 1130px) {
