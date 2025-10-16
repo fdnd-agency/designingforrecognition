@@ -2,8 +2,8 @@
 	import { ProjectCard } from '$lib';
 </script>
 
-<section>
-	<h2>Filter de projecten</h2>
+<section class="neutral">
+	<h2>active filter</h2>
 	{#each Array(5)}
 		<ProjectCard />
 	{/each}
@@ -15,11 +15,12 @@
 		flex-direction: column;
 		place-items: center;
 		gap: 1em;
+		background-color: var(--color);
 
 		@media (min-width: 730px) {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-			margin: 0 1em;
+			padding: 0 1em;
 		}
 
 		@media (min-width: 1130px) {
@@ -34,5 +35,6 @@
 	h2 {
 		grid-column: 1 / -1;
 		margin: 0 1em;
+		color: var(--color-primary);
 	}
 </style>
