@@ -1,0 +1,1 @@
+import Logo from "$lib/components/Logo.svelte";
