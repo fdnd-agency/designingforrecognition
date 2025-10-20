@@ -60,7 +60,7 @@
 		padding: 0;
 		margin: 0 1em;
 
-		@media (min-width: 625px) {
+		@media (min-width: 600px) {
 			flex-direction: row;
 		}
 	}
@@ -80,7 +80,11 @@
 
 		&:hover,
 		&:focus {
-			width: 290px;
+			width: 250px;
+
+			@media (min-width: 350px) {
+				width: 290px;
+			}
 
 			h3 {
 				opacity: 1;
@@ -91,13 +95,16 @@
 
 	h3 {
 		opacity: 0;
-		white-space: nowrap;
 		transform: translateX(-20px);
 		transition:
 			opacity 0.4s ease,
 			transform 0.4s ease;
 		font-size: 24px;
 		margin: 0;
+
+		@media (min-width: 350px) {
+			white-space: nowrap;
+		}
 	}
 
 	img {
