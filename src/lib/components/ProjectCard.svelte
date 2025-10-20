@@ -13,7 +13,7 @@
 	<picture>
 		<source
 			type="image/avif"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=250&height=165"
+			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250"
 		/>
 		<source
 			type="image/webp"
@@ -21,8 +21,8 @@
 		/>
 		<img
 			src={fallBackimg}
-			width="250px"
-			height="165px"
+			width="270px"
+			height="250px"
 			alt="image die te maken heeft met {project.img}"
 			loading="lazy"
 		/>
@@ -41,13 +41,39 @@
 	{:else}
 		<p><i>Description is missing</i></p>
 	{/if}
+
+	<ul>
+		{#if project.case_study}
+			{#each project.case_study as case_study}
+				<li>{case_study}</li>
+			{/each}
+		{/if}
+
+		{#if project.results}
+			<li>{project.results}</li>
+		{/if}
+
+		{#if project.Process_phase}
+			<li>{project.Process_phase}</li>
+		{/if}
+
+		{#if project.Participation_level}
+			<li>{project.Participation_level}</li>
+		{/if}
+
+		{#if project.execution}
+			{#each project.execution as execution}
+				<li>{execution}</li>
+			{/each}
+		{/if}
+	</ul>
 </article>
 
 <style>
 	article {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(4, min-content);
+		grid-template-rows: repeat(5, min-content);
 		position: relative;
 		background-color: var(--light-2);
 		color: var(--color-primary);
@@ -58,19 +84,24 @@
 		cursor: pointer;
 		box-shadow: 1px 1px 10px 0 var(--dark-2);
 
-		&:hover {
+		&:hover, &:focus-within {
 			background-color: var(--dark-2);
 			outline: 2px solid var(--light-2);
 			box-shadow: 1px 1px 5px 10px var(--dark-1);
+			scale: 1.01;
 
 			img {
 				outline: 3px solid var(--light-2);
 			}
+
+			ul {
+				opacity: 1;
+			}
 		}
 
 		@media (min-width: 1130px) {
-			grid-template-columns: 13em 1fr;
-			grid-template-rows: min-content min-content 1fr;
+			grid-template-columns: 15em 1fr;
+			grid-template-rows: min-content min-content 1fr min-content;
 			min-width: 650px;
 			max-width: 860px;
 		}
@@ -114,20 +145,18 @@
 
 		@media (min-width: 1130px) {
 			grid-column: 1;
-			grid-row: 1 / -1;
+			grid-row: 1 / 4;
+			align-self: center;
 		}
 	}
 
 	img {
 		border-radius: 5px;
 		width: 100%;
-		max-width: 380px;
+		max-width: 480px;
 		height: auto;
-		justify-self: center;
-
-		@media (min-width: 1130px) {
-			height: 100%;
-		}
+		object-fit: contain;
+		object-position: center;
 	}
 
 	p:nth-of-type(1) {
@@ -154,5 +183,30 @@
 			grid-row: 3;
 			margin: 0 0 0 0.5em;
 		}
+	}
+
+	ul {
+		grid-row: 5;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		padding: 0 0.5em;
+		list-style-type: none;
+		opacity: 0.5;
+
+		@media (min-width: 1130px) {
+			grid-row: 4;
+			grid-column: 1/3;
+		}
+	}
+
+	li {
+		background-color: var(--color-accent-secondary);
+		color: var(--color-dark);
+		width: min-content;
+		text-wrap: nowrap;
+		padding: 0.5em;
+		border-radius: 15px;
+		text-align: center;
 	}
 </style>
