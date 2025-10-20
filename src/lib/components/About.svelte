@@ -40,8 +40,15 @@
 
 	ul {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 		gap: 1em;
+		padding: 0;
+		margin: 0 1em;
+
+		@media (min-width: 625px) {
+			flex-direction: row;
+		}
 	}
 
 	li {
@@ -58,7 +65,7 @@
 		justify-content: start;
 
 		&:hover {
-			width: 300px;
+			width: 290px;
 
 			h3 {
 				opacity: 1;
