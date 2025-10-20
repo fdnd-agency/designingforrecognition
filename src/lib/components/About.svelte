@@ -9,17 +9,32 @@
 	</p>
 
 	<ul>
-		<li>
+		<li tabindex="0">
 			<h3>Tessa Steenkamp</h3>
-			<img src="https://civicinteractiondesign.com/wp-content/uploads/2023/08/Tessa-scaled-e1691482296190.jpg" alt="foto van Tessa Steenkamp" width="100" height="100">
+			<img
+				src="https://civicinteractiondesign.com/wp-content/uploads/2023/08/Tessa-scaled-e1691482296190.jpg"
+				alt="foto van Tessa Steenkamp"
+				width="100"
+				height="100"
+			/>
 		</li>
-		<li>
+		<li tabindex="0">
 			<h3>Martijn de Waal</h3>
-			<img src="https://civicinteractiondesign.com/wp-content/uploads/2018/09/martijn-de-waal-1.jpg" alt="foto van Martijn de Waal" width="100" height="100">
+			<img
+				src="https://civicinteractiondesign.com/wp-content/uploads/2018/09/martijn-de-waal-1.jpg"
+				alt="foto van Martijn de Waal"
+				width="100"
+				height="100"
+			/>
 		</li>
-		<li>
+		<li tabindex="0">
 			<h3>Jorgen Karskens</h3>
-			<img src="https://civicinteractiondesign.com/wp-content/uploads/2022/11/1539348613468.jpeg" alt="foto van Jorgen Karskens" width="100" height="100">
+			<img
+				src="https://civicinteractiondesign.com/wp-content/uploads/2022/11/1539348613468.jpeg"
+				alt="foto van Jorgen Karskens"
+				width="100"
+				height="100"
+			/>
 		</li>
 	</ul>
 </section>
@@ -64,7 +79,8 @@
 		transition: width 0.5s ease;
 		justify-content: start;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			width: 290px;
 
 			h3 {
