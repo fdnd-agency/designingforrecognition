@@ -1,8 +1,46 @@
+<script>
+	import { fallBackimg } from '$lib';
+	export let project;
+</script>
+
 <article class="neutral">
-	<a href="#"><h3>Beeld herkenning</h3></a>
-	<img src="https://humanvaluesforsmartercities.nl/wp-content/uploads/sites/2/2024/11/SCANFIETSEXPERIMENT_ML-22-1024x683.jpeg" alt="afbeelding voor beeld herkenning" width="250" height="165">
-	<p>2020/2025</p>
-	<p>Since the autumn of 2023, we followed a citizens panel getting engaged with the municipality’s development of a new smart city technology: the scan bike. In a series of sessions, we discussed ethics around implementing such technology and brainstormed on topics like privacy, blurring algorithms and other forms of data minimalization. </p>
+	{#if project.title}
+		<a href="#"><h3>{project.title}</h3></a>
+	{:else}
+		<a href="#"><h3><i>Title is missing</i></h3></a>
+	{/if}
+
+	<picture>
+		<source
+			type="image/avif"
+			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=250&height=165"
+		/>
+		<source
+			type="image/webp"
+			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165"
+		/>
+		<img
+			src={fallBackimg}
+			width="250px"
+			height="165px"
+			alt="image die te maken heeft met {project.img}"
+			loading="lazy"
+		/>
+	</picture>
+
+	{#if project.date && !project.end_date}
+		<p>{new Date(project.date).getFullYear()}</p>
+	{:else if project.date && project.end_date}
+		<p>{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
+	{:else}
+		<p></p>
+	{/if}
+
+	{#if project.description}
+		<p>{project.description}</p>
+	{:else}
+		<p><i>Description is missing</i></p>
+	{/if}
 </article>
 
 <style>
@@ -53,7 +91,7 @@
 		}
 
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			inset: 0;
 		}
@@ -71,8 +109,16 @@
 		}
 	}
 
-	img {
+	picture {
 		grid-row: 1;
+
+		@media (min-width: 1130px) {
+			grid-column: 1;
+			grid-row: 1 / -1;
+		}
+	}
+
+	img {
 		border-radius: 5px;
 		width: 100%;
 		max-width: 380px;
@@ -80,8 +126,6 @@
 		justify-self: center;
 
 		@media (min-width: 1130px) {
-			grid-column: 1;
-			grid-row: 1 / -1;
 			height: 100%;
 		}
 	}

@@ -1,11 +1,12 @@
 <script>
 	import { ProjectCard } from '$lib';
+	export let data;
 </script>
 
 <section class="neutral">
 	<h2>active filter</h2>
-	{#each Array(5)}
-		<ProjectCard />
+	{#each data.projects as project}
+		<ProjectCard {project} />
 	{/each}
 </section>
 
@@ -21,6 +22,7 @@
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 			padding: 0 1em;
+			align-items: stretch;
 		}
 
 		@media (min-width: 1130px) {
