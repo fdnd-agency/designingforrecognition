@@ -9,6 +9,7 @@
 	</p>
 
 	<ul>
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li tabindex="0">
 			<h3>Tessa Steenkamp</h3>
 			<img
@@ -18,6 +19,7 @@
 				height="100"
 			/>
 		</li>
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li tabindex="0">
 			<h3>Martijn de Waal</h3>
 			<img
@@ -27,6 +29,7 @@
 				height="100"
 			/>
 		</li>
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li tabindex="0">
 			<h3>Jorgen Karskens</h3>
 			<img
