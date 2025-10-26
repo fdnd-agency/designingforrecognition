@@ -33,7 +33,7 @@
 	{:else if project.date && project.end_date}
 		<p>{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
 	{:else}
-		<p></p>
+		<p class="empty-element"></p>
 	{/if}
 
 	{#if project.description}
@@ -71,13 +71,15 @@
 
 <style>
 	article {
+		--radius: 15px;
+		--child-radius: calc(var(--radius) / 2);
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, min-content);
 		position: relative;
 		background-color: var(--light-2);
 		color: var(--color-primary);
-		border-radius: 15px;
+		border-radius: var(--radius);
 		margin: 1em 0.5em;
 		padding: 0.5em;
 		max-width: 400px;
@@ -99,6 +101,10 @@
 			}
 		}
 
+		@media (min-width: 430px) {
+			padding: 1em;
+		}
+
 		@media (min-width: 1130px) {
 			grid-template-columns: 15em 1fr;
 			grid-template-rows: min-content min-content 1fr min-content;
@@ -107,10 +113,18 @@
 		}
 	}
 
+	.empty-element:empty {
+		margin: 0;
+		padding: 0;
+	}
+
 	a {
 		color: var(--color-primary);
 		text-decoration: none;
-		margin-left: 0.3em;
+
+		@media (min-width: 1130px) {
+			margin: 1em 0 0 1em;
+		}
 
 		&:hover {
 			color: var(--color-accent-secondary);
@@ -118,7 +132,7 @@
 
 		&:focus {
 			outline: 3px solid var(--color-accent-secondary);
-			border-radius: 5px;
+			border-radius: var(--child-radius);
 		}
 
 		&::after {
@@ -136,7 +150,6 @@
 		@media (min-width: 1130px) {
 			grid-column: 2;
 			grid-row: 1;
-			margin: 0 0 0.3em 0.3em;
 		}
 	}
 
@@ -151,7 +164,7 @@
 	}
 
 	img {
-		border-radius: 5px;
+		border-radius: var(--child-radius);
 		width: 100%;
 		max-width: 480px;
 		height: auto;
@@ -162,12 +175,13 @@
 	p:nth-of-type(1) {
 		grid-row: 2;
 		margin: 0.3em 0 0.3em 0;
+		padding: 0.5em 0;
 		font-style: italic;
 
 		@media (min-width: 1130px) {
 			grid-column: 2;
 			grid-row: 2;
-			margin: 0.3em 0 0.3em 0.7em;
+			margin-left: 1em;
 		}
 	}
 
@@ -176,12 +190,16 @@
 		width: clamp(25ch, 100%, 100ch);
 		box-sizing: border-box;
 		margin: 0;
-		padding: 0 0.2em;
+		padding: 0.7em 0.2em;
+
+		@media (min-width: 475px) {
+			padding: 0.5em 0;
+		}
 
 		@media (min-width: 1130px) {
 			grid-column: 2;
 			grid-row: 3;
-			margin: 0 0 0 0.5em;
+			padding-left: 1em;
 		}
 	}
 
@@ -190,7 +208,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5em;
-		padding: 0 0.5em;
+		padding: 0;
 		list-style-type: none;
 		opacity: 0.5;
 
@@ -206,7 +224,7 @@
 		width: min-content;
 		text-wrap: nowrap;
 		padding: 0.5em;
-		border-radius: 15px;
+		border-radius: var(--child-radius);
 		text-align: center;
 	}
 </style>
