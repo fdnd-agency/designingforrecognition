@@ -40,4 +40,95 @@
     </div>
 </section>
 
+<style>
+:root{
+    --blue-hero:#1B427D;
+    --blue-hero-contrast:#fff;
+    --accent-light:#BFD6FF;
+}
+
+:global(body){ 
+    margin:0; 
+    background:#1B427D;
+    overflow-x: hidden;
+    color:var(--blue-hero-contrast);
+}
+
+.sponsors{
+    background: var(--bg, var(--blue-hero));
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding-block:1.50em;
+    text-align:center;
+}
+
+.title{
+    padding-bottom:16px;
+}
+
+.title h2{
+    color:var(--blue-hero-contrast);
+    line-height:1.2;
+    margin:0;
+    height: 2em;
+}
+
+.title h2::after{
+    content:"";
+    display:block;
+    height:3px;
+    width:64px;
+    margin:12px auto 0;
+    background:var(--accent-light);
+}
+
+/* logo's top en bottom */
+
+.logo-top,
+.logo-bottom{
+    position:relative;
+    width:100%;
+    max-width:100vw;
+    overflow:hidden;
+    padding-block:12px;
+    border-bottom:1px solid rgba(191,214,255,.15);
+    display:flex;
+    margin-bottom:16px;
+    background:linear-gradient(to bottom, rgba(191,214,255,.06) 0%, rgba(191,214,255,0) 100%);
+}
+
+.logo-bottom{
+    margin-bottom:0;
+    background:linear-gradient(to top, rgba(191,214,255,.06) 0%, rgba(191,214,255,0) 100%);
+}
+
+.logo-strip-top,
+.logo-strip-bottom{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    align-items:center;
+    gap:clamp(8px,1.5vw,20px);
+    padding-inline:24px;
+}
+
+.logo-strip-top li,
+.logo-strip-bottom li{
+    display:flex;
+    align-items:center;
+}
+
+.logo-strip-top img,
+.logo-strip-bottom img{
+    max-height:5.5em;
+    height:auto;
+    width:auto;
+    object-fit:contain;
+}
+
 </style>
