@@ -131,4 +131,31 @@
     object-fit:contain;
 }
 
+  /* Animatie auto carousel */
+
+.logo-strip-top{
+    animation: scroll-left-to-right 30s linear infinite;
+}
+
+.logo-strip-bottom{
+    animation: scroll-right-to-left 30s linear infinite;
+}
+
+@keyframes scroll-left-to-right {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes scroll-right-to-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .logo-strip-top,
+    .logo-strip-bottom{
+    animation:none;
+    transform:none;
+    }
+}
 </style>
