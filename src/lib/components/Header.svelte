@@ -7,11 +7,12 @@
 <header> 
   <nav>
     <Logo />
-    <button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu">
+    <!-- <button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
-    </button>
+    </button> -->
+    <!-- <ul class:active={isMenuOpen}> -->
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/Projects">Projects</a></li>
@@ -49,44 +50,21 @@
     margin: 0;
     padding: 0;
   }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-  }
-
-  .hamburger span {
-    width: 30px;
-    height: 3px;
-    background: var(--color-dark);
-    border-radius: 10px;
-    transition: all 0.3s linear;
-  }
-
-  @media (max-width: 470px) {
-    .hamburger {
-      display: flex;
-    }
-  }
-  @media (max-width: 471px) {
-    nav ul {
-      display: none;
-      transition: ease-in-out 2s;
-      opacity: 0;
-    }
-    .hamburger {
-      display: none;
-    }
-  }
   
+   /* Mobile  */
+  @media (max-width: 470px) {
+     nav ul {
+      flex-direction: row;
+    }
+  }
+
+   /* Small Tablet to Desktop  */
+   /* @media (max-width: 471px) {
+    .hamburger {
+      display: none;
+    } 
+  }  */
+
   ul {
     padding-top: 5em;
   }
@@ -101,5 +79,28 @@
 
   a:hover {
       color: var(--color-accent-primary);
+    } 
+
+  /* @media (min-width: 320px) {
+
+    nav ul {
+      flex-direction: row;
     }
-</style>
+  } 
+
+  /* header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-accent-secondary);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  } */
+</style> 
