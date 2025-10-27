@@ -1,22 +1,30 @@
 <script>
   import Logo from '$lib/components/Logo.svelte';
+
+  // Menu functionality
   let isMenuOpen = false;
   const toggleMenu = () => isMenuOpen = !isMenuOpen;
+  const closeMenu = () => isMenuOpen = false;
 </script>
 
 <header> 
   <nav>
     <Logo />
-    <!-- <button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button> -->
-    <!-- <ul class:active={isMenuOpen}> -->
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/Projects">Projects</a></li>
-      <li><a href="/Researchers">Researchers</a></li>
+    <button 
+    type="button"
+    class="menu-mobile" 
+    on:click={toggleMenu} 
+    aria-label="Toggle menu"
+    aria-expanded={isMenuOpen}
+    aria-controls="main-menu">
+      <span class:open={isMenuOpen}></span>
+      <span class:open={isMenuOpen}></span>
+      <span class:open={isMenuOpen}></span>
+    </button>
+     <ul id="main-menu" class:open={isMenuOpen}>
+      <li><a href="/" on:click={closeMenu}>Home</a></li>
+      <li><a href="/Projects" on:click={closeMenu}>Projects</a></li>
+      <li><a href="/Researchers" on:click={closeMenu}>Researchers</a></li>
     </ul>
   </nav>
 </header>
@@ -24,9 +32,7 @@
 <style>
   header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,6 +40,7 @@
     padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    font-family: var(--font-size-primary);
   }
 
   nav{
@@ -43,6 +50,9 @@
     width: 100%;
   }
 
+
+
+
   nav ul {
     list-style: none;
     display: flex;
@@ -50,20 +60,20 @@
     margin: 0;
     padding: 0;
   }
+
+
   
+   /* simple cross animation when open */
+  
+
+
    /* Mobile  */
   @media (max-width: 470px) {
      nav ul {
+     display: none;
       flex-direction: row;
     }
   }
-
-   /* Small Tablet to Desktop  */
-   /* @media (max-width: 471px) {
-    .hamburger {
-      display: none;
-    } 
-  }  */
 
   ul {
     padding-top: 5em;
@@ -77,30 +87,69 @@
     transition: color 0.3s ease;
   }
 
+  a:focus,
   a:hover {
       color: var(--color-accent-primary);
     } 
 
-  /* @media (min-width: 320px) {
+  .menu-mobile {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-mobile span {
+    display: block;
+    height: 2px;
+    background: var(--color-dark);
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  .menu-mobile span.open:nth-child(1) { 
+    transform: translateY(6px) rotate(45deg); 
+  }
+  .menu-mobile span.open:nth-child(2) { 
+    opacity: 0; 
+  }
+  .menu-mobile span.open:nth-child(3) { 
+    transform: translateY(-6px) rotate(-45deg); 
+  }
+
+   /* Mobile behavior: hide menu by default, show when .open */
+  @media (max-width: 470px) {
+    .menu-mobile { display: inline-flex; }
 
     nav ul {
-      flex-direction: row;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-accent-secondary);
+      flex-direction: column;
+      gap: 0;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-  } 
 
-  /* header {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    background-color: var(--color-accent-secondary);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    nav ul.open {
+      display: flex;
+    }
+
+    nav ul li {
+      padding: .5rem 0;
+    }
   }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-  } */
+
+  /* Desktop: hide hamburger */
+  @media (min-width: 471px) {
+    .menu-mobile { display: none; }
+  }
 </style> 
