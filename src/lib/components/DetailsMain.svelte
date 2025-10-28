@@ -13,8 +13,8 @@
 	{/if}
 
 	<button>
-		<img src={backButton} width="36px" height="36px" alt="Terug naar de vorige pagina" >
-		<span>back</span>
+		<img src={backButton} width="36px" height="36px" alt="Terug naar de vorige pagina" />
+		<span>Terug</span>
 	</button>
 
 	<picture>
@@ -75,13 +75,38 @@
 	.content-container {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: min-content;
+		gap: 1em;
 		place-items: center;
 		margin: 0.5em;
+
+		@media (min-width: 400px) {
+			grid-template-columns: 1fr min-content minmax(280px, 400px) 1fr;
+			margin: 1em;
+
+			& > * {
+				grid-column: 2 / 4;
+			}
+		}
+
+		@media (min-width: 810px) {
+			grid-template-columns: 1fr min-content minmax(280px, 400px) 1fr;
+			grid-template-rows: 7.5em;
+
+			picture {
+				grid-column: 2 / 3;
+			}
+
+			article {
+				grid-column: 3 / 4;
+			}
+		}
 	}
 
 	h2 {
-		font-size: var(--font-size-title-paragraph);
+		grid-row: 1;
+		align-self: start;
+		margin-top: 0.5em;
+		font-size: clamp(1.35rem, calc(3vw + 1rem), 3rem);
 	}
 
 	button {
@@ -93,28 +118,54 @@
 		background-color: inherit;
 		margin: 0.5em 0;
 
+		@media (min-width: 810px) {
+			grid-row: 1;
+			align-self: end;
+		}
+
 		span {
 			font-size: var(--font-size-primary);
+			font-style: italic;
 		}
 	}
 
 	picture img {
-		border-radius: 7.5px;
+		border-radius: var(--child-radius);
 		box-shadow: 1px 1px 10px 0 var(--dark-2);
+		width: clamp(270px, 40vw, 400px);
+		height: auto;
+
+		@media (min-width: 810px) {
+			margin-left: 2em;
+		}
 	}
 
 	p:nth-of-type(1) {
 		justify-self: start;
+		font-style: italic;
 		margin: 0.5em 0;
+
+		@media (min-width: 810px) {
+			margin-left: 2em;
+		}
 	}
 
 	article {
 		display: flex;
 		flex-direction: column;
 		background-color: var(--oklch-accent-secondary);
-		border-radius: var(--radius);
+		border-radius: var(--child-radius);
+		box-shadow: 1px 1px 10px 0 var(--dark-2);
 		padding: 0.8em;
 		margin-top: 0.5em;
+
+		@media (min-width: 810px) {
+			grid-row: 2;
+			align-self: start;
+			justify-self: end;
+			height: max-content;
+			margin-top: 0;
+		}
 
 		h3 {
 			font-size: var(--font-size-title-paragraph);
@@ -131,9 +182,10 @@
 	.text-container :global {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 
 		p {
-			width: clamp(25ch, 100%, 100ch);
+			width: clamp(25ch, 75%, 85ch);
 		}
 
 		strong {
