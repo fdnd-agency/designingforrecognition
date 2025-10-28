@@ -63,7 +63,11 @@
 		padding: 0;
 		margin: 0 1em;
 
-		@media (min-width: 600px) {
+		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
+			flex-direction: row;
+		}
+
+		@media (min-width: 980px) and (prefers-reduced-motion: reduce) {
 			flex-direction: row;
 		}
 	}
@@ -81,6 +85,16 @@
 		transition: width 0.5s ease;
 		justify-content: start;
 
+		@media (prefers-reduced-motion: reduce) {
+			transform: none;
+			transition: none;
+			width: 250px;
+
+			@media (min-width: 350px) {
+				width: 290px;
+			}
+		}
+
 		&:hover,
 		&:focus {
 			width: 250px;
@@ -92,6 +106,11 @@
 			h3 {
 				opacity: 1;
 				transform: translateX(0);
+
+				@media (prefers-reduced-motion: reduce) {
+					transform: none;
+					transition: none;
+				}
 			}
 		}
 	}
@@ -107,6 +126,16 @@
 
 		@media (min-width: 350px) {
 			white-space: nowrap;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			transform: none;
+			transition: none;
+			opacity: 1;
+
+			@media (min-width: 980px) {
+				white-space: nowrap;
+			}
 		}
 	}
 
