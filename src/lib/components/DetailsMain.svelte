@@ -31,7 +31,8 @@
 			src={project.img}
 			width="270px"
 			height="250px"
-			alt="image die te maken heeft met {project.img}"
+			alt="image die te maken heeft met {project.title}"
+			fetchpriority="high"
 		/>
 	</picture>
 
