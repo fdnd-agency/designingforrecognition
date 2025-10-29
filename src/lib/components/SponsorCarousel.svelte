@@ -32,7 +32,6 @@
 .sponsors{
     background: var(--color-neutral);
     color:var(--color-accent-primary);
-    width:100vw;
     min-height:100vh;
     display:flex;
     flex-direction:column;
