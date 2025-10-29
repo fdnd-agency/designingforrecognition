@@ -1,5 +1,5 @@
 <script>
-  // export let ilters = [];
+
 </script>
 
 <h3>Filteren</h3>
@@ -34,8 +34,39 @@
 
 
 <style>
+  .filter-checkbox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+  }
+   .checkbox-button{
+    display: inline-flex;
+    align-items: center;
+    margin: 8px;
+  }
 
-  div {
-    margin: 20px;
+  .checkbox-button input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .checkbox-button label {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid var(--color-accent-primary);
+    border-radius: 7.5px;
+    background: var(--color-accent-secondary);
+    border-color: var(--color-accent-secondary);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .checkbox-button input:hover + label,
+  .checkbox-button input:checked + label {
+    background: var( --color-accent-primary);
+    border-color: var( --color-accent-primary);
+    /* box-shadow: 0 30 blur(60%) 20%; */
+    box-shadow: 0 30%(var(--color-dark)) ;
   }
 </style>
