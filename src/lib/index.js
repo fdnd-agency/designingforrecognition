@@ -10,5 +10,9 @@ export { default as ProjectCard } from './components/ProjectCard.svelte'
 // This component is the container for all project cards on the home page
 export { default as ContainerProjectCard } from './components/ContainerProjectCard.svelte'
 
+export { default as FooterInfo } from './components/FooterInfo.svelte'
+
+
+
 // Images & Icons
 export { default as fallBackimg } from './assets/fallBackimg.png'
