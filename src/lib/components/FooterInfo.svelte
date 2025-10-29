@@ -58,8 +58,13 @@ margin-inline: auto;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 16rem;
 		}
+	
+		@media (min-width: 1024px) {
+    justify-content: center;
+		}
+	
 	}
 
 /* kolommen */
@@ -78,6 +83,10 @@ color: var(--color-text-dark);
 @media (min-width: 768px) {
     max-width: 500px;	
 }
+
+@media (min-width: 1024px) {
+    margin-right: 3rem;
+  	}
 }
 
 .footer-right {
@@ -109,6 +118,10 @@ color: var(--color-text-dark);
 line-height: 1.5;
 max-width: 40ch;
 color: var(--color-text-dark);
+
+@media (min-width: 1024px) {
+    max-width: 50ch;
+  }
 }
 
 /* contact */
@@ -131,8 +144,13 @@ flex-direction: column;
 gap: 1rem;
 
 @media (min-width: 768px) {
-    /* flex-direction: row; */
     gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 2.5rem;
+    white-space: nowrap;
 }
 
 a {
