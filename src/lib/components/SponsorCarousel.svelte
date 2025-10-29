@@ -27,11 +27,6 @@
 </section>
 
 <style>
-:root{
-    --blue-hero:#1B427D;
-    --blue-hero-contrast:#fff;
-    --accent-light:#BFD6FF;
-}
 
 :global(body){ 
     margin:0; 
@@ -41,8 +36,9 @@
 }
 
 .sponsors{
-    background: var(--bg, var(--blue-hero));
     width:100%;
+    background: var(--color-neutral);
+    color:var(--color-accent-primary);
     min-height:100vh;
     display:flex;
     flex-direction:column;
@@ -57,7 +53,7 @@
 }
 
 .title h2{
-    color:var(--blue-hero-contrast);
+    color:var(--color-primary);
     line-height:1.2;
     margin:0;
     height: 2em;
@@ -69,7 +65,7 @@
     height:3px;
     width:64px;
     margin:12px auto 0;
-    background:var(--accent-light);
+    background:var(--color-accent-primary);
 }
 
 /* logo's top en bottom */
