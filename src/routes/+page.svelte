@@ -1,6 +1,8 @@
 <script>
-	import { TestLinks } from '$lib';
+    import { SponsorCarousel, ContainerProjectCard } from '$lib'
+    export let data
 </script>
 
-<li><a href="/project-open-statistiek-delen">Open Statistiek Delen</a></li>
-<li><a href="/project-chatten-met-de-handhaver">Chatten met de Handhaver</a></li>
+<ContainerProjectCard {data}/>
+
+<SponsorCarousel {data}/>
