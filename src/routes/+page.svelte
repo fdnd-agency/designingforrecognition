@@ -1,5 +1,6 @@
 <script>
-    import { About } from '$lib'
+    import { TestLinks, ContainerProjectCard } from '$lib'
+	export let data;
 </script>
 
-<About />
+<ContainerProjectCard {data}/>
