@@ -28,17 +28,11 @@
 
 <style>
 
-:global(body){ 
-    margin:0; 
-    background:#1B427D;
-    overflow-x: hidden;
-    color:var(--blue-hero-contrast);
-}
 
 .sponsors{
-    width:100%;
     background: var(--color-neutral);
     color:var(--color-accent-primary);
+    width:100vw;
     min-height:100vh;
     display:flex;
     flex-direction:column;
@@ -46,6 +40,7 @@
     justify-content:center;
     padding-block:1.50em;
     text-align:center;
+    overflow-x: hidden;
 }
 
 .title{
