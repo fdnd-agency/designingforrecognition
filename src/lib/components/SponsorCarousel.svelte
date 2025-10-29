@@ -13,21 +13,21 @@
     <!-- Bovenste rij (links → rechts) -->
     <div class="logo-top">
     <ul class="logo-strip-top">
-        {#each sponsors as q, i}
-        <li><img src="https://fdnd-agency.directus.app/assets/{q.logo}" alt="AMS Institute"></li>
+        {#each sponsors as sponsor, i}
+        <li><img src="https://fdnd-agency.directus.app/assets/{sponsor.logo}" alt="AMS Institute"></li>
         {/each}
     </ul>
     </div>
-    <div>
+    <div class="logo-bottom">
     <ul class="logo-strip-bottom">
         {#each sponsors as sponsor}
         <li><img src="https://fdnd-agency.directus.app/assets/{sponsor.logo}" alt="AMS Institute"></li>
         {/each}
     </ul>
+</div>
 </section>
 
 <style>
-
 
 .sponsors{
     background: var(--color-neutral);
@@ -72,16 +72,20 @@
     max-width:100vw;
     overflow:hidden;
     padding-block:12px;
-    border-bottom:1px solid rgba(191,214,255,.15);
+    border-bottom:1px solid var(--color-accent-secondary);
     display:flex;
     margin-bottom:16px;
-    background:linear-gradient(to bottom, rgba(191,214,255,.06) 0%, rgba(191,214,255,0) 100%);
+    background: linear-gradient(
+		to bottom,
+		color-mix(in srgb, var(--color-accent-secondary) 6%, transparent) 0%,
+		transparent 100%
+	);
 }
 
 .logo-bottom{
     margin-bottom:0;
-    background:linear-gradient(to top, rgba(191,214,255,.06) 0%, rgba(191,214,255,0) 100%);
-}
+    background:linear-gradient(to top,color-mix(in srgb, var(--color-accent-secondary) 6%, transparent) 0%,
+    transparent 100%);}
 
 .logo-strip-top,
 .logo-strip-bottom{
