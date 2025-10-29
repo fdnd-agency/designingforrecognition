@@ -20,8 +20,8 @@
     </div>
     <div>
     <ul class="logo-strip-bottom">
-        {#each sponsors as q}
-        <li><img src="https://fdnd-agency.directus.app/assets/{q.logo}" alt="AMS Institute"></li>
+        {#each sponsors as sponsor}
+        <li><img src="https://fdnd-agency.directus.app/assets/{sponsor.logo}" alt="AMS Institute"></li>
         {/each}
     </ul>
 </section>
