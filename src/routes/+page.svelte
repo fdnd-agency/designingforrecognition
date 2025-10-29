@@ -1,10 +1,8 @@
 <script>
-    import { FooterInfo } from '$lib'
+    import { SponsorCarousel, ContainerProjectCard } from '$lib'
     export let data
-    console.log(data.Sponsor)
 </script>
 
-<FooterInfo/>
+<ContainerProjectCard {data}/>
 
-
-
+<SponsorCarousel {data}/>
