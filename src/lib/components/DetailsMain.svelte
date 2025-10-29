@@ -55,9 +55,9 @@
 			{@html project.content}
 		</section>
 	{:else}
-		<section class="text-container">
+		<section class="text-container text-fallback">
 			<h3>Sorry, er is nog geen content beschikbaar.</h3>
-			Er wordt momenteel gewerkt aan dit onderwerp. Bekijk ons ander werk.
+			<p>Er wordt momenteel gewerkt aan dit onderwerp. Bekijk ons ander werk.</p>
 			<a href="/">Terug naar homepagina</a>
 		</section>
 	{/if}
@@ -193,6 +193,15 @@
 			display: inline-block;
 			font-size: var(--font-size-title-paragraph);
 			margin: 0.5em 0 0.5em 0;
+		}
+	}
+
+	.text-fallback {
+		place-items: center;
+		text-align: center;
+		
+		p {
+			line-height: 1.5rem;
 		}
 	}
 </style>
