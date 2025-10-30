@@ -1,5 +1,5 @@
 <script>
-	import Logo from './components/Logo.svelte';
+	import Logo from '$lib/components/Logo.svelte';
 
 	// Menu functionality
 	let isMenuOpen = false;
