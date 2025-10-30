@@ -15,7 +15,12 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: inherit;
-    font-size: 1rem;
+
+    font-size: clamp(0.95rem, 2.6vw, 1.7rem);
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
   }
 </style>

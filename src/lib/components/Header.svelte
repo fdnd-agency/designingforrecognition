@@ -23,8 +23,8 @@
 		</button>
 		<ul id="main-menu" class:open={isMenuOpen}>
 			<li><a href="/" on:click={closeMenu}>Home</a></li>
-			<li><a href="/Projects" on:click={closeMenu}>Projects</a></li>
-			<li><a href="/Researchers" on:click={closeMenu}>Researchers</a></li>
+			<li><a href="/projects" on:click={closeMenu}>Projects</a></li>
+			<li><a href="/researcher" on:click={closeMenu}>Researchers</a></li>
 		</ul>
 	</nav>
 </header>
@@ -61,7 +61,7 @@
 	}
 
 	/* Mobile  */
-	@media (max-width: 470px) {
+	@media (max-width: 544px) {
 		nav ul {
 			display: none;
 			flex-direction: row;
@@ -117,8 +117,8 @@
 		transform: translateY(-6px) rotate(-45deg);
 	}
 
-	/* Mobile behavior: hide menu by default, show when .open */
-	@media (max-width: 470px) {
+	/* Mobile behavior: hide menu, show when .open */
+	@media (max-width: 544px) {
 		.menu-mobile {
 			display: inline-flex;
 		}
@@ -145,8 +145,8 @@
 		}
 	}
 
-	/* Desktop: hide hamburger */
-	@media (min-width: 471px) {
+	/* Tablet + Desktop: hide hamburger menu and show buttons*/
+	@media (min-width: 545px) {
 		.menu-mobile {
 			display: none;
 		}
