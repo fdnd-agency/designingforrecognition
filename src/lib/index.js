@@ -11,6 +11,10 @@ export { default as SponsorCarousel } from './components/SponsorCarousel.svelte'
 // component for loading in the details page content
 export { default as DetailsMain } from './components/DetailsMain.svelte'
 
+export { default as FooterInfo } from './components/FooterInfo.svelte'
+
+
+
 // Images & Icons
 export { default as fallBackimg } from './assets/fallBackimg.png'
 export { default as backButton } from './assets/backButton.svg'
