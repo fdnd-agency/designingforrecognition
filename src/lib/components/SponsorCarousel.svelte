@@ -1,6 +1,6 @@
 <script>
-    export let data
-    const sponsors = data.Sponsor
+    export let data 
+    const sponsors = data
     </script>
 
 <section class="sponsors">
@@ -14,14 +14,22 @@
     <div class="logo-top">
     <ul class="logo-strip-top">
         {#each sponsors as sponsor, i}
-        <li><img src="https://fdnd-agency.directus.app/assets/{sponsor.logo}" alt="AMS Institute"></li>
+        <li>
+            <img src={`https://fdnd-agency.directus.app/assets/${sponsor.logo}`}
+            alt={sponsor.name}>
+        </li>
         {/each}
     </ul>
     </div>
+
+    <!-- ONderste rij (rechts links) -->
     <div class="logo-bottom">
     <ul class="logo-strip-bottom">
         {#each sponsors as sponsor}
-        <li><img src="https://fdnd-agency.directus.app/assets/{sponsor.logo}" alt="AMS Institute"></li>
+        <li>
+            <img   src={`https://fdnd-agency.directus.app/assets/${sponsor.logo}`}
+            alt={sponsor.name}>
+        </li>
         {/each}
     </ul>
 </div>
