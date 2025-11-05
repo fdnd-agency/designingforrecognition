@@ -38,9 +38,9 @@
 <style>
 
 .sponsors{
-    background: var(--color-neutral);
+    background: var(--oklch-neutral);
     color:var(--color-accent-primary);
-    min-height:100vh;
+    min-height: 57vh;
     display:flex;
     flex-direction:column;
     align-items:center;
