@@ -1,5 +1,9 @@
 // place files you want to import through the `$lib` alias in this folder.
 // Components
+// Logo of the website
+export { default as Logo } from './components/Logo.svelte'
+// Header component for the Website
+export { default as Header } from './components/Header.svelte'
 // Component responsible for rendering project subjects on the home page
 export { default as ProjectCard } from './components/ProjectCard.svelte'
 // This component is the container for all project cards on the home page
