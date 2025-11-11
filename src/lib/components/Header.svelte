@@ -16,8 +16,7 @@
 			on:click={toggleMenu}
 			aria-label="Toggle menu"
 			aria-expanded={isMenuOpen}
-			aria-controls="main-menu"
-		>
+			aria-controls="main-menu">
 			<span class:open={isMenuOpen}></span>
 			<span class:open={isMenuOpen}></span>
 			<span class:open={isMenuOpen}></span>

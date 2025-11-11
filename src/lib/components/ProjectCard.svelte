@@ -86,8 +86,7 @@
 		cursor: pointer;
 		box-shadow: 1px 1px 10px 0 var(--dark-2);
 
-		&:hover,
-		&:focus-within {
+		&:hover, &:focus-within {
 			background-color: var(--dark-2);
 			outline: 2px solid var(--light-2);
 			box-shadow: 1px 1px 5px 10px var(--dark-1);
