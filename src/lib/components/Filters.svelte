@@ -75,13 +75,13 @@
   .checkbox-button input:checked + label {
     box-shadow:0 1px 0 #ccc, 0 2px 0 #c9c9c9, 
     0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 
-    0 6px 1px rgba(0, 0, 0, 0.1), 
-    0 0 5px rgba(0, 0, 0, 0.1), 
-    0 1px 3px rgba(0, 0, 0, 0.3), 
-    0 3px 5px rgba(0, 0, 0, 0.2), 
-    0 5px 10px rgba(0, 0, 0, 0.25), 
-    0 10px 10px rgba(0, 0, 0, 0.2), 
-    0 20px 20px rgba(0, 0, 0, 0.15); 
+    0 6px 1px rgb(0, 0, 0, 0.1), 
+    0 0 5px rgb(0, 0, 0, 0.1), 
+    0 1px 3px rgb(0, 0, 0, 0.3), 
+    0 3px 5px rgb(0, 0, 0, 0.2), 
+    0 5px 10px rgb(0, 0, 0, 0.25), 
+    0 10px 10px rgb(0, 0, 0, 0.2), 
+    0 20px 20px rgb(0, 0, 0, 0.15); 
   }
 
   @media  (max-width: 320px) {
@@ -97,7 +97,7 @@
     }
   }
 
-  @media (min-width: 321px) and (max-width: 375px) {
+  @media (min-width: 321px)  {
     .filters {
       flex-direction: row;
       flex-wrap: wrap;
@@ -109,10 +109,4 @@
     }
   }
 
-  @media (min-width: 376px) {
-    .filters {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
 </style>
