@@ -72,7 +72,8 @@
     transition: ease-in 0.3s;
   }
 
-  .checkbox-button input:checked + label {
+  .checkbox-button input:checked + label, 
+  .checkbox-button input:focus + label {
     box-shadow:0 1px 0 #ccc, 0 2px 0 #c9c9c9, 
     0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 
     0 6px 1px rgb(0, 0, 0, 0.1), 
