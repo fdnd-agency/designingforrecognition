@@ -199,7 +199,7 @@
 	.text-fallback {
 		place-items: center;
 		text-align: center;
-		
+
 		p {
 			line-height: 1.5rem;
 		}

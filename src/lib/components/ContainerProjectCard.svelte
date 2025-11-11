@@ -17,7 +17,7 @@
 		place-items: center;
 		gap: 1em;
 		background-color: var(--color);
-		background: linear-gradient(to bottom, var(--color-neutral) 80%, var(--color-primary)100%);
+		background: linear-gradient(to bottom, var(--color-neutral) 80%, var(--color-primary) 100%);
 
 		@media (min-width: 730px) {
 			display: grid;

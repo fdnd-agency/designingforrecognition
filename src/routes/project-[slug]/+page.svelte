@@ -1,6 +1,6 @@
 <script>
-    import { DetailsMain } from '$lib'
+	import { DetailsMain } from '$lib';
 	export let data;
 </script>
 
-<DetailsMain {data}/>
+<DetailsMain {data} />
