@@ -1,4 +1,4 @@
 // place files you want to import through the `$lib` alias in this folder.
 // Components
-export { default as TestLinks } from './components/Test.svelte'
+// These filters sort the Project cards
 export { default as Filters } from './components/Filters.svelte'
