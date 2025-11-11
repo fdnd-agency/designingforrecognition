@@ -1,6 +1,6 @@
 <script>
     export let data 
-    const sponsors = data
+    const sponsors = data.sponsors
     </script>
 
 <section class="sponsors">
