@@ -2,7 +2,8 @@
 
 </script>
 
-<section class="filters">
+<!-- <section class="filters"> -->
+<form action="/" method="post">
   <h3>Filteren</h3>
   <div class="checkbox-button">
     <input type="checkbox" id="filter-ideeën" name="projects" value="Ideeën" alt="filter op Ideeën" />
@@ -23,7 +24,8 @@
     <input type="checkbox" id="filter-methodes" name="projects" value="Methodes" alt="filter op Methodes" />
     <label for="filter-methodes">Methodes</label>
   </div> 
-</section>
+</form>
+<!-- </section> -->
 
 
 <style>
@@ -34,7 +36,7 @@
     justify-content: center;
     font-size: var(--font-size-title-section);
   }
-  .filters {
+  form {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -86,7 +88,7 @@
   }
 
   @media  (max-width: 320px) {
-    .filters {
+    form {
       flex-direction: column;
     }
     label:nth-of-type(1) {
@@ -99,7 +101,7 @@
   }
 
   @media (min-width: 321px)  {
-    .filters {
+    form {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
