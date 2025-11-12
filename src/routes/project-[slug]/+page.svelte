@@ -1,6 +1,7 @@
 <script>
-    import { DetailsMain } from '$lib'
+	import { fallBackimg } from '$lib';
 	export let data;
+	const project = data.projectsDetails[0];
 </script>
 
-<DetailsMain {data}/>
+<h1>{project.title}</h1>

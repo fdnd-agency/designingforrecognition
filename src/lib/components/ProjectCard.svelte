@@ -5,9 +5,9 @@
 
 <article class="neutral">
 	{#if project.title}
-		<a href="#"><h3>{project.title}</h3></a>
+		<a href="/project-{project.slug}"><h3>{project.title}</h3></a>
 	{:else}
-		<a href="#"><h3><i>Title is missing</i></h3></a>
+		<a href="/project-{project.slug}"><h3><i>Title is missing</i></h3></a>
 	{/if}
 
 	<picture>

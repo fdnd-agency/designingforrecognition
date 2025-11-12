@@ -48,6 +48,7 @@
 		flex-direction: column;
 		align-items: center;
 		background-color: var(--color);
+		margin-bottom: 2rem;
 	}
 
 	p {
