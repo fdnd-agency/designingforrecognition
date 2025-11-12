@@ -1,8 +1,6 @@
 <script>
-
 </script>
 
-<!-- <section class="filters"> -->
 <form action="/" method="post">
   <h3>Filteren</h3>
   <div class="checkbox-button">
@@ -25,8 +23,6 @@
     <label for="filter-methodes">Methodes</label>
   </div> 
 </form>
-<!-- </section> -->
-
 
 <style>
 
