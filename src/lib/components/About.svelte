@@ -62,7 +62,7 @@
 		border-radius: 25px;
 		background-color: var(--color-accent-secondary);
 		overflow: hidden;
-		width: 100px;
+		width: 120px;
 		transition: width 0.5s ease;
 		justify-content: start;
 
