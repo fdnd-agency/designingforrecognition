@@ -1,22 +1,16 @@
 <script>
-	import Logo from '$lib/components/Logo.svelte';
+	import Logo from '$lib/components/Logo.svelte'
 
 	// Menu functionality
-	let isMenuOpen = false;
-	const toggleMenu = () => (isMenuOpen = !isMenuOpen);
-	const closeMenu = () => (isMenuOpen = false);
+	let isMenuOpen = false
+	const toggleMenu = () => (isMenuOpen = !isMenuOpen)
+	const closeMenu = () => (isMenuOpen = false)
 </script>
 
 <header>
 	<nav>
 		<Logo />
-		<button
-			type="button"
-			class="menu-mobile"
-			on:click={toggleMenu}
-			aria-label="Toggle menu"
-			aria-expanded={isMenuOpen}
-			aria-controls="main-menu">
+		<button type="button" class="menu-mobile" on:click={toggleMenu} aria-label="Toggle menu" aria-expanded={isMenuOpen} aria-controls="main-menu">
 			<span class:open={isMenuOpen}></span>
 			<span class:open={isMenuOpen}></span>
 			<span class:open={isMenuOpen}></span>
@@ -31,11 +25,9 @@
 
 <style>
 	header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
 		display: flex;
+		position: fixed;
+		inset: 0 0 auto 0;
 		align-items: center;
 		justify-content: space-between;
 		background-color: var(--color-accent-secondary);
@@ -56,20 +48,26 @@
 		list-style: none;
 		display: flex;
 		gap: 1.5rem;
-		margin: 0;
-		padding: 0;
-	}
 
-	/* Mobile  */
-	@media (max-width: 544px) {
-		nav ul {
+		/* Mobile behavior: hide menu, show when .open */
+		@media (max-width: 544px) {
 			display: none;
-			flex-direction: row;
-		}
-	}
+			flex-direction: column;
+			position: absolute;
+			inset: 100% 0 auto 0;
+			background: var(--color-accent-secondary);
+			gap: 0;
+			padding: 1rem 1.5rem;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-	ul {
-		padding-top: 5em;
+			&.open {
+				display: flex;
+			}
+
+			li {
+				padding: 0.5rem 0;
+			}
+		}
 	}
 
 	a {
@@ -95,6 +93,11 @@
 		border: none;
 		background: transparent;
 		cursor: pointer;
+
+		/* Tablet + Desktop: hide hamburger menu and show buttons*/
+		@media (min-width: 545px) {
+			display: none;
+		}
 	}
 
 	.menu-mobile span {
@@ -115,40 +118,5 @@
 	}
 	.menu-mobile span.open:nth-child(3) {
 		transform: translateY(-6px) rotate(-45deg);
-	}
-
-	/* Mobile behavior: hide menu, show when .open */
-	@media (max-width: 544px) {
-		.menu-mobile {
-			display: inline-flex;
-		}
-
-		nav ul {
-			display: none;
-			position: absolute;
-			top: 100%;
-			left: 0;
-			right: 0;
-			background: var(--color-accent-secondary);
-			flex-direction: column;
-			gap: 0;
-			padding: 1rem 1.5rem;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-		}
-
-		nav ul.open {
-			display: flex;
-		}
-
-		nav ul li {
-			padding: 0.5rem 0;
-		}
-	}
-
-	/* Tablet + Desktop: hide hamburger menu and show buttons*/
-	@media (min-width: 545px) {
-		.menu-mobile {
-			display: none;
-		}
 	}
 </style>
