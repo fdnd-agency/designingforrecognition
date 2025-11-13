@@ -1,6 +1,6 @@
 <script>
-	import { fallBackimg } from '$lib';
-	export let project;
+	import { fallBackimg } from '$lib'
+	export let project
 </script>
 
 <article class="neutral">
@@ -11,21 +11,9 @@
 	{/if}
 
 	<picture>
-		<source
-			type="image/avif"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250"
-		/>
-		<source
-			type="image/webp"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165"
-		/>
-		<img
-			src={fallBackimg}
-			width="270px"
-			height="250px"
-			alt="image die te maken heeft met {project.img}"
-			loading="lazy"
-		/>
+		<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250" />
+		<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165" />
+		<img src={fallBackimg} width="270px" height="250px" alt="image die te maken heeft met {project.img}" loading="lazy" />
 	</picture>
 
 	{#if project.date && !project.end_date}
@@ -86,7 +74,8 @@
 		cursor: pointer;
 		box-shadow: 1px 1px 10px 0 var(--dark-2);
 
-		&:hover, &:focus-within {
+		&:hover,
+		&:focus-within {
 			background-color: var(--dark-2);
 			outline: 2px solid var(--light-2);
 			box-shadow: 1px 1px 5px 10px var(--dark-1);

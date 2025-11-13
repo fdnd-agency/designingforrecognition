@@ -1,6 +1,6 @@
 <script>
-	import { ProjectCard } from '$lib';
-	export let data;
+	import { ProjectCard } from '$lib'
+	export let data
 </script>
 
 <section class="neutral">

@@ -1,8 +1,7 @@
 <script>
-	import { backButton } from '$lib';
-
-	export let data;
-	const project = data.projectsDetails[0];
+	import { backButton } from '$lib'
+	export let data
+	const project = data.projectsDetails[0]
 </script>
 
 <section class="content-container primary">
@@ -18,28 +17,16 @@
 	</button>
 
 	<picture>
-		<source
-			type="image/avif"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250"
-		/>
-		<source
-			type="image/webp"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165"
-		/>
+		<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250" />
+		<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165" />
 		<!-- change to {fallBackimg} before merging, this image if already on de dev branch -->
-		<img
-			src={project.img}
-			width="270px"
-			height="250px"
-			alt="image die te maken heeft met {project.title}"
-			fetchpriority="high"
-		/>
+		<img src={project.img} width="270px" height="250px" alt="image die te maken heeft met {project.title}" fetchpriority="high" />
 	</picture>
 
 	{#if project.date && !project.end_date}
-		<p>{new Date(project.date).getFullYear()}</p>
+		<p class="date">{new Date(project.date).getFullYear()}</p>
 	{:else if project.date && project.end_date}
-		<p>{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
+		<p class="date">{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
 	{:else}
 		<p></p>
 	{/if}
@@ -64,16 +51,12 @@
 </section>
 
 <style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-
+	.content-container {
 		--radius: 15px;
 		--child-radius: calc(var(--radius) / 2);
-	}
+		--left-margin-810px: 2em;
+		--box-shadow-img-article: 1px 1px 10px 0 var(--dark-2);
 
-	.content-container {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1em;
@@ -90,7 +73,6 @@
 		}
 
 		@media (min-width: 810px) {
-			grid-template-columns: 1fr min-content minmax(280px, 400px) 1fr;
 			grid-template-rows: 7.5em;
 
 			picture {
@@ -132,22 +114,22 @@
 
 	picture img {
 		border-radius: var(--child-radius);
-		box-shadow: 1px 1px 10px 0 var(--dark-2);
+		box-shadow: var(--box-shadow-img-article);
 		width: clamp(270px, 40vw, 400px);
 		height: auto;
 
 		@media (min-width: 810px) {
-			margin-left: 2em;
+			margin-left: var(--left-margin-810px);
 		}
 	}
 
-	p:nth-of-type(1) {
+	.date {
 		justify-self: start;
 		font-style: italic;
 		margin: 0.5em 0;
 
 		@media (min-width: 810px) {
-			margin-left: 2em;
+			margin-left: var(--left-margin-810px);
 		}
 	}
 
@@ -156,7 +138,7 @@
 		flex-direction: column;
 		background-color: var(--oklch-accent-secondary);
 		border-radius: var(--child-radius);
-		box-shadow: 1px 1px 10px 0 var(--dark-2);
+		box-shadow: var(--box-shadow-img-article);
 		padding: 0.8em;
 		margin-top: 0.5em;
 
@@ -197,9 +179,8 @@
 	}
 
 	.text-fallback {
-		place-items: center;
 		text-align: center;
-		
+
 		p {
 			line-height: 1.5rem;
 		}
