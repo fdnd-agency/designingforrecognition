@@ -8,6 +8,7 @@
 		display: inline-block;
 		margin: 0 15px 0 0;
 	}
+
 	.logo-text {
 		font-weight: 700;
 		text-transform: uppercase;

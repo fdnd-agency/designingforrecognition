@@ -20,8 +20,8 @@
 		<section class="footer-right">
 			<h2 class="community-heading">Join our community of practice</h2>
 			<p class="community-text">
-				Join us on our Signal group and subscribe to our quarterly newsletter, where we share thoughts, interesting readings, conferences, and other
-				media that relate to the project.
+				Join us on our Signal group and subscribe to our quarterly newsletter, where we share thoughts, interesting readings, conferences, and
+				other media that relate to the project.
 			</p>
 
 			<section class="brand-block">
@@ -77,7 +77,8 @@
 	}
 
 	/* titels & tekst */
-	.project-title, .community-heading  {
+	.project-title,
+	.community-heading {
 		font-size: var(--font-size-title-paragraph);
 	}
 
@@ -91,7 +92,6 @@
 		display: flex;
 		flex-direction: column;
 		line-height: 1.5;
-
 
 		a {
 			color: var(--color-dark);
