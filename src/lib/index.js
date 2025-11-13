@@ -7,7 +7,7 @@ export { default as Header } from './components/Header.svelte'
 // Component responsible for rendering project subjects on the home page
 export { default as ProjectCard } from './components/ProjectCard.svelte'
 // This component is the container for all project cards on the home page
-export { default as ContainerProjectCard } from './components/ContainerProjectCard.svelte'
+export { default as ProjectCardContainer } from './components/ProjectCardContainer.svelte'
 // component for the main content on the details page
 export { default as About } from './components/About.svelte'
 // carrousel for displaying the sponsors on the homepage
