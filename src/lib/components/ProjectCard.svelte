@@ -17,17 +17,17 @@
 	</picture>
 
 	{#if project.date && !project.end_date}
-		<p>{new Date(project.date).getFullYear()}</p>
+		<p class="date">{new Date(project.date).getFullYear()}</p>
 	{:else if project.date && project.end_date}
-		<p>{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
+		<p class="date">{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
 	{:else}
 		<p class="empty-element"></p>
 	{/if}
 
 	{#if project.description}
-		<p>{project.description}</p>
+		<p class="description">{project.description}</p>
 	{:else}
-		<p><i>Description is missing</i></p>
+		<p class="description"><i>Description is missing</i></p>
 	{/if}
 
 	<ul>
@@ -61,6 +61,7 @@
 	article {
 		--radius: 15px;
 		--child-radius: calc(var(--radius) / 2);
+
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, min-content);
@@ -73,6 +74,7 @@
 		max-width: 400px;
 		cursor: pointer;
 		box-shadow: 1px 1px 10px 0 var(--dark-2);
+		transition: scale 0.2s ease-in;
 
 		&:hover,
 		&:focus-within {
@@ -80,6 +82,7 @@
 			outline: 2px solid var(--light-2);
 			box-shadow: 1px 1px 5px 10px var(--dark-1);
 			scale: 1.01;
+			transition: scale 0.2s ease-in;
 
 			img {
 				outline: 3px solid var(--light-2);
@@ -124,11 +127,11 @@
 			border-radius: var(--child-radius);
 		}
 
-		&::after {
+		/* &::after {
 			content: '';
 			position: absolute;
 			inset: 0;
-		}
+		} */
 	}
 
 	h3 {
@@ -161,7 +164,7 @@
 		object-position: center;
 	}
 
-	p:nth-of-type(1) {
+	.date {
 		grid-row: 2;
 		margin: 0.3em 0 0.3em 0;
 		padding: 0.5em 0;
@@ -174,11 +177,10 @@
 		}
 	}
 
-	p:nth-of-type(2) {
+	.description {
 		grid-row: 4;
 		width: clamp(25ch, 100%, 100ch);
 		box-sizing: border-box;
-		margin: 0;
 		padding: 0.7em 0.2em;
 
 		@media (min-width: 475px) {
