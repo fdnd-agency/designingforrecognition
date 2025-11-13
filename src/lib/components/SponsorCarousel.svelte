@@ -1,6 +1,5 @@
 <script>
-	export let data
-	const sponsors = data.sponsors
+	export let sponsorsData
 
 	const rowClasses = [
 		{
@@ -23,7 +22,7 @@
 	{#each rowClasses as row}
 		<div class={row.position}>
 			<ul class={row.animation}>
-				{#each sponsors as sponsor}
+				{#each sponsorsData as sponsor}
 					<li>
 						<img src={`https://fdnd-agency.directus.app/assets/${sponsor.logo}`} alt={sponsor.name} />
 					</li>

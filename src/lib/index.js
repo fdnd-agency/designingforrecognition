@@ -20,5 +20,6 @@ export { default as FooterInfo } from './components/FooterInfo.svelte'
 
 
 // Images & Icons
+export { default as favicon } from './assets/favicon.svg'
 export { default as fallBackimg } from './assets/fallBackimg.png'
 export { default as backButton } from './assets/backButton.svg'

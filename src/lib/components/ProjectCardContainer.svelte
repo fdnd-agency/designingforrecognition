@@ -1,11 +1,11 @@
 <script>
 	import { ProjectCard } from '$lib'
-	export let data
+	export let projectsData
 </script>
 
 <section class="neutral">
 	<h2>active filter</h2>
-	{#each data.projects as project}
+	{#each projectsData as project}
 		<ProjectCard {project} />
 	{/each}
 </section>

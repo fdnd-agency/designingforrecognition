@@ -1,7 +1,7 @@
 <script>
 	import { backButton } from '$lib'
-	export let data
-	const project = data.projectsDetails[0]
+	export let projectsDetails
+	const project = projectsDetails
 </script>
 
 <section class="content-container primary">

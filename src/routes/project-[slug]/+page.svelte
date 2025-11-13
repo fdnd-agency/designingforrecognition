@@ -1,8 +1,10 @@
 <script>
-    import { DetailsMain } from '$lib'
-	export let data;
+	import { DetailsMain } from '$lib'
+	export let data
+	const projectsDetails = data.projectsDetails[0]
+
 </script>
 
 <main>
-	<DetailsMain {data}/>
+	<DetailsMain {projectsDetails} />
 </main>

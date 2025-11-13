@@ -127,11 +127,11 @@
 			border-radius: var(--child-radius);
 		}
 
-		/* &::after {
+		&::after {
 			content: '';
 			position: absolute;
 			inset: 0;
-		} */
+		}
 	}
 
 	h3 {
