@@ -1,43 +1,27 @@
 <section class="primary">
 	<h2>About us</h2>
 	<p>
-		Designing for Recognition is an interdisciplinary research group at the Amsterdam University of
-		Applied Sciences. Together with students, designers, technology developers, policymakers,
-		(local) governments, academic researchers, and citizens, we explore how design & technology can
-		contribute to civic life: the numerous and varied interactions through which people in a society
-		come together to strive towards collective well-being
+		Designing for Recognition is an interdisciplinary research group at the Amsterdam University of Applied Sciences. Together with students,
+		designers, technology developers, policymakers, (local) governments, academic researchers, and citizens, we explore how design & technology can
+		contribute to civic life: the numerous and varied interactions through which people in a society come together to strive towards collective
+		well-being
 	</p>
 
 	<ul>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
 			<h3>Tessa Steenkamp</h3>
-			<img
-				src="https://civicinteractiondesign.com/wp-content/uploads/2023/08/Tessa-scaled-e1691482296190.jpg"
-				alt=""
-				width="100"
-				height="100"
-			/>
+			<img src="https://civicinteractiondesign.com/wp-content/uploads/2023/08/Tessa-scaled-e1691482296190.jpg" alt="" width="100" height="100" />
 		</li>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
 			<h3>Martijn de Waal</h3>
-			<img
-				src="https://civicinteractiondesign.com/wp-content/uploads/2018/09/martijn-de-waal-1.jpg"
-				alt=""
-				width="100"
-				height="100"
-			/>
+			<img src="https://civicinteractiondesign.com/wp-content/uploads/2018/09/martijn-de-waal-1.jpg" alt="" width="100" height="100" />
 		</li>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
 			<h3>Jorgen Karskens</h3>
-			<img
-				src="https://civicinteractiondesign.com/wp-content/uploads/2022/11/1539348613468.jpeg"
-				alt=""
-				width="100"
-				height="100"
-			/>
+			<img src="https://civicinteractiondesign.com/wp-content/uploads/2022/11/1539348613468.jpeg" alt="" width="100" height="100" />
 		</li>
 	</ul>
 </section>
@@ -65,10 +49,6 @@
 		margin: 0 1em;
 
 		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
-			flex-direction: row;
-		}
-
-		@media (min-width: 980px) and (prefers-reduced-motion: reduce) {
 			flex-direction: row;
 		}
 	}
