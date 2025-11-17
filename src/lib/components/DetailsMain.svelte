@@ -1,8 +1,7 @@
 <script>
 	import { backButton } from '$lib';
-
-	export let data;
-	const project = data.projectsDetails[0];
+	export let projectsDetails;
+	const project = projectsDetails;
 </script>
 
 <section class="content-container primary">
@@ -37,9 +36,11 @@
 	</picture>
 
 	{#if project.date && !project.end_date}
-		<p>{new Date(project.date).getFullYear()}</p>
+		<p class="date">{new Date(project.date).getFullYear()}</p>
 	{:else if project.date && project.end_date}
-		<p>{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
+		<p class="date">
+			{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}
+		</p>
 	{:else}
 		<p></p>
 	{/if}
@@ -64,16 +65,12 @@
 </section>
 
 <style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-
+	.content-container {
 		--radius: 15px;
 		--child-radius: calc(var(--radius) / 2);
-	}
+		--left-margin-810px: 2em;
+		--box-shadow-img-article: 1px 1px 10px 0 var(--dark-2);
 
-	.content-container {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1em;
@@ -87,10 +84,13 @@
 			& > * {
 				grid-column: 2 / 4;
 			}
+
+			.text-container {
+				grid-column: 1 / -1;
+			}
 		}
 
 		@media (min-width: 810px) {
-			grid-template-columns: 1fr min-content minmax(280px, 400px) 1fr;
 			grid-template-rows: 7.5em;
 
 			picture {
@@ -99,6 +99,10 @@
 
 			article {
 				grid-column: 3 / 4;
+			}
+
+			.text-container {
+				grid-column: 2 / 4;
 			}
 		}
 	}
@@ -132,22 +136,22 @@
 
 	picture img {
 		border-radius: var(--child-radius);
-		box-shadow: 1px 1px 10px 0 var(--dark-2);
-		width: clamp(270px, 40vw, 400px);
+		box-shadow: var(--box-shadow-img-article);
+		width: clamp(270px, 75vw, 400px);
 		height: auto;
 
 		@media (min-width: 810px) {
-			margin-left: 2em;
+			margin-left: var(--left-margin-810px);
 		}
 	}
 
-	p:nth-of-type(1) {
+	.date {
 		justify-self: start;
 		font-style: italic;
 		margin: 0.5em 0;
 
 		@media (min-width: 810px) {
-			margin-left: 2em;
+			margin-left: var(--left-margin-810px);
 		}
 	}
 
@@ -156,7 +160,7 @@
 		flex-direction: column;
 		background-color: var(--oklch-accent-secondary);
 		border-radius: var(--child-radius);
-		box-shadow: 1px 1px 10px 0 var(--dark-2);
+		box-shadow: var(--box-shadow-img-article);
 		padding: 0.8em;
 		margin-top: 0.5em;
 
@@ -197,9 +201,8 @@
 	}
 
 	.text-fallback {
-		place-items: center;
 		text-align: center;
-		
+
 		p {
 			line-height: 1.5rem;
 		}
