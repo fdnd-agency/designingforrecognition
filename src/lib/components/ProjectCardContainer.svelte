@@ -18,22 +18,27 @@
 
 		display: grid;
 		place-items: center;
-		gap: 1em;
+		gap: 2.5em;
+		padding: 1em;
 		background-color: var(--color);
 
-		@media (min-width: 730px) {
+		@media (min-width: 850px) {
+			padding: clamp(1rem, 2vw, 15rem);
+		}
+
+		/* @media (min-width: 475px) {
 			grid-template-columns: repeat(auto-fit, minmax(var(--card-width-small), 1fr));
 			padding: 0 1em;
 			align-items: stretch;
-		}
+		} */
 
-		@media (min-width: 1130px) {
+		/* @media (min-width: 1130px) {
 			grid-template-columns: repeat(auto-fit, minmax(var(--card-width-large), 1fr));
-		}
+		} */
 
-		@media (min-width: 2500px) {
+		/* @media (min-width: 2500px) {
 			grid-template-columns: repeat(3, minmax(var(--card-width-medium), 1fr));
-		}
+		} */
 	}
 
 	h2 {
