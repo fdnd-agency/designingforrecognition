@@ -13,7 +13,7 @@
 
 		<picture>
 			<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=570&height=250" />
-			<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165" />
+			<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=570&height=250" />
 			<img src={fallBackimg} width="270px" height="250px" alt="image die te maken heeft met {project.img}" loading="lazy" />
 		</picture>
 
@@ -123,7 +123,6 @@
 	.card-info {
 		display: grid;
 		width: 100%;
-		/* height: 100%; */
 		text-decoration: none;
 		background-color: var(--light-2);
 		color: var(--color-primary);
@@ -170,8 +169,6 @@
 			grid-template-columns: 255px 1fr;
 			grid-template-rows: auto minmax(106px, auto) auto;
 
-			/* height: 17rem; */
-
 			h3 {
 				grid-row: 2/3;
 				grid-column: 2;
@@ -186,7 +183,6 @@
 			}
 
 			img {
-				/* width: 100%; */
 				height: 100%;
 				border-radius: var(--radius) 0 0 var(--radius);
 				margin: 0;
