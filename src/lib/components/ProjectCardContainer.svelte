@@ -22,13 +22,9 @@
 			padding: 5em clamp(1rem, 5vw, 5rem);
 		}
 
-		/* @media (min-width: 848px) {
-
-		} */
-
 		@media (min-width: 1225px) {
 			grid-template-columns: repeat(2, minmax(375px, 1fr));
-			padding: 5em clamp(1rem, 15vw, 10rem);
+			padding: 5em clamp(1rem, 15vw, 7rem);
 		}
 	}
 </style>

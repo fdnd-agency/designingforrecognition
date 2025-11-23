@@ -12,7 +12,7 @@
 		{/if}
 
 		<picture>
-			<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250" />
+			<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=570&height=250" />
 			<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165" />
 			<img src={fallBackimg} width="270px" height="250px" alt="image die te maken heeft met {project.img}" loading="lazy" />
 		</picture>
@@ -33,6 +33,84 @@
 	</a>
 </article>
 
+<!-- 
+@container project-card (min-width: 520px) {
+		.card-info {
+			grid-template-columns: clamp(225px, 40cqw, 276px) 1fr;
+			/* grid-template-rows: min-content min-content min-content; */
+
+			h3 {
+				grid-row: 2/3;
+				grid-column: 2;
+				align-self: end;
+				padding: 0 1rem;
+			}
+
+			picture {
+				grid-row: 1 /3;
+			}
+
+			img {
+				height: 100%;
+				margin: 0;
+				/* width: auto; */
+				border-radius: var(--radius) 0 0 0;
+			}
+
+			.date {
+				align-self: end;
+			}
+
+			.description {
+				grid-column: 1/3;
+				grid-row: 3;
+				width: clamp(41ch, 100%, 75ch);
+				padding-bottom: 0;
+
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 5;
+				height: calc(1.5em * 4.2);
+				margin: 1em 0;
+			}
+		}
+	}
+
+	@container project-card (min-width: 680px) {
+		.card-info {
+			grid-template-columns: 275px 1fr;
+
+			/* height: 17rem; */
+
+			picture {
+				grid-row: 1 /4;
+				height: 100%;
+			}
+
+			img {
+				/* width: 100%; */
+				border-radius: var(--radius) 0 0 var(--radius);
+				margin: 0;
+				overflow: hidden;
+			}
+
+			.date {
+				margin-top: 1rem;
+				padding: 0 1rem;
+			}
+
+			.description {
+				grid-column: 2;
+				grid-row: 3;
+				/* -webkit-line-clamp: 6;
+				height: calc(1.5em * 5);
+				margin: 0.5em 0 1em 0; */
+			}
+		}
+	} -->
+
 <style>
 	/* https://ishadeed.com/article/css-container-query-guide/#its-not-possible-to-query-a-container-against-itself */
 	.card-container {
@@ -45,7 +123,7 @@
 	.card-info {
 		display: grid;
 		width: 100%;
-		height: 100%;
+		/* height: 100%; */
 		text-decoration: none;
 		background-color: var(--light-2);
 		color: var(--color-primary);
@@ -75,7 +153,7 @@
 		img {
 			width: 100%;
 			object-fit: cover;
-			object-position: center;
+			object-position: top;
 			border-radius: var(--radius) var(--radius) 0 0;
 			margin-bottom: 1rem;
 		}
@@ -87,33 +165,43 @@
 		}
 	}
 
-	@container project-card (min-width: 520px) {
+	@container project-card (min-width: 630px) {
 		.card-info {
-			grid-template-rows: min-content min-content min-content;
+			grid-template-columns: 255px 1fr;
+			grid-template-rows: auto minmax(106px, auto) auto;
+
+			/* height: 17rem; */
 
 			h3 {
 				grid-row: 2/3;
 				grid-column: 2;
-				align-self: start;
+				align-self: end;
+				padding: 0 1rem;
+				margin-top: 1rem;
 			}
 
 			picture {
-				grid-row: 1 /3;
+				grid-row: 1 /4;
+				height: 100%;
 			}
 
 			img {
+				/* width: 100%; */
 				height: 100%;
-				border-radius: var(--radius) 0 0 0;
+				border-radius: var(--radius) 0 0 var(--radius);
+				margin: 0;
+				overflow: hidden;
 			}
 
 			.date {
+				margin-top: 1rem;
+				padding: 0 1rem;
 				align-self: end;
 			}
 
 			.description {
-				grid-column: 1/3;
+				grid-column: 2;
 				grid-row: 3;
-				width: clamp(41ch, 100%, 75ch);
 
 				overflow: hidden;
 				display: -webkit-box;
@@ -122,36 +210,6 @@
 				-webkit-line-clamp: 5;
 				height: calc(1.5em * 4.2);
 				margin: 1em 0;
-			}
-		}
-	}
-
-	@container project-card (min-width: 620px) {
-		.card-info {
-			height: 17rem;
-
-			picture {
-				grid-row: 1 /4;
-				height: 100%;
-			}
-
-			img {
-				width: 100%;
-				border-radius: var(--radius) 0 0 var(--radius);
-				margin: 0;
-				overflow: hidden;
-			}
-
-			.date {
-				margin-top: 1rem;
-			}
-
-			.description {
-				grid-column: 2;
-				grid-row: 3;
-				-webkit-line-clamp: 6;
-				height: calc(1.5em * 5);
-				margin: 0.5em 0 1em 0;
 			}
 		}
 	}
