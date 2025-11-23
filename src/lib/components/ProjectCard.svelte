@@ -3,8 +3,8 @@
 	export let project
 </script>
 
-<article class="neutral">
-	<a class="card-container" href="/project-{project.slug}">
+<article class="neutral card-container">
+	<a class="card-info" href="/project-{project.slug}">
 		{#if project.title}
 			<h3>{project.title}</h3>
 		{:else}
@@ -28,195 +28,32 @@
 		{#if project.description}
 			<p class="description">{project.description}</p>
 		{:else}
-			<p class="description"><i>Currently no description available</i></p>
+			<p class="description"><i>Description is missing</i></p>
 		{/if}
 	</a>
 </article>
 
 <style>
-	/* article {
-		--radius: 15px;
-		--child-radius: calc(var(--radius) / 2);
-
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(5, min-content);
-		position: relative;
-		background-color: var(--light-2);
-		color: var(--color-primary);
-		border-radius: var(--radius);
-		margin: 1em 0.5em;
-		padding: 0.5em;
-		max-width: 400px;
-		cursor: pointer;
-		box-shadow: 1px 1px 10px 0 var(--dark-2);
-		transition: scale 0.2s ease-in;
-
-		&:hover,
-		&:focus-within {
-			background-color: var(--dark-2);
-			outline: 2px solid var(--light-2);
-			box-shadow: 1px 1px 5px 10px var(--dark-1);
-			scale: 1.01;
-			transition: scale 0.2s ease-in;
-
-			img {
-				outline: 3px solid var(--light-2);
-			}
-
-			ul {
-				opacity: 1;
-			}
-		}
-
-		@media (min-width: 430px) {
-			padding: 1em;
-		}
-
-		@media (min-width: 1130px) {
-			grid-template-columns: 15em 1fr;
-			grid-template-rows: min-content min-content 1fr min-content;
-			min-width: 650px;
-			max-width: 860px;
-		}
-	}
-
-	.empty-element:empty {
-		margin: 0;
-		padding: 0;
-	}
-
-	a {
-		color: var(--color-primary);
-		text-decoration: none;
-
-		@media (min-width: 1130px) {
-			margin: 1em 0 0 1em;
-		}
-
-		&:hover {
-			color: var(--color-accent-secondary);
-		}
-
-		&:focus {
-			outline: 3px solid var(--color-accent-secondary);
-			border-radius: var(--child-radius);
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-		}
-	}
-
-	h3 {
-		grid-row: 3;
-		line-height: 2.8rem;
-		margin: 0 0 0.3em 0;
-
-		@media (min-width: 1130px) {
-			grid-column: 2;
-			grid-row: 1;
-		}
-	}
-
-	picture {
-		grid-row: 1;
-
-		@media (min-width: 1130px) {
-			grid-column: 1;
-			grid-row: 1 / 4;
-			align-self: center;
-		}
-	}
-
-	img {
-		border-radius: var(--child-radius);
-		width: 100%;
-		max-width: 480px;
-		height: auto;
-		object-fit: contain;
-		object-position: center;
-	}
-
-	.date {
-		grid-row: 2;
-		margin: 0.3em 0 0.3em 0;
-		padding: 0.5em 0;
-		font-style: italic;
-
-		@media (min-width: 1130px) {
-			grid-column: 2;
-			grid-row: 2;
-			margin-left: 1em;
-		}
-	}
-
-	.description {
-		grid-row: 4;
-		width: clamp(25ch, 100%, 100ch);
-		box-sizing: border-box;
-		padding: 0.7em 0.2em;
-
-		@media (min-width: 475px) {
-			padding: 0.5em 0;
-		}
-
-		@media (min-width: 1130px) {
-			grid-column: 2;
-			grid-row: 3;
-			padding-left: 1em;
-		}
-	}
-
-	ul {
-		grid-row: 5;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5em;
-		padding: 0;
-		list-style-type: none;
-		opacity: 0.5;
-
-		@media (min-width: 1130px) {
-			grid-row: 4;
-			grid-column: 1/3;
-		}
-	}
-
-	li {
-		background-color: var(--color-accent-secondary);
-		color: var(--color-dark);
-		width: min-content;
-		text-wrap: nowrap;
-		padding: 0.5em;
-		border-radius: var(--child-radius);
-		text-align: center;
-	} */
-
-	article {
-		width: clamp(260px, 100%, 420px);
-		container-type: inline-size;
-
-		@media (min-width: 850px) {
-			width: clamp(775px, 100%, 875px);
-		}
-	}
-
+	/* https://ishadeed.com/article/css-container-query-guide/#its-not-possible-to-query-a-container-against-itself */
 	.card-container {
 		--radius: 15px;
 		--child-radius: calc(var(--radius) / 2);
 
+		container: project-card / inline-size;
+	}
+
+	.card-info {
 		display: grid;
-		grid-template-columns: 1fr;
+		width: 100%;
+		height: 100%;
 		text-decoration: none;
+		background-color: var(--light-2);
 		color: var(--color-primary);
 		border-radius: var(--radius);
-		background-color: var(--light-2);
-		cursor: pointer;
 		box-shadow: 1px 1px 10px 0 var(--dark-2);
 		transition: scale 0.2s ease-in;
+		cursor: pointer;
+		overflow: hidden;
 
 		&:hover,
 		&:focus-within {
@@ -237,8 +74,7 @@
 
 		img {
 			width: 100%;
-			height: auto;
-			object-fit: contain;
+			object-fit: cover;
 			object-position: center;
 			border-radius: var(--radius) var(--radius) 0 0;
 			margin-bottom: 1rem;
@@ -251,31 +87,71 @@
 		}
 	}
 
-	@container (min-width: 775px) {
-		article {
-			.card-container {
-				grid-template-columns: 16em 1fr;
-				grid-template-rows: min-content min-content min-content;
+	@container project-card (min-width: 520px) {
+		.card-info {
+			grid-template-rows: min-content min-content min-content;
 
-				h3 {
-					grid-row: 2;
-					grid-column: 2;
-				}
+			h3 {
+				grid-row: 2/3;
+				grid-column: 2;
+				align-self: start;
+			}
 
-				picture {
-					grid-row: 1 / -1;
-				}
+			picture {
+				grid-row: 1 /3;
+			}
 
-				img {
-					border-radius: var(--radius) 0 0 var(--radius);
-					margin: 0;
-				}
+			img {
+				height: 100%;
+				border-radius: var(--radius) 0 0 0;
+			}
 
-				.description {
-					grid-column: 2;
-					grid-row: 3 / 4;
-					width: clamp(260px, 100%, 75ch);
-				}
+			.date {
+				align-self: end;
+			}
+
+			.description {
+				grid-column: 1/3;
+				grid-row: 3;
+				width: clamp(41ch, 100%, 75ch);
+
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 5;
+				height: calc(1.5em * 4.2);
+				margin: 1em 0;
+			}
+		}
+	}
+
+	@container project-card (min-width: 620px) {
+		.card-info {
+			height: 17rem;
+
+			picture {
+				grid-row: 1 /4;
+				height: 100%;
+			}
+
+			img {
+				width: 100%;
+				border-radius: var(--radius) 0 0 var(--radius);
+				margin: 0;
+				overflow: hidden;
+			}
+
+			.date {
+				margin-top: 1rem;
+			}
+
+			.description {
+				grid-column: 2;
+				grid-row: 3;
+				-webkit-line-clamp: 6;
+				height: calc(1.5em * 5);
+				margin: 0.5em 0 1em 0;
 			}
 		}
 	}

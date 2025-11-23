@@ -3,8 +3,7 @@
 	export let projectsData
 </script>
 
-<section class="neutral">
-	<h2>active filter</h2>
+<section class="neutral projects-grid">
 	{#each projectsData as project}
 		<ProjectCard {project} />
 	{/each}
@@ -12,38 +11,24 @@
 
 <style>
 	section {
-		--card-width-small: 350px;
-		--card-width-medium: 600px;
-		--card-width-large: 700px;
-
 		display: grid;
-		place-items: center;
 		gap: 2.5em;
-		padding: 1em;
+		padding: 5em 1em;
 		background-color: var(--color);
 
-		@media (min-width: 850px) {
-			padding: clamp(1rem, 2vw, 15rem);
+		@media (min-width: 420px) {
+			grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+			align-items: stretch;
+			padding: 5em clamp(1rem, 5vw, 5rem);
 		}
 
-		/* @media (min-width: 475px) {
-			grid-template-columns: repeat(auto-fit, minmax(var(--card-width-small), 1fr));
-			padding: 0 1em;
-			align-items: stretch;
+		/* @media (min-width: 848px) {
+
 		} */
 
-		/* @media (min-width: 1130px) {
-			grid-template-columns: repeat(auto-fit, minmax(var(--card-width-large), 1fr));
-		} */
-
-		/* @media (min-width: 2500px) {
-			grid-template-columns: repeat(3, minmax(var(--card-width-medium), 1fr));
-		} */
-	}
-
-	h2 {
-		grid-column: 1 / -1;
-		margin: 0 1em;
-		color: var(--color-primary);
+		@media (min-width: 1225px) {
+			grid-template-columns: repeat(2, minmax(375px, 1fr));
+			padding: 5em clamp(1rem, 15vw, 10rem);
+		}
 	}
 </style>
