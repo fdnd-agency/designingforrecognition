@@ -173,6 +173,7 @@ Ik vind dat we meer als team moeten samenwerken inplaats van dat iedereen zijn e
 - the user story is written as `as ... I would like ... so that ...`
 - Weigh User stories
 - Create sub issues to split each user story into tasks
+- A task (or sub-issue) should include everything that belongs to it. For example, fetching data and loading it into the HTML should be one
 - Prioritize the user stories (MoSCoW)
 
 

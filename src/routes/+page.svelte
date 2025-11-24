@@ -1,7 +1,13 @@
 <script>
-    import { Filters } from '$lib'
+	// componenten importeren zet na SponsorCarousel een "," dan kan je alles erin doen
+	import { ProjectCardContainer, About, SponsorCarousel } from '$lib'
+	export let data
+	const projectsData = data.projects
+	const sponsorsData = data.sponsors
 </script>
 
-<h1>Welcome to overview page</h1>
-
-<Filters /> 
+<main>
+	<ProjectCardContainer {projectsData} />
+	<About />
+	<SponsorCarousel {sponsorsData} />
+</main>
