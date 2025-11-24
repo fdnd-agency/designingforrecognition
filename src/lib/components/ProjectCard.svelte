@@ -122,7 +122,8 @@
 		.card-info {
 			grid-template-columns: 255px 1fr;
 			grid-template-rows: auto minmax(106px, auto) auto;
-			height: auto;
+			/* grid-template-rows: auto minmax(152px, auto) auto; */
+			height: 100%;
 
 			h3 {
 				grid-row: 2/3;
