@@ -162,6 +162,16 @@
 		.description {
 			padding: 0 1rem 1rem 1rem;
 		}
+
+		.description {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 7;
+			height: calc(1.5em * 5.9);
+			margin: 1em 0;
+		}
 	}
 
 	@container project-card (min-width: 630px) {
@@ -198,14 +208,8 @@
 			.description {
 				grid-column: 2;
 				grid-row: 3;
-
-				overflow: hidden;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				text-overflow: ellipsis;
 				-webkit-line-clamp: 5;
 				height: calc(1.5em * 4.2);
-				margin: 1em 0;
 			}
 		}
 	}
