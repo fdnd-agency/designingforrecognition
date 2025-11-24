@@ -33,90 +33,11 @@
 	</a>
 </article>
 
-<!-- 
-@container project-card (min-width: 520px) {
-		.card-info {
-			grid-template-columns: clamp(225px, 40cqw, 276px) 1fr;
-			/* grid-template-rows: min-content min-content min-content; */
-
-			h3 {
-				grid-row: 2/3;
-				grid-column: 2;
-				align-self: end;
-				padding: 0 1rem;
-			}
-
-			picture {
-				grid-row: 1 /3;
-			}
-
-			img {
-				height: 100%;
-				margin: 0;
-				/* width: auto; */
-				border-radius: var(--radius) 0 0 0;
-			}
-
-			.date {
-				align-self: end;
-			}
-
-			.description {
-				grid-column: 1/3;
-				grid-row: 3;
-				width: clamp(41ch, 100%, 75ch);
-				padding-bottom: 0;
-
-				overflow: hidden;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				text-overflow: ellipsis;
-				-webkit-line-clamp: 5;
-				height: calc(1.5em * 4.2);
-				margin: 1em 0;
-			}
-		}
-	}
-
-	@container project-card (min-width: 680px) {
-		.card-info {
-			grid-template-columns: 275px 1fr;
-
-			/* height: 17rem; */
-
-			picture {
-				grid-row: 1 /4;
-				height: 100%;
-			}
-
-			img {
-				/* width: 100%; */
-				border-radius: var(--radius) 0 0 var(--radius);
-				margin: 0;
-				overflow: hidden;
-			}
-
-			.date {
-				margin-top: 1rem;
-				padding: 0 1rem;
-			}
-
-			.description {
-				grid-column: 2;
-				grid-row: 3;
-				/* -webkit-line-clamp: 6;
-				height: calc(1.5em * 5);
-				margin: 0.5em 0 1em 0; */
-			}
-		}
-	} -->
-
 <style>
 	/* https://ishadeed.com/article/css-container-query-guide/#its-not-possible-to-query-a-container-against-itself */
 	.card-container {
 		--radius: 15px;
 		--child-radius: calc(var(--radius) / 2);
-
 		container: project-card / inline-size;
 	}
 
@@ -196,7 +117,6 @@
 				height: 100%;
 				border-radius: var(--radius) 0 0 var(--radius);
 				margin: 0;
-				overflow: hidden;
 			}
 
 			.date {
