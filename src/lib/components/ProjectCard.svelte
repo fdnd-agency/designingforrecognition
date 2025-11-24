@@ -90,8 +90,31 @@
 			-webkit-box-orient: vertical;
 			text-overflow: ellipsis;
 			-webkit-line-clamp: 7;
-			height: calc(1.5em * 5.9);
+			height: calc(1.5em * 5.8);
 			margin: 1em 0;
+		}
+	}
+
+	@container project-card (min-width: 385px) {
+		.card-info {
+			height: 34em;
+
+			h3 {
+				padding: 0 1rem;
+			}
+
+			img {
+				margin-bottom: 0;
+				height: 100%;
+			}
+
+			.date {
+				padding: 1rem 1rem 0 1rem;
+			}
+
+			.description {
+				margin: 0;
+			}
 		}
 	}
 
@@ -99,6 +122,7 @@
 		.card-info {
 			grid-template-columns: 255px 1fr;
 			grid-template-rows: auto minmax(106px, auto) auto;
+			height: auto;
 
 			h3 {
 				grid-row: 2/3;
@@ -128,8 +152,10 @@
 			.description {
 				grid-column: 2;
 				grid-row: 3;
+				margin-bottom: 1rem;
+				padding-top: 0.5rem;
 				-webkit-line-clamp: 5;
-				height: calc(1.5em * 4.2);
+				height: calc(1.5em * 4.4);
 			}
 		}
 	}
