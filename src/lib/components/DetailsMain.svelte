@@ -1,12 +1,13 @@
 <script>
-	import { backButton } from '$lib';
-	export let projectsDetails;
-	const project = projectsDetails;
+	import { backButton } from '$lib'
+	export let projectsDetails
+	const { title, img, date, end_date, content } = projectsDetails
+
 </script>
 
 <section class="content-container primary">
-	{#if project.title}
-		<h2>{project.title}</h2>
+	{#if title}
+		<h2>{title}</h2>
 	{:else}
 		<h2><i>Title is missing</i></h2>
 	{/if}
@@ -17,29 +18,17 @@
 	</button>
 
 	<picture>
-		<source
-			type="image/avif"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250"
-		/>
-		<source
-			type="image/webp"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165"
-		/>
+		<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{img}?format=avif&width=270&height=250" />
+		<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{img}?format=webp&width=250&height=165" />
 		<!-- change to {fallBackimg} before merging, this image if already on de dev branch -->
-		<img
-			src={project.img}
-			width="270px"
-			height="250px"
-			alt="image die te maken heeft met {project.title}"
-			fetchpriority="high"
-		/>
+		<img src={img} width="270px" height="250px" alt="image die te maken heeft met {title}" fetchpriority="high" />
 	</picture>
 
-	{#if project.date && !project.end_date}
-		<p class="date">{new Date(project.date).getFullYear()}</p>
-	{:else if project.date && project.end_date}
+	{#if date && !end_date}
+		<p class="date">{new Date(date).getFullYear()}</p>
+	{:else if date && end_date}
 		<p class="date">
-			{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}
+			{new Date(date).getFullYear()} / {new Date(end_date).getFullYear()}
 		</p>
 	{:else}
 		<p></p>
@@ -51,9 +40,9 @@
 		<span>Laatst bijgewerkt op: 27 oktober 2025</span>
 	</article>
 
-	{#if project.content}
+	{#if content}
 		<section class="text-container">
-			{@html project.content}
+			{@html content}
 		</section>
 	{:else}
 		<section class="text-container text-fallback">

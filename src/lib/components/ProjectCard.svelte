@@ -1,32 +1,33 @@
 <script>
 	import { fallBackimg } from '$lib'
 	export let project
+	const { title, slug, img, date, end_date, description } = project
 </script>
 
 <article class="neutral card-container">
-	<a class="card-info" href="/project-{project.slug}">
-		{#if project.title}
-			<h3>{project.title}</h3>
+	<a class="card-info" href="/project-{slug}">
+		{#if title}
+			<h3>{title}</h3>
 		{:else}
 			<h3><i>Title is missing</i></h3>
 		{/if}
 
 		<picture>
-			<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=570&height=250" />
-			<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=570&height=250" />
-			<img src={fallBackimg} width="270px" height="250px" alt="image die te maken heeft met {project.img}" loading="lazy" />
+			<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{img}?format=avif&width=570&height=250" />
+			<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{img}?format=webp&width=570&height=250" />
+			<img src={fallBackimg} width="270px" height="250px" alt="image die te maken heeft met {img}" loading="lazy" />
 		</picture>
 
-		{#if project.date && !project.end_date}
-			<p class="date">{new Date(project.date).getFullYear()}</p>
-		{:else if project.date && project.end_date}
-			<p class="date">{new Date(project.date).getFullYear()} / {new Date(project.end_date).getFullYear()}</p>
+		{#if date && !end_date}
+			<p class="date">{new Date(date).getFullYear()}</p>
+		{:else if date && end_date}
+			<p class="date">{new Date(date).getFullYear()} / {new Date(end_date).getFullYear()}</p>
 		{:else}
 			<p class="empty-element"></p>
 		{/if}
 
-		{#if project.description}
-			<p class="description">{project.description}</p>
+		{#if description}
+			<p class="description">{description}</p>
 		{:else}
 			<p class="description"><i>Description is missing</i></p>
 		{/if}

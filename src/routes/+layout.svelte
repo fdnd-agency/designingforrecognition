@@ -1,6 +1,7 @@
 <script>
 	import { favicon, FooterInfo, Header } from '$lib'
 	let { children } = $props()
+	
 </script>
 
 <svelte:head>
