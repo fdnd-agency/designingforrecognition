@@ -4,6 +4,8 @@
 export { default as Logo } from './components/Logo.svelte'
 // Header component for the Website
 export { default as Header } from './components/Header.svelte'
+// These filters sort the Project cards
+export { default as Filters } from './components/Filters.svelte'
 // Component responsible for rendering project subjects on the home page
 export { default as ProjectCard } from './components/ProjectCard.svelte'
 // This component is the container for all project cards on the home page
@@ -16,8 +18,6 @@ export { default as SponsorCarousel } from './components/SponsorCarousel.svelte'
 export { default as DetailsMain } from './components/DetailsMain.svelte'
 
 export { default as FooterInfo } from './components/FooterInfo.svelte'
-
-
 
 // Images & Icons
 export { default as favicon } from './assets/favicon.svg'
