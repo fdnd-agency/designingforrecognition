@@ -6,10 +6,10 @@
 			position: 'logo-top',
 			animation: 'logo-strip-top'
 		},
-		{
-			position: 'logo-bottom',
-			animation: 'logo-strip-bottom'
-		}
+		// {
+		// 	position: 'logo-bottom',
+		// 	animation: 'logo-strip-bottom'
+		// }
 	]
 </script>
 
@@ -67,8 +67,7 @@
 
 	/* logo's top en bottom */
 
-	.logo-top,
-	.logo-bottom {
+	.logo-top {
 		position: relative;
 		width: 100%;
 		max-width: 100vw;
@@ -85,23 +84,21 @@
 		background: linear-gradient(to top, color-mix(in srgb, var(--color-accent-secondary) 6%, transparent) 0%, transparent 100%);
 	}
 
-	.logo-strip-top,
-	.logo-strip-bottom {
+	.logo-strip-top {
 		list-style: none;
 		display: flex;
 		align-items: center;
 		gap: clamp(8px, 1.5vw, 20px);
 		padding-inline: 24px;
+		animation: marquee-left 30s linear infinite;
 	}
 
-	.logo-strip-top li,
-	.logo-strip-bottom li {
+	.logo-strip-top li {
 		display: flex;
 		align-items: center;
 	}
 
-	.logo-strip-top img,
-	.logo-strip-bottom img {
+	.logo-strip-top img {
 		max-height: 5.5em;
 		height: auto;
 		width: auto;
@@ -109,37 +106,25 @@
 	}
 
 	/* Animatie auto carousel */
-	.logo-strip-top {
+	/* .logo-strip-top {
 		animation: scroll-left-to-right 30s linear infinite;
 	}
 
 	.logo-strip-bottom {
 		animation: scroll-right-to-left 30s linear infinite;
-	}
+	} */
 
-	@keyframes scroll-left-to-right {
-		0% {
-			transform: translateX(-100%);
-		}
-		100% {
-			transform: translateX(0);
-		}
-	}
+	@keyframes marquee-left {
+	0%   { transform: translateX(0); }      /* start meteen zichtbaar */
+	100% { transform: translateX(-50%); }   /* schuift eerste helft exact weg */
+}
 
-	@keyframes scroll-right-to-left {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(-100%);
-		}
-	}
+/* optioneel: bestaande .logo-bottom/.logo-strip-bottom mogen blijven staan maar worden niet meer gebruikt */
 
-	@media (prefers-reduced-motion: reduce) {
-		.logo-strip-top,
-		.logo-strip-bottom {
-			animation: none;
-			transform: none;
-		}
+@media (prefers-reduced-motion: reduce) {
+	.logo-strip-top {
+		animation: none;
+		transform: none;
 	}
+}
 </style>
