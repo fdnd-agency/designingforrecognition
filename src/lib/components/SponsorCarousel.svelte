@@ -34,7 +34,7 @@
 
 <style>
 	.sponsors {
-		background: var(--oklch-neutral);
+		background: var(--color-neutral);
 		color: var(--color-accent-primary);
 		min-height: 57vh;
 		display: flex;
