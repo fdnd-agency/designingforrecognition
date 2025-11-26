@@ -1,6 +1,6 @@
 <script>
 	export let sponsorsData
-
+	export let visible = false
 	const rowClasses = [
 		{
 			position: 'logo-top',
@@ -12,9 +12,8 @@
 		// }
 	]
 </script>
-
-<section class="sponsors">
-	<header class="title">
+<!-- voor de toggle -->
+<section class="sponsors" style="display: {visible ? 'flex' : 'none'}">	<header class="title">
 		<h2>Onze partners</h2>
 	</header>
 
