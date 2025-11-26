@@ -8,6 +8,8 @@ export async function load() {
 		projectsResponse.json(),
 		sponsorsResponse.json()
 	]);
+
+	// console.log(projectsData.data)
 	
 	return {
 		projects: projectsData.data,

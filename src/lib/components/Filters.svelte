@@ -1,9 +1,10 @@
 <script>
+	// export let form;
 </script>
 
-<form action="/" method="post">
+<form action="?/filter" method="get">
 	<h3>Filteren</h3>
-	<div class="checkbox-button">
+	<!-- <div class="checkbox-button">
 		<input type="checkbox" id="filter-ideeën" name="projects" value="Ideeën" alt="filter op Ideeën" />
 		<label for="filter-ideeën">Ideeën</label>
 	</div>
@@ -14,14 +15,16 @@
 	</div>
 
 	<div class="checkbox-button">
-		<input type="checkbox" id="filter-experimenten" name="projects" value="Experimenten" alt="filter op Experimenten" />
-		<label for="filter-experimenten">Experimenten</label>
-	</div>
+		<input type="checkbox" id="filter-experimenten" name="projects" value="Articulating" alt="filter op Experimenten" />
+		<label for="filter-experimenten">Articulating</label>
+	</div> -->
 
 	<div class="checkbox-button">
-		<input type="checkbox" id="filter-methodes" name="projects" value="Methodes" alt="filter op Methodes" />
-		<label for="filter-methodes">Methodes</label>
+		<input type="checkbox" id="filter-methodes" name="projects" value="Contestable" alt="filter op Methodes" />
+		<label for="filter-methodes">Contestable</label>
 	</div>
+
+	<button type="submit">Filter</button>
 </form>
 
 <style>
