@@ -53,6 +53,10 @@
 			</section>
 		</section>
 	</section>
+	<SponsorCarousel
+	{sponsorsData} 
+	visible={showSponsors}
+	/>
 </footer>
 
 <style>
