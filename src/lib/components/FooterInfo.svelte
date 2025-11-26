@@ -1,3 +1,17 @@
+<script>
+	// @ts-nocheck
+
+	import { SponsorCarousel } from '$lib'
+	export let sponsorsData
+
+	let showSponsors = false
+
+	const toggleSponsors = () => {
+		// e?.preventDefault()
+		showSponsors = !showSponsors
+	}
+</script>
+
 <footer class="footer">
 	<section class="footer-container">
 		<section class="footer-left">
