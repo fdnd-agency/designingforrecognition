@@ -59,6 +59,8 @@
 	/>
 </footer>
 
+
+
 <style>
 	.footer {
 		background-color: var(--color-accent-secondary);
