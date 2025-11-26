@@ -98,7 +98,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
-
 		margin-top: 1em;
 		margin-bottom: 2em;
 		
