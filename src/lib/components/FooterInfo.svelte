@@ -26,7 +26,14 @@
 
 			<nav class="footer-nav">
 				<a href="partners">About this project</a>
-				<a href="partners">partners</a>
+				<a
+				href="partners"
+				on:click|preventDefault={toggleSponsors}
+				role="button"
+				
+			>
+				Partners
+			</a>
 				<a href="signal">Signal</a>
 			</nav>
 		</section>
