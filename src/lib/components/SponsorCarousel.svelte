@@ -33,16 +33,25 @@
 
 <style>
 	.sponsors {
-		background: var(--oklch-neutral);
-		color: var(--color-accent-primary);
-		min-height: 57vh;
 		display: flex;
+		/* background: linear-gradient(
+	to top,
+	var(--color-neutral) 0%,    
+	var(--oklch-accent-secondary) 100%      
+); */
+
+
+		/* background: var(--oklch-neutral); */
+		color: var(--color-accent-primary);
+		/* min-height: 57vh; */
+		/* display: none; */
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding-block: 1.5em;
+		/* padding-block: 1.5em; */
 		text-align: center;
 		overflow-x: hidden;
+		margin-top: 2em;
 	}
 
 	.title {
@@ -72,10 +81,10 @@
 		max-width: 100vw;
 		overflow: hidden;
 		padding-block: 12px;
-		border-bottom: 1px solid var(--color-accent-secondary);
+		/* border-bottom: 1px solid var(--color-accent-secondary); */
 		display: flex;
-		margin-bottom: 16px;
-		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 6%, transparent) 0%, transparent 100%);
+		/* margin-bottom: 16px; */
+		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 0%, transparent) 0%, var(--oklch-neutral) 100%);
 	}
 
 	.logo-bottom {
@@ -98,10 +107,14 @@
 	}
 
 	.logo-strip-top img {
-		max-height: 5.5em;
+		max-height: 3.5em;
 		height: auto;
 		width: auto;
 		object-fit: contain;
+
+		@media (min-width: 726px){
+			max-height: 5.5em; 
+		}
 	}
 
 	/* Animatie auto carousel */
