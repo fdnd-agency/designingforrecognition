@@ -146,7 +146,7 @@
 	article {
 		display: flex;
 		flex-direction: column;
-		background-color: var(--oklch-accent-secondary);
+		background-color: var(--color-accent-secondary);
 		border-radius: var(--child-radius);
 		box-shadow: var(--box-shadow-img-article);
 		padding: 0.8em;

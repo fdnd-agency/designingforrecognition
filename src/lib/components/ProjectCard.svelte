@@ -56,7 +56,7 @@
 		&:hover,
 		&:focus-within {
 			background-color: var(--dark-2);
-			outline: 2px solid var(--light-2);
+			outline: 1px solid var(--light-2);
 			box-shadow: 1px 1px 5px 10px var(--dark-1);
 			scale: 1.01;
 			transition: scale 0.2s ease-in;
