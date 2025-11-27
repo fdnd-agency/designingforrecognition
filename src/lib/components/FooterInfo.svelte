@@ -1,3 +1,17 @@
+<script>
+	// @ts-nocheck
+
+	import { SponsorCarousel } from '$lib'
+	export let sponsorsData
+
+	let showSponsors = false
+
+	const toggleSponsors = () => {
+		// e?.preventDefault()
+		showSponsors = !showSponsors
+	}
+</script>
+
 <footer class="footer">
 	<section class="footer-container">
 		<section class="footer-left">
@@ -12,7 +26,14 @@
 
 			<nav class="footer-nav">
 				<a href="partners">About this project</a>
-				<a href="partners">partners</a>
+				<a
+				href="partners"
+				on:click|preventDefault={toggleSponsors}
+				role="button"
+				
+			>
+				Partners
+			</a>
 				<a href="signal">Signal</a>
 			</nav>
 		</section>
@@ -32,15 +53,21 @@
 			</section>
 		</section>
 	</section>
+	<SponsorCarousel
+	{sponsorsData} 
+	visible={showSponsors}
+	/>
 </footer>
+
+
 
 <style>
 	.footer {
 		background-color: var(--color-accent-secondary);
-		padding: 2rem 5vw;
+		/* padding: 2rem 5vw; */
 
 		@media (min-width: 768px) {
-			padding: 3rem 6vw;
+			padding: 0rem 0vw; /*dit weghalen*/
 		}
 	}
 
@@ -51,6 +78,7 @@
 		gap: 2rem;
 		max-width: 1400px;
 		margin-inline: auto;
+		padding: 0 3em;
 
 		@media (min-width: 768px) {
 			flex-direction: row;
@@ -70,7 +98,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
-
+		margin-top: 1em;
+		margin-bottom: 2em;
+		
 		@media (min-width: 768px) {
 			max-width: 500px;
 		}
@@ -141,4 +171,8 @@
 		flex-direction: column;
 		font-weight: 600;
 	}
+
+	
 </style>
+
+
