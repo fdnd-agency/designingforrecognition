@@ -1,7 +1,7 @@
 <script>
-	import { backButton } from '$lib';
-	export let projectsDetails;
-	const project = projectsDetails;
+	import { backButton } from '$lib'
+	export let projectsDetails
+	const project = projectsDetails
 </script>
 
 <section class="content-container primary">
@@ -17,22 +17,10 @@
 	</button>
 
 	<picture>
-		<source
-			type="image/avif"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250"
-		/>
-		<source
-			type="image/webp"
-			srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165"
-		/>
+		<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=avif&width=270&height=250" />
+		<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{project.img}?format=webp&width=250&height=165" />
 		<!-- change to {fallBackimg} before merging, this image if already on de dev branch -->
-		<img
-			src={project.img}
-			width="270px"
-			height="250px"
-			alt="image die te maken heeft met {project.title}"
-			fetchpriority="high"
-		/>
+		<img src={project.img} width="270px" height="250px" alt="image die te maken heeft met {project.title}" fetchpriority="high" />
 	</picture>
 
 	{#if project.date && !project.end_date}
