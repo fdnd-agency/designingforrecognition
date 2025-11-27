@@ -60,6 +60,8 @@
 		--left-margin-810px: 2em;
 		--box-shadow-img-article: 1px 1px 10px 0 var(--dark-2);
 
+		padding: 5em 0;
+
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1em;
