@@ -3,25 +3,35 @@
 </script>
 
 <form action="?/filter" method="get">
-	<h3>Filteren</h3>
-	<!-- <div class="checkbox-button">
-		<input type="checkbox" id="filter-ideeën" name="projects" value="Ideeën" alt="filter op Ideeën" />
-		<label for="filter-ideeën">Ideeën</label>
+	<h2>Filteren</h2>
+	<div class="checkbox-button">
+		<input type="checkbox" id="filter-ideeën" name="projects" value="Concept" alt="filter op Ideeën" />
+		<label for="filter-ideeën">Concept</label>
 	</div>
 
 	<div class="checkbox-button">
-		<input type="checkbox" id="filter-participatie" name="projects" value="Participatie" alt="filter op Participatie" />
-		<label for="filter-participatie">Participatie</label>
+		<input type="checkbox" id="filter-Uitgevoerd" name="projects" value="Uitgevoerd" alt="filter op Ideeën" />
+		<label for="filter-Uitgevoerd">Uitgevoerd</label>
 	</div>
 
 	<div class="checkbox-button">
-		<input type="checkbox" id="filter-experimenten" name="projects" value="Articulating" alt="filter op Experimenten" />
-		<label for="filter-experimenten">Articulating</label>
-	</div> -->
+		<input type="checkbox" id="filter-experiment" name="projects" value="experiment" alt="filter op Ideeën" />
+		<label for="filter-experiment">experiment</label>
+	</div>
 
 	<div class="checkbox-button">
-		<input type="checkbox" id="filter-methodes" name="projects" value="Contestable" alt="filter op Methodes" />
-		<label for="filter-methodes">Contestable</label>
+		<input type="checkbox" id="filter-Actionable" name="projects" value="Actionable" alt="filter op Ideeën" />
+		<label for="filter-Actionable">Actionable</label>
+	</div>
+
+	<div class="checkbox-button">
+		<input type="checkbox" id="filter-Making" name="projects" value="Making" alt="filter op Ideeën" />
+		<label for="filter-Making">Making</label>
+	</div>
+
+	<div class="checkbox-button">
+		<input type="checkbox" id="filter-draft" name="projects" value="draft" alt="filter op Ideeën" />
+		<label for="filter-draft">draft</label>
 	</div>
 
 	<button type="submit">Filter</button>
@@ -35,7 +45,7 @@
 		margin-top: 5em;
 	}
 
-	h3 {
+	h2 {
 		width: 100%;
 		display: flex;
 		justify-content: center;
