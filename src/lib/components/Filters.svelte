@@ -3,39 +3,68 @@
 </script>
 
 <form action="?/filter" method="get">
-	<h2>Filteren</h2>
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-ideeën" name="projects" value="Concept" alt="filter op Ideeën" />
-		<label for="filter-ideeën">Concept</label>
-	</div>
+    <h2>Filteren</h2>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-Uitgevoerd" name="projects" value="Uitgevoerd" alt="filter op Ideeën" />
-		<label for="filter-Uitgevoerd">Uitgevoerd</label>
-	</div>
+    <!-- Execution groep -->
+    <fieldset>
+        <legend>Execution</legend>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-concept" name="execution" value="Concept" />
+            <label for="filter-concept">Concept</label>
+        </div>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-uitgevoerd" name="execution" value="Uitgevoerd" />
+            <label for="filter-uitgevoerd">Uitgevoerd</label>
+        </div>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-experiment" name="execution" value="Experiment" />
+            <label for="filter-experiment">Experiment</label>
+        </div>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-methode" name="execution" value="Methode" />
+            <label for="filter-methode">Methode</label>
+        </div>
+    </fieldset>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-experiment" name="projects" value="experiment" alt="filter op Ideeën" />
-		<label for="filter-experiment">experiment</label>
-	</div>
+    <!-- Participation Level groep -->
+    <fieldset>
+        <legend>Participation Level</legend>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-contestable" name="participation_level" value="Contestable" />
+            <label for="filter-contestable">Contestable</label>
+        </div>
+    </fieldset>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-Actionable" name="projects" value="Actionable" alt="filter op Ideeën" />
-		<label for="filter-Actionable">Actionable</label>
-	</div>
+    <!-- Process Phase groep -->
+    <fieldset>
+        <legend>Process Phase</legend>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-making" name="process_phase" value="Making" />
+            <label for="filter-making">Making</label>
+        </div>
+    </fieldset>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-Making" name="projects" value="Making" alt="filter op Ideeën" />
-		<label for="filter-Making">Making</label>
-	</div>
+    <!-- Results groep -->
+    <fieldset>
+        <legend>Results</legend>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-niet-beschikbaar" name="results" value="Niet beschikbaar" />
+            <label for="filter-niet-beschikbaar">Niet beschikbaar</label>
+        </div>
+    </fieldset>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-draft" name="projects" value="draft" alt="filter op Ideeën" />
-		<label for="filter-draft">draft</label>
-	</div>
+    <!-- Status groep -->
+    <fieldset>
+        <legend>Status</legend>
+        <div class="checkbox-button">
+            <input type="checkbox" id="filter-draft" name="status" value="draft" />
+            <label for="filter-draft">Draft</label>
+        </div>
+    </fieldset>
 
-	<button type="submit">Filter</button>
+    <button type="submit">Filter</button>
 </form>
+
 
 <style>
 	form {
