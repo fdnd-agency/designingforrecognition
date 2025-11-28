@@ -17,7 +17,7 @@
             <label for="filter-uitgevoerd">Uitgevoerd</label>
         </div>
         <div class="checkbox-button">
-            <input type="checkbox" id="filter-experiment" name="execution" value="Experiment" />
+            <input type="checkbox" id="filter-experiment" name="execution" value="experiment" />
             <label for="filter-experiment">Experiment</label>
         </div>
         <div class="checkbox-button">
@@ -30,7 +30,7 @@
     <fieldset>
         <legend>Participation Level</legend>
         <div class="checkbox-button">
-            <input type="checkbox" id="filter-contestable" name="participation_level" value="Contestable" />
+            <input type="checkbox" id="filter-contestable" name="Participation_level" value="Contestable" />
             <label for="filter-contestable">Contestable</label>
         </div>
     </fieldset>
@@ -39,7 +39,7 @@
     <fieldset>
         <legend>Process Phase</legend>
         <div class="checkbox-button">
-            <input type="checkbox" id="filter-making" name="process_phase" value="Making" />
+            <input type="checkbox" id="filter-making" name="Process_phase" value="Making" />
             <label for="filter-making">Making</label>
         </div>
     </fieldset>
