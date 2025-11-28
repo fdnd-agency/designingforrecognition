@@ -2,15 +2,12 @@ export async function load({ url, parent }) {
 	// get project data from layout.server.js
 	const { projects } = await parent();
 
-	// get the form url
 	const selectedCategories = url.searchParams;
 
-	// let filteredProjects;
 	let filteredProjects;
 
 	let keyValuePairs = [];
 
-	// maakt een array met key en value samen, wordt daarna opgeslagen in keyValuePairs, een array in een array
 	selectedCategories.forEach((value, key) => {
 		keyValuePairs.push([key, value]);
 	});
@@ -21,72 +18,34 @@ export async function load({ url, parent }) {
 		return (filteredProjects = projects);
 	}
 
-	// Pas elke filter toe
+	// https://blog.logrocket.com/array-filter-method-javascript/#:~:text=John%27%2C%20%27Jonathan%27%2C%20%27Joanna%27%5D-,Filtering%20objects%20by%20specific%20properties,-The%20filter()
+	// https://hostman.com/tutorials/how-to-use-javascript-array-map/#filtering-and-mapping
+
+	// filteredProjects = projects.filter((project) =>
+	// 	keyValuePairs.every(([key, value]) => {
+	// 		// if (!project[key]) return false;
+	// 		return project[key].toLowerCase().includes(value.toLowerCase());
+	// 	})
+	// );
 
 	filteredProjects = projects.filter((project) =>
 		keyValuePairs.every(([key, value]) => {
-			if (!project[key]) return false; // check dat het veld bestaat
-			return project[key].toLowerCase().includes(value.toLowerCase());
+			let p = project[key]
+			if (Array.isArray(p)) {
+			
+				console.log(p)
+				console.log('1 ' + value)
+				console.log('2 ' + key)
+			
+				return project[key].some((item) => typeof item === 'string' && item.includes(value));
+			} else {
+				// return project[key].includes(value.toLowerCase());
+				return project[key].toLowerCase().includes(value.toLowerCase());
+			}
 		})
 	);
 
+	console.log(filteredProjects)
+
 	return { projects: filteredProjects };
-
-	// if (selectedCategories.length > 0) {
-	// 	// ga per filter door alle JSON objecten. gebruik de functie searchValues om om elke value te controleren als de filter daarin voorkomt
-	// 	selectedCategories.forEach((filter) => {
-	// 		filteredProjects = searchThroughValues(projects, filter);
-	// 	});
-	// 	// if there is no filter, show everything
-	// } else {
-	// 	filteredProjects = projects;
-	// }
-
-	// // This function searches through all values of the JSON objects (used for project cards on the homepage)
-	// // and returns only those objects where the user's selected filter matches any value.
-	// function searchThroughValues(jsonObjects, filter) {
-	// 	return jsonObjects.filter((project) => {
-	// 		// Iterate over all key value pairs of a single JSON object
-	// 		// Handle all possible values: empty, a string, or an array
-	// 		// if true the entire object will be placed in the new array that the filter makes
-	// 		return Object.entries(project).some(([key, value]) => {
-	// 			if (value == null) {
-	// 				return false;
-	// 			} else if (typeof value === 'string') {
-	// 				return value.includes(filter);
-	// 			} else if (Array.isArray(value)) {
-	// 				return value.some((item) => typeof item === 'string' && item.includes(filter));
-	// 			}
-	// 		});
-	// 	});
-	// }
-
-	// if (selectedCategories.length > 0) {
-	// 	// ga per filter door alle JSON objecten. gebruik de functie searchValues om om elke value te controleren als de filter daarin voorkomt
-	// 	selectedCategories.forEach((filter) => {
-	// 		filteredProjects = searchThroughValues(projects, filter);
-	// 	});
-	// 	// if there is no filter, show everything
-	// } else {
-	// 	filteredProjects = projects;
-	// }
-
-	// // This function searches through all values of the JSON objects (used for project cards on the homepage)
-	// // and returns only those objects where the user's selected filter matches any value.
-	// function searchThroughValues(jsonObjects, filter) {
-	// 	return jsonObjects.filter((project) => {
-	// 		// Iterate over all key value pairs of a single JSON object
-	// 		// Handle all possible values: empty, a string, or an array
-	// 		// if true the entire object will be placed in the new array that the filter makes
-	// 		return Object.entries(project).some(([key, value]) => {
-	// 			if (value == null) {
-	// 				return false;
-	// 			} else if (typeof value === 'string') {
-	// 				return value.includes(filter);
-	// 			} else if (Array.isArray(value)) {
-	// 				return value.some((item) => typeof item === 'string' && item.includes(filter));
-	// 			}
-	// 		});
-	// 	});
-	// }
 }
