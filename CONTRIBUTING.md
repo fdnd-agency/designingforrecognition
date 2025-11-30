@@ -220,3 +220,45 @@ De issues worden toegewezen op maandag, woensdag en vrijdag. Tijdens de bespreki
 - bespreken wat er gedaan moet worden en als team besluiten als we de volgende dag langer op school blijven
 
 
+
+
+
+
+<details>
+ <summary>Retrospect 1 (Sprint 14)</summary>
+ 
+  #### [Smart Goals](https://retromat.org/en/?id=13)
+ <img height="750" width="750" src="https://github.com/user-attachments/assets/3cd312e8-9b72-4138-950a-044aa380eaac" />  
+ 
+ Viresh:  
+ mijn smart goal is: In de komende twee sprints plannen we alle taken/issues door de user stories opnieuw te evalueren, te categoriseren en te voorzien van harde deadlines. Elke week tot het einde van het project wordt volledig ingepland. We weten dat we succesvol zijn wanneer de website aan het einde van sprint 2 een visueel aantrekkelijke en consistente look-and-feel heeft.
+
+ Inez:  
+ Om goede resultaten te behalen bij complexe code, zal ik iteratief werken tijdens het bouwen en onderzoeken, vóór het einde van de week. Ik weet dat ik succesvol ben wanneer het onderwerp is opgelost.
+
+   #### [Starfish](https://retromat.org/en/?id=49)
+ <img height="750" width="750" src="https://github.com/user-attachments/assets/52a69b9e-4a52-4d00-8a98-d3a2ae8cb024" />  
+
+We hebben allebei punten benoemd over communicatie en het gebruik van het projectboard:
+- Meld zo snel mogelijk wanneer er iets mis gaat (wacht niet tot het laatste moment om iets te melden of vragen)
+- Stel gezamenlijk regels op voor het beheren van het projectboard
+  - Idee: elke week wordt een persoon iemand aangewezen die controleert of het projectboard wordt bijgehouden door de team
+  - De backlog bevat alle issues die in de sprint opgepakt moeten worden. Er mag maximaal één user story per persoon assigned zijn
+  - Een user story blijft in `To Do` totdat je eraan begint, bij de start van het werk verplaats je deze naar `In Progress`
+  - Zodra je een pull request aanmaakt, verplaats je zowel de user story als de pull request naar `Review`. (Let op: een nieuwe pull request komt automatisch in No Status terecht.)
+  - De kolom No Status mag nooit open blijven, alle issues moeten altijd meteen naar de juiste kolom worden verplaatst
+
+   #### [Pessimize](https://retromat.org/en/?id=74)
+ <img height="750" width="750" src="https://github.com/user-attachments/assets/e582eb45-6bfd-4359-bc81-aca2450aa048" />  
+</details>
+
+
+### Afspraken uit retrospect Sprint 16
+- Meld zo snel mogelijk wanneer er iets mis gaat (wacht niet tot het laatste moment om iets te melden of vragen)
+- Nieuwe projectboard regels:
+  - elke week wordt een persoon iemand aangewezen die controleert of het projectboard wordt bijgehouden door de team
+  - De backlog bevat alle issues die in de sprint opgepakt moeten worden. Er mag maximaal een user story per persoon assigned zijn
+  - Een user story blijft in `To Do` totdat je eraan begint, bij de start van het werk verplaats je deze naar `Progress`
+  - Zodra je een pull request aanmaakt, verplaats je zowel de user story als de pull request naar `Review`. (Let op: een nieuwe pull request komt automatisch in `No Status` terecht.)
+  - De kolom No Status mag nooit open blijven, alle issues moeten altijd meteen naar de juiste kolom worden verplaatst
+
