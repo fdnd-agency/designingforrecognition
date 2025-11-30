@@ -7,7 +7,6 @@
 	let showSponsors = false
 
 	const toggleSponsors = () => {
-		// e?.preventDefault()
 		showSponsors = !showSponsors
 	}
 </script>
@@ -64,10 +63,9 @@
 <style>
 	.footer {
 		background-color: var(--color-accent-secondary);
-		/* padding: 2rem 5vw; */
 
 		@media (min-width: 768px) {
-			padding: 0rem 0vw; /*dit weghalen*/
+			padding: 0rem 0vw;
 		}
 	}
 
