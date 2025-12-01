@@ -7,7 +7,7 @@ export { default as Header } from './organisms/Header.svelte';
 // These filters sort the Project cards
 export { default as Filters } from './organisms/Filters.svelte';
 // Component responsible for rendering project subjects on the home page
-export { default as ProjectCard } from './organisms/ProjectCard.svelte';
+export { default as ProjectCard } from './molecules/ProjectCard.svelte';
 // This component is the container for all project cards on the home page
 export { default as ProjectCardContainer } from './organisms/ProjectCardContainer.svelte';
 // component for the main content on the details page
