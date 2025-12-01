@@ -1,70 +1,61 @@
 <script>
-	// export let form;
 </script>
 
-<form action="?/filter" method="get">
-    <h2>Filteren</h2>
+<form action="/" method="GET">
+	<h2>Filteren</h2>
 
-    <!-- Execution groep -->
-    <fieldset>
-        <legend>Execution</legend>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-concept" name="execution" value="Concept" />
-            <label for="filter-concept">Concept</label>
-        </div>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-uitgevoerd" name="execution" value="Uitgevoerd" />
-            <label for="filter-uitgevoerd">Uitgevoerd</label>
-        </div>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-experiment" name="execution" value="experiment" />
-            <label for="filter-experiment">Experiment</label>
-        </div>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-methode" name="execution" value="Methode" />
-            <label for="filter-methode">Methode</label>
-        </div>
-    </fieldset>
+	<fieldset>
+		<legend>Execution</legend>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-concept" name="execution" value="Concept" />
+			<label for="filter-concept">Concept</label>
+		</div>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-uitgevoerd" name="execution" value="Uitgevoerd" />
+			<label for="filter-uitgevoerd">Uitgevoerd</label>
+		</div>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-experiment" name="execution" value="experiment" />
+			<label for="filter-experiment">Experiment</label>
+		</div>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-methode" name="execution" value="Methode" />
+			<label for="filter-methode">Methode</label>
+		</div>
+	</fieldset>
 
-    <!-- Participation Level groep -->
-    <fieldset>
-        <legend>Participation Level</legend>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-contestable" name="Participation_level" value="Contestable" />
-            <label for="filter-contestable">Contestable</label>
-        </div>
-    </fieldset>
+	<fieldset>
+		<legend>Participation Level</legend>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-contestable" name="Participation_level" value="Contestable" />
+			<label for="filter-contestable">Contestable</label>
+		</div>
+	</fieldset>
 
-    <!-- Process Phase groep -->
-    <fieldset>
-        <legend>Process Phase</legend>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-making" name="Process_phase" value="Making" />
-            <label for="filter-making">Making</label>
-        </div>
-    </fieldset>
+	<fieldset>
+		<legend>Process Phase</legend>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-making" name="Process_phase" value="Making" />
+			<label for="filter-making">Making</label>
+		</div>
+	</fieldset>
 
-    <!-- Results groep -->
-    <fieldset>
-        <legend>Results</legend>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-niet-beschikbaar" name="results" value="Niet beschikbaar" />
-            <label for="filter-niet-beschikbaar">Niet beschikbaar</label>
-        </div>
-    </fieldset>
+	<fieldset>
+		<legend>Results</legend>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-niet-beschikbaar" name="results" value="Niet beschikbaar" />
+			<label for="filter-niet-beschikbaar">Niet beschikbaar</label>
+		</div>
+	</fieldset>
 
-    <!-- Status groep -->
-    <fieldset>
-        <legend>Status</legend>
-        <div class="checkbox-button">
-            <input type="checkbox" id="filter-draft" name="status" value="draft" />
-            <label for="filter-draft">Draft</label>
-        </div>
-    </fieldset>
-
-    <button type="submit">Filter</button>
+	<fieldset>
+		<legend>Status</legend>
+		<div class="checkbox-button">
+			<input type="submit" id="filter-draft" name="status" value="draft" />
+			<label for="filter-draft">Draft</label>
+		</div>
+	</fieldset>
 </form>
-
 
 <style>
 	form {
