@@ -84,7 +84,7 @@
 		/* border-bottom: 1px solid var(--color-accent-secondary); */
 		display: flex;
 		/* margin-bottom: 16px; */
-		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 0%, transparent) 0%, var(--oklch-neutral) 100%);
+		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 0%, transparent) 0%, var(--color-neutral) 100%);
 	}
 
 	.logo-bottom {
