@@ -1,5 +1,5 @@
 <script>
-	import Logo from '$lib/components/Logo.svelte'
+	import Logo from '$lib/atoms/Logo.svelte'
 
 	// Menu functionality
 	let isMenuOpen = false
