@@ -9,6 +9,13 @@
 	const toggleSponsors = () => {
 		showSponsors = !showSponsors
 	}
+const toggleSponsors = () => {
+showSponsors = !showSponsors
+if (showSponsors)
+    requestAnimationFrame(() =>
+    document.querySelector('.sponsors')?.scrollIntoView({ behavior: 'smooth' })
+    )
+}
 </script>
 
 <footer class="footer">
