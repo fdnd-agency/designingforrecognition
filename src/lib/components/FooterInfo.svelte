@@ -4,11 +4,12 @@
 	import { SponsorCarousel } from '$lib'
 	export let sponsorsData
 
-	let showSponsors = false
-
-	const toggleSponsors = () => {
-		showSponsors = !showSponsors
-	}
+	// JS disabled functie
+	import { onMount } from 'svelte';
+let showSponsors = true    
+onMount(() => {
+showSponsors = false
+});
 const toggleSponsors = () => {
 showSponsors = !showSponsors
 if (showSponsors)
