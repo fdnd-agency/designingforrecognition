@@ -10,6 +10,7 @@ let showSponsors = true
 onMount(() => {
 showSponsors = false
 });
+// toggle
 const toggleSponsors = () => {
 showSponsors = !showSponsors
 if (showSponsors)
@@ -32,9 +33,9 @@ if (showSponsors)
 			</address>
 
 			<nav class="footer-nav">
-				<a href="partners">About this project</a>
+				<a href="about">About this project</a> 
 				<a
-				href="partners"
+				href="#partners"
 				on:click|preventDefault={toggleSponsors}
 				role="button"
 				
@@ -77,7 +78,6 @@ if (showSponsors)
 		}
 	}
 
-	/* layout */
 	.footer-container {
 		display: flex;
 		flex-direction: column;
