@@ -1,10 +1,9 @@
 <section>
 	<h1 id="top">Creative Coding - CSS</h1>
+	<h2>Hilarious pop-art skip-to-content</h2>
 
 	<article class="uitleg">
-		<h2>Verplaats de button</h2>
-		sleep de button rond de pagina
-
+		<h3>Verplaats de button</h3>
 		<form>
 			<fieldset>
 				<label>
@@ -64,7 +63,7 @@
 	</ul>
 
 	<section class="main-content">
-		<h2 id="hier">Content</h2>
+		<h3 id="hier">Content</h3>
 
 		<a class="to-top" href="#top">
 			<svg
@@ -97,12 +96,22 @@
 		scroll-padding-top: 20px;
 	}
 
+	:global(body) {
+		margin: 0;
+	}
+
 	section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		font-family: sans-serif;
+		background:
+			radial-gradient(circle, rgba(0, 0, 0, 0.15) 10%, transparent 11%) 0 0 / 6px 6px repeat,
+			radial-gradient(circle, rgba(0, 0, 0, 0.08) 10%, transparent 11%) 3px 3px / 6px 6px repeat,
+			repeating-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 2px, rgba(0, 0, 0, 0.02) 3px),
+			#fdf4d8;
+		background-blend-mode: multiply, multiply, normal;
 	}
 
 	.uitleg {
@@ -112,6 +121,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 		font-size: 1.5rem;
+		margin: 1em;
 
 		fieldset {
 			display: flex;
@@ -121,7 +131,7 @@
 
 	.skip-link {
 		text-decoration: none;
-		/* background-color: gray; */
+		color: black;
 		box-shadow: 2px 2px 0 0 grey;
 		outline: 1px solid gray;
 		border-radius: 20px;
@@ -146,7 +156,7 @@
 
 		position-anchor: --skip-link;
 		position-area: right bottom;
-		position-try-fallbacks: --right-bottom, --left-bottom, --right-top, --left-top;
+		position-try-fallbacks: --right-bottom, --left-bottom, --right-top, --left-top, --center-bottom, --center-top;
 	}
 
 	@position-try --right-bottom {
@@ -168,6 +178,16 @@
 	@position-try --left-top {
 		inset: unset;
 		position-area: left top;
+	}
+
+	@position-try --center-top {
+		inset: unset;
+		position-area: top;
+	}
+
+	@position-try --center-bottom {
+		inset: unset;
+		position-area: bottom;
 	}
 
 	section:has(input[value='left-top']:checked) {
@@ -215,11 +235,20 @@
 	}
 
 	.comic-book {
-		column-count: 3;
+		column-count: 1;
 		column-gap: 20px;
 		width: 90%;
 		height: 100%;
-		margin: 100vh 3em 0 3em;
+		padding: 0;
+		margin-top: 100vh;
+
+		@media (min-width: 500px) {
+			column-count: 2;
+		}
+
+		@media (min-width: 725px) {
+			column-count: 3;
+		}
 
 		img {
 			width: 100%;
