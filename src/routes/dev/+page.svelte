@@ -1,6 +1,7 @@
 <section>
 	<h1 id="top">Creative Coding - CSS</h1>
 	<h2>Hilarious pop-art skip-to-content</h2>
+	<a href="https://github.com/fdnd-agency/designingforrecognition/blob/142-ccs-hilarious-pop-art-skip-to-content/src/routes/dev/%2Bpage.svelte">link to code</a>
 
 	<article class="uitleg">
 		<h3>Verplaats de button</h3>
