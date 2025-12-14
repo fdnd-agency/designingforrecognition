@@ -1,30 +1,65 @@
 <script>
+	import { filterProjects } from '$lib/remote-functions/filter.remote'
+
+	console.log(filterProjects)
 </script>
 
-<form action="/" method="post">
-	<h3>Filteren</h3>
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-ideeën" name="projects" value="Ideeën" alt="filter op Ideeën" />
-		<label for="filter-ideeën">Ideeën</label>
-	</div>
+<form {...filterProjects}>
+	<h2>Filteren</h2>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-participatie" name="projects" value="Participatie" alt="filter op Participatie" />
-		<label for="filter-participatie">Participatie</label>
-	</div>
+	<fieldset>
+		<legend>Execution</legend>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-experimenten" name="projects" value="Experimenten" alt="filter op Experimenten" />
-		<label for="filter-experimenten">Experimenten</label>
-	</div>
+		{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
+			<div class="checkbox-button">
+				<label>
+					<input {...filterProjects.fields.execution.as('radio', value)} />
+					{value}
+				</label>
+			</div>
+		{/each}
+	</fieldset>
 
-	<div class="checkbox-button">
-		<input type="checkbox" id="filter-methodes" name="projects" value="Methodes" alt="filter op Methodes" />
-		<label for="filter-methodes">Methodes</label>
-	</div>
+	<fieldset>
+		<legend>Participation Level</legend>
+
+		<label class="checkbox-button">
+			<input {...filterProjects.fields.Participation_level.as('radio', 'Contestable')} />
+			Contestable
+		</label>
+	</fieldset>
+
+	<fieldset>
+		<legend>Process Phase</legend>
+
+		<label class="checkbox-button">
+			<input {...filterProjects.fields.Process_phase.as('radio', 'Making')} />
+			Making
+		</label>
+	</fieldset>
+
+	<fieldset>
+		<legend>Results</legend>
+
+		<label class="checkbox-button">
+			<input {...filterProjects.fields.results.as('radio', 'Niet beschikbaar')} />
+			Niet beschikbaar
+		</label>
+	</fieldset>
+
+	<fieldset>
+		<legend>Status</legend>
+
+		<label class="checkbox-button">
+			<input {...filterProjects.fields.status.as('radio', 'draft')} />
+			Draft
+		</label>
+	</fieldset>
+
+	<button>Filter</button>
 </form>
 
-<style>
+<!-- <style>
 	form {
 		display: flex;
 		justify-content: center;
@@ -113,4 +148,4 @@
 			justify-content: center;
 		}
 	}
-</style>
+</style> -->
