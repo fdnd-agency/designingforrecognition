@@ -32,18 +32,18 @@ if (showSponsors)
 				</p>
 			</address>
 
+
+
 			<nav class="footer-nav">
 				<a href="about">About this project</a> 
-				<a
-				href="#partners"
-				on:click|preventDefault={toggleSponsors}
-				role="button"
-				
-			>
-				Partners
-			</a>
 				<a href="signal">Signal</a>
 			</nav>
+
+			<a
+			href="#partners"
+			on:click|preventDefault={toggleSponsors}
+			style="font-weight: 600; color: black; font-style:italic; text-decoration:none;"
+			role="button">Onze Partners</a>
 		</section>
 
 		<section class="footer-right">
@@ -143,12 +143,12 @@ if (showSponsors)
 		gap: 1rem;
 
 		@media (min-width: 768px) {
-			gap: 2rem;
+			gap: 0.5rem;
 		}
 
 		@media (min-width: 1024px) {
 			flex-direction: row;
-			gap: 2.5rem;
+			gap: 1em;
 			white-space: nowrap;
 		}
 
