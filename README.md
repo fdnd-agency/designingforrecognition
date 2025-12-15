@@ -1,20 +1,31 @@
 # Designing for Recognition
 
+
+## Installation
+
+If you’d like to continue with this project, you’ll first need to fork the repository using this link:
+```
+https://github.com/fdnd-agency/designingforrecognition.git
+```
+or directly on the GitHub website [here](https://github.com/fdnd-agency/designingforrecognition/tree/development)
+
+
+Once you have the repository on your computer, run the following command in the root folder:
+```
+npm install
+```
+
+
+After that, you can start the website on localhost with:
+```
+npm run dev
+```
+
 ## Project Description
 Our Product owner, Tessa Steenkamp, wanted a website to showcase all her research results. She wanted to avoid having her work end up in a booklet that might eventually get lost in a drawer.
 The goal of the project is to create an online platform where her research can be easily accessed, organized, and shared
 
 Tessa asked us to keep the existing brand style, but gave us the freedom to design a new and improved layout. As a team, we worked on redesigning the structure, visuals, and user experience of the website using modern web technologies such as SvelteKit and design tools like Figma.
-
-
-## Functionalities
-The Designing for Recognition website offers the following functionalities:
-- Research Showcase: Users can explore and view all papers in a structured and easily accessible way.
-- Filter: Users can filter papers by category to quickly find what they are looking for.
-- Responsive Design: Optimized for both desktop and mobile devices.
-- High Performance: Fast loading times and smooth interactions for an efficient user experience.
-- Progressive Enhanced: Core functionality works on all browsers, with enhanced features available on modern browsers.
-
 
 ## Design choices
 ### Colors
@@ -28,7 +39,6 @@ However, since OKLCH is still not supported in all browsers, we added a fallback
 
 This approach keeps the design consistent across all browsers while taking advantage of the newer, more advanced color system where possible
 
-
 ### Designs
 We created two design versions:
 - The first design used all the original colors from the live website: purple for the header and footer, white for the “About Us” section, dark blue for the filter results, pink for the researchers section, green & pink for highlights.
@@ -36,73 +46,4 @@ However, using so many different colors made the layout look too busy.
 
 - In the second design, we simplified the color usage by applying the new color palette with lighter colors. This made the interface look cleaner, more modern, and visually balanced.
 
-
-## Installation
-### Localhost
-If you are joining our team or would like to contribute, here’s how to get started:
-if you are contributing:
-- First, you need to fork the repository on GitHub
-  - You can do that on the [GitHub website](https://github.com/fdnd-agency/designingforrecognition/tree/main)
-
-*If you are joining our team you don't need to make a fork*
-
-- Then, clone your fork to your computer
-  - You can do this through the terminal or GitHub Desktop
-- Once you have your local clone, you need to install the dependencies
-  - Run the following command in the root folder of the project:
-```
-npm install
-```
-
-If you don’t have Node.js installed, you can [download](https://nodejs.org/en/download) it from the official Node.js website.  
-After installing Node.js, open a new terminal and try running `npm install` again.
-
-If that succeeds, you can start the website on localhost with:
-```
-npm run dev
-```
-
-### Prettier code formatter
-We use Prettier to format our code.  
-To enable it in your project, follow these steps:
-- Install the Prettier – Code Formatter extension in VS Code.
-- Go to File > Preferences > Settings.
-  - Search for “Format on Save” and enable it.
-
-Now you can format a file by pressing `Ctrl + S`  
-You can turn Auto Save on or off, but note that Auto Save does not format the file you’re working in.
-
-If formatting still doesn’t work, it might be due to your personal VS Code settings or conflicting extensions.
-In that case, you can always format all files through the terminal:
-```
-npx prettier . --write
-```
-
-
-## How to contribute
-We welcome contributions to this project!
-Whether you want to report a bug, improve the code, or take on an issue from [our project board](https://github.com/orgs/fdnd-agency/projects/81), here’s how to get started:
-
-If you are reporting a bug, you can create a new issue in our repository or on our project board.
-Please provide a detailed description and include screenshots if possible.
-
-If your contribution involves code, please follow these steps:
-- Follow [our installation guide](#installation)
-- Create a feature branch, from the dev branch, for your changes
-- Don’t forget to format your code with Prettier and follow [our code conventions](https://github.com/fdnd-agency/designingforrecognition/blob/dev/CONTRIBUTING.md#code-conventies)
-- When you’re ready, open a pull request with a clear description of what you’re changing.
-  - Note: When creating your pull request, make sure to target the `dev branch`, not the main branch.
-
-One of our team members will review your contribution.  
-We may request a few adjustments.  
-Once everything looks good, we’ll merge your pull request.
-
-
-## Datamodel
-
-[![](https://mermaid.ink/img/pako:eNqNUsFqwzAM_RWjc1qSukkT30YXGIOxke00AsHUWpptsYvqwLa0_744TdsUNqgOwnrv6UlgtbAyCkEA0m0lS5J1rlkXWfqc3mTLuzRju91kYlr2lD3ep8uXYsQIVhzUA3eNdIS1B8RFpS2rFDsDW0uVLhnhFiWt1kiFljUOgv3l1Ct8NmTecWXHJi6UtHjiXPGXf_H_ysfWi5GOGO1dqcEUPCipUiAsNehBjVRLV0JvmoNdY405iO6pJH3kkGvXs5H61Zj62EamKdcg3uTntquajdt6-LkTSqgV0tI02oIIot4DRAtfIDj3p3Ew8_0kCbrEFx37DSKMpjyex7PADxMexxEP9x789GM7_TwJ5wseJFESz3iw8ABVZQ09HC6nP6D9L0Ewq6A?type=png)](https://mermaid.live/edit#pako:eNqNUsFqwzAM_RWjc1qSukkT30YXGIOxke00AsHUWpptsYvqwLa0_744TdsUNqgOwnrv6UlgtbAyCkEA0m0lS5J1rlkXWfqc3mTLuzRju91kYlr2lD3ep8uXYsQIVhzUA3eNdIS1B8RFpS2rFDsDW0uVLhnhFiWt1kiFljUOgv3l1Ct8NmTecWXHJi6UtHjiXPGXf_H_ysfWi5GOGO1dqcEUPCipUiAsNehBjVRLV0JvmoNdY405iO6pJH3kkGvXs5H61Zj62EamKdcg3uTntquajdt6-LkTSqgV0tI02oIIot4DRAtfIDj3p3Ew8_0kCbrEFx37DSKMpjyex7PADxMexxEP9x789GM7_TwJ5wseJFESz3iw8ABVZQ09HC6nP6D9L0Ewq6A)
-
-
-
-
-## Link naar de licentie
+##Functionaliteiten uitleg
