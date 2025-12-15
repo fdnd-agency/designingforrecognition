@@ -67,7 +67,8 @@
 		overflow: hidden;
 		padding-block: 12px;
 		display: flex;
-		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 0%, transparent) 0%, var(--oklch-neutral) 100%);
+		/* margin-bottom: 16px; */
+		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 0%, transparent) 0%, var(--color-neutral) 100%);
 	}
 
 	.logo-bottom {
