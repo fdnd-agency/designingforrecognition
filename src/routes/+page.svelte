@@ -1,11 +1,10 @@
 <script>
-	import { Filters, ProjectCardContainer, About } from '$lib'
-	export let data
-	const projectsData = data.projects
+	import { Filters, ProjectCardContainer, About, SponsorCarousel } from '$lib'
+	let { data } = $props()
 </script>
 
 <main>
 	<Filters />
-	<ProjectCardContainer {projectsData} />
+	<ProjectCardContainer projectsData={data.projects} />
 	<About />
 </main>
