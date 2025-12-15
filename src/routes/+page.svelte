@@ -6,11 +6,8 @@
 
 	let projects = $state(data.projects)
 
-	// effect wordt opnieuw uitgevoerd zodra iets daarbinnen verandert
 	$effect(async () => {
 		if (await filterProjects.result?.data?.projects) {
-			// projects is een state, set update de state van projects met de gefilterde lijst uit de remote function
-			// result is de return uit de remote function
 			projects = filterProjects.result.data.projects
 		}
 	})

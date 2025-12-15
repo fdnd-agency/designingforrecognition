@@ -11,11 +11,8 @@ export const filterProjects = form(
 		status: v.optional(v.string())
 	}),
 	async (filters) => {
-		// haal alle projecten op
 		const projects = await getProjects();
-		// console.log(filters)
 
-		// filter projecten
 		const filteredProjects = projects.filter((project) =>
 			Object.entries(filters).every(([key, value]) => {
 
@@ -33,10 +30,8 @@ export const filterProjects = form(
 				return String(field).toLowerCase().includes(value.toLowerCase());
 			})
 		);
-		// console.log(filteredProjects)
 		console.log("new remote", filteredProjects)
 
-		// console.log(filteredProjects)
 		return {
 			data: {projects: filteredProjects}
 		};
