@@ -1,10 +1,8 @@
 <script>
-	import { filterProjects } from '$lib/remote-functions/filter.remote'
-
-	console.log(filterProjects)
+	export let filter
 </script>
 
-<form {...filterProjects}>
+<form {...filter}>
 	<h2>Filteren</h2>
 
 	<fieldset>
@@ -13,7 +11,7 @@
 		{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
 			<div class="checkbox-button">
 				<label>
-					<input {...filterProjects.fields.execution.as('radio', value)} />
+					<input {...filter.fields.execution.as('radio', value)} />
 					{value}
 				</label>
 			</div>
@@ -24,7 +22,7 @@
 		<legend>Participation Level</legend>
 
 		<label class="checkbox-button">
-			<input {...filterProjects.fields.Participation_level.as('radio', 'Contestable')} />
+			<input {...filter.fields.Participation_level.as('radio', 'Contestable')} />
 			Contestable
 		</label>
 	</fieldset>
@@ -33,7 +31,7 @@
 		<legend>Process Phase</legend>
 
 		<label class="checkbox-button">
-			<input {...filterProjects.fields.Process_phase.as('radio', 'Making')} />
+			<input {...filter.fields.Process_phase.as('radio', 'Making')} />
 			Making
 		</label>
 	</fieldset>
@@ -42,7 +40,7 @@
 		<legend>Results</legend>
 
 		<label class="checkbox-button">
-			<input {...filterProjects.fields.results.as('radio', 'Niet beschikbaar')} />
+			<input {...filter.fields.results.as('radio', 'Niet beschikbaar')} />
 			Niet beschikbaar
 		</label>
 	</fieldset>
@@ -51,7 +49,7 @@
 		<legend>Status</legend>
 
 		<label class="checkbox-button">
-			<input {...filterProjects.fields.status.as('radio', 'draft')} />
+			<input {...filter.fields.status.as('radio', 'draft')} />
 			Draft
 		</label>
 	</fieldset>

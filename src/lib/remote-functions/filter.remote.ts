@@ -1,5 +1,6 @@
-import * as v from 'valibot'
-import { form } from '$app/server'
+import * as v from 'valibot';
+import { form } from '$app/server';
+import { getProjects } from '$lib/server/projectData';
 
 export const filterProjects = form(
 	v.object({
@@ -9,9 +10,35 @@ export const filterProjects = form(
 		results: v.optional(v.string()),
 		status: v.optional(v.string())
 	}),
-	async (data) => {
-		console.log(data)
+	async (filters) => {
+		// haal alle projecten op
+		const projects = await getProjects();
+		// console.log(filters)
 
-		return data
+		// filter projecten
+		const filteredProjects = projects.filter((project) =>
+			Object.entries(filters).every(([key, value]) => {
+
+				if (!value) return true;
+
+				const field = project[key];
+				if (!field) return false;
+
+				if (Array.isArray(field)) {
+					return field.some((item) =>
+						String(item).toLowerCase().includes(value.toLowerCase())
+					);
+				}
+
+				return String(field).toLowerCase().includes(value.toLowerCase());
+			})
+		);
+		// console.log(filteredProjects)
+		console.log("new remote", filteredProjects)
+
+		// console.log(filteredProjects)
+		return {
+			data: {projects: filteredProjects}
+		};
 	}
-)
+);
