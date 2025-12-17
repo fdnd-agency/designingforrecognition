@@ -3,7 +3,6 @@
 	export let filter
 
 	onMount(() => {
-		const filterButton = document.querySelector('.filter-button')
 		const form = document.querySelector('form')
 		if (!form) return
 
@@ -74,6 +73,32 @@
 		gap: 0.5em;
 	}
 
+	label {
+		transition: background-color 0.2s ease-out;
+		position: relative;
+
+		input {
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	label:has(input:focus-visible)::after {
+		content: 'Druk op spatie om filter te schakelen';
+		position: absolute;
+		bottom: 115%;
+		left: 0;
+		margin-top: 0.4rem;
+		padding: 0.4rem;
+		font-size: 0.9rem;
+		background: var(--color-dark);
+		color: white;
+		border-radius: 10px;
+		white-space: nowrap;
+		z-index: 10;
+	}
+
 	label,
 	button {
 		font-size: 1.3rem;
@@ -82,20 +107,12 @@
 		text-align: center;
 		align-self: center;
 		background-color: var(--color-accent-secondary);
-	}
-
-	label {
-		transition: background-color 0.2s ease-out;
-
-		input {
-			position: absolute;
-			opacity: 0;
-			pointer-events: none;
-		}
+		color: var(--color-dark);
 
 		&:has(input:checked),
+		&:has(input:focus-visible),
 		&:hover,
-		&:has(input:focus-visible) {
+		&:focus-visible {
 			background-color: var(--color-accent-primary);
 			transition: background-color 0.2s ease-out;
 		}
