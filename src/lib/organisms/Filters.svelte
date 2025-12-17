@@ -1,149 +1,107 @@
 <script>
+	import { onMount } from 'svelte'
 	export let filter
+
+	onMount(() => {
+		const filterButton = document.querySelector('.filter-button')
+		const form = document.querySelector('form')
+		if (!form) return
+
+		const inputs = form.querySelectorAll('input[type="checkbox"]')
+
+		inputs.forEach((input) => {
+			input.addEventListener('change', () => {
+				form.requestSubmit()
+			})
+		})
+	})
 </script>
 
-<form {...filter}>
-	<h2>Filteren</h2>
+<div class="form-container">
+	<form {...filter}>
+		<h2>Filteren</h2>
 
-	<fieldset>
-		<legend>Execution</legend>
-
-		{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
-			<div class="checkbox-button">
+		<fieldset>
+			{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
 				<label>
-					<input {...filter.fields.execution.as('radio', value)} />
+					<input {...filter.fields.execution.as('checkbox', value)} />
 					{value}
 				</label>
-			</div>
-		{/each}
-	</fieldset>
+			{/each}
 
-	<fieldset>
-		<legend>Participation Level</legend>
+			<label>
+				<input {...filter.fields.Participation_level.as('checkbox', 'Contestable')} />
+				Contestable
+			</label>
 
-		<label class="checkbox-button">
-			<input {...filter.fields.Participation_level.as('radio', 'Contestable')} />
-			Contestable
-		</label>
-	</fieldset>
+			<label>
+				<input {...filter.fields.Process_phase.as('checkbox', 'Making')} />
+				Making
+			</label>
 
-	<fieldset>
-		<legend>Process Phase</legend>
+			<label>
+				<input {...filter.fields.results.as('checkbox', 'Niet beschikbaar')} />
+				Niet beschikbaar
+			</label>
 
-		<label class="checkbox-button">
-			<input {...filter.fields.Process_phase.as('radio', 'Making')} />
-			Making
-		</label>
-	</fieldset>
+			<label>
+				<input {...filter.fields.status.as('checkbox', 'draft')} />
+				Draft
+			</label>
+		</fieldset>
+	</form>
+</div>
 
-	<fieldset>
-		<legend>Results</legend>
+<style>
+	.form-container {
+		container: filters / inline-size;
+	}
 
-		<label class="checkbox-button">
-			<input {...filter.fields.results.as('radio', 'Niet beschikbaar')} />
-			Niet beschikbaar
-		</label>
-	</fieldset>
-
-	<fieldset>
-		<legend>Status</legend>
-
-		<label class="checkbox-button">
-			<input {...filter.fields.status.as('radio', 'draft')} />
-			Draft
-		</label>
-	</fieldset>
-
-	<button>Filter</button>
-</form>
-
-<!-- <style>
 	form {
 		display: flex;
-		justify-content: center;
 		flex-direction: column;
-		margin-top: 5em;
-	}
-
-	h3 {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		font-size: var(--font-size-title-section);
-	}
-
-	.checkbox-button {
-		display: inline-flex;
 		align-items: center;
-		margin: 8px;
-		font-size: var(--font-size-title-paragraph);
+		margin: 5em 2em 2em 2em;
+		gap: 2.5em;
+	}
+
+	fieldset {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		border: none;
+		gap: 0.5em;
+	}
+
+	label {
+		font-size: 1.3rem;
+		padding: 0.5em;
+		border-radius: 20px;
 		text-align: center;
-	}
+		align-self: center;
+		background-color: var(--color-accent-secondary);
+		transition: background-color 0.2s ease-out;
 
-	.checkbox-button input {
-		position: absolute;
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	.checkbox-button label {
-		display: inline-block;
-		padding: 6px 10px;
-		border: 1px solid var(--color-accent-primary);
-		border-radius: 7.5px;
-		background: var(--color-accent-secondary);
-		border-color: var(--color-accent-secondary);
-		cursor: pointer;
-		user-select: none;
-	}
-
-	.checkbox-button input:hover + label {
-		background: var(--color-accent-primary);
-		border-color: var(--color-accent-primary);
-		transition: ease-in 0.3s;
-	}
-
-	.checkbox-button input:checked + label {
-		background: var(--color-accent-primary);
-		border-color: var(--color-accent-primary);
-		transition: ease-out 0.3s;
-		box-shadow:
-			0 1px 0 #ccc,
-			0 2px 0 #c9c9c9,
-			0 3px 0 #bbb,
-			0 4px 0 #b9b9b9,
-			0 5px 0 #aaa,
-			0 6px 1px rgb(0, 0, 0, 0.1),
-			0 0 5px rgb(0, 0, 0, 0.1),
-			0 1px 3px rgb(0, 0, 0, 0.3),
-			0 3px 5px rgb(0, 0, 0, 0.2),
-			0 5px 10px rgb(0, 0, 0, 0.25),
-			0 10px 10px rgb(0, 0, 0, 0.2),
-			0 20px 20px rgb(0, 0, 0, 0.15);
-	}
-
-	@media (max-width: 320px) {
-		form {
-			flex-direction: column;
+		input {
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
 		}
-		label:nth-of-type(1) {
-			margin-bottom: 8px;
+
+		&:has(input:checked),
+		&:hover,
+		&:has(input:focus-visible) {
+			background-color: var(--color-accent-primary);
+			transition: background-color 0.2s ease-out;
 		}
-		.checkbox-button {
+	}
+
+	@container filters (min-width: 545px) {
+		fieldset {
 			display: flex;
-			justify-content: center;
-		}
-	}
-
-	@media (min-width: 321px) {
-		form {
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: center;
-		}
-		.checkbox-button {
-			display: flex;
-			justify-content: center;
+			gap: 2em;
 		}
 	}
-</style> -->
+</style>
