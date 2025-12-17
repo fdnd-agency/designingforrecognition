@@ -4,7 +4,7 @@
 </script>
 
 <section class="neutral projects-grid">
-	{#each projectsData as project}
+	{#each projectsData as project (project.id)}
 		<ProjectCard {project} />
 	{/each}
 </section>

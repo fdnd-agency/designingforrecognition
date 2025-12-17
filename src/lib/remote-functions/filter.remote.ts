@@ -11,7 +11,7 @@ export const filterProjects = form(
 		status: v.optional(v.array(v.string()))
 	}),
 	async (filters) => {
-		const projects = await getProjects();
+		let projects = await getProjects();
 
 		const filteredProjects = projects.filter((project) =>
 			Object.entries(filters).every(([key, values]) => {

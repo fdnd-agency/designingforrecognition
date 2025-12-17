@@ -49,6 +49,8 @@
 				Draft
 			</label>
 		</fieldset>
+
+		<button>Reset Filters</button>
 	</form>
 </div>
 
@@ -72,13 +74,17 @@
 		gap: 0.5em;
 	}
 
-	label {
+	label,
+	button {
 		font-size: 1.3rem;
 		padding: 0.5em;
 		border-radius: 20px;
 		text-align: center;
 		align-self: center;
 		background-color: var(--color-accent-secondary);
+	}
+
+	label {
 		transition: background-color 0.2s ease-out;
 
 		input {
@@ -93,6 +99,10 @@
 			background-color: var(--color-accent-primary);
 			transition: background-color 0.2s ease-out;
 		}
+	}
+
+	button {
+		border: none;
 	}
 
 	@container filters (min-width: 545px) {
