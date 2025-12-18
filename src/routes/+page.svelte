@@ -1,7 +1,14 @@
 <script>
-	import { Filters, ProjectCardContainer, About, SponsorCarousel } from '$lib'
+	import { HeroSection, Filters, ProjectCardContainer, About, SponsorCarousel, } from '$lib'
 	let { data } = $props()
 </script>
+
+<header>
+	<HeroSection 
+	project={data.projects[2]}
+	callout={data.projects[5]}
+	/>
+</header>
 
 <main>
 	<Filters />
