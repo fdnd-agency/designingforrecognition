@@ -1,24 +1,17 @@
 <script>
-	import { onMount } from 'svelte'
 	export let filter
-
-	onMount(() => {
-		const form = document.querySelector('form')
-		if (!form) return
-
-		const inputs = form.querySelectorAll('input[type="checkbox"]')
-
-		inputs.forEach((input) => {
-			input.addEventListener('change', () => {
-				form.requestSubmit()
-			})
-		})
-	})
+	export let projectCount
 </script>
 
 <div class="form-container">
+	<p class="sr-only" aria-live="polite">
+		{projectCount} <a href="#project-container">projecten gevonden klik enter om filters over te slaan en naar projecten te gaan</a>
+	</p>
+
 	<form {...filter}>
 		<h2>Filteren</h2>
+
+		<p class="keyboard-info">Druk op spatie om filter te schakelen</p>
 
 		<fieldset>
 			{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
@@ -49,7 +42,7 @@
 			</label>
 		</fieldset>
 
-		<button>Reset Filters</button>
+		<button>Activeer filters</button>
 	</form>
 </div>
 
@@ -64,6 +57,20 @@
 		align-items: center;
 		margin: 5em 2em 2em 2em;
 		gap: 2.5em;
+	}
+
+	.keyboard-info {
+		padding: 0.5em;
+		font-size: 1.3rem;
+		background: var(--color-accent-secondary);
+		color: var(--color-dark);
+		border-radius: 20px;
+		white-space: nowrap;
+		opacity: 0;
+	}
+
+	form:has(input:focus-visible) .keyboard-info {
+		opacity: 1;
 	}
 
 	fieldset {
@@ -84,21 +91,6 @@
 		}
 	}
 
-	label:has(input:focus-visible)::after {
-		content: 'Druk op spatie om filter te schakelen';
-		position: absolute;
-		bottom: 115%;
-		left: 0;
-		margin-top: 0.4rem;
-		padding: 0.4rem;
-		font-size: 0.9rem;
-		background: var(--color-dark);
-		color: white;
-		border-radius: 10px;
-		white-space: nowrap;
-		z-index: 10;
-	}
-
 	label,
 	button {
 		font-size: 1.3rem;
@@ -108,6 +100,7 @@
 		align-self: center;
 		background-color: var(--color-accent-secondary);
 		color: var(--color-dark);
+		cursor: pointer;
 
 		&:has(input:checked),
 		&:has(input:focus-visible),

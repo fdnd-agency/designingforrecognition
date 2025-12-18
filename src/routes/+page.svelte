@@ -14,7 +14,7 @@
 </script>
 
 <main>
-	<Filters filter={filterProjects} />
+	<Filters filter={filterProjects} projectCount={projects.length} />
 	<ProjectCardContainer projectsData={projects} />
 	<About />
 </main>

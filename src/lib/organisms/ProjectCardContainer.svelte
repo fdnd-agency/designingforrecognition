@@ -4,6 +4,8 @@
 </script>
 
 <section class="neutral projects-grid">
+	<h2 id="project-container" tabindex="-1">Projecten</h2>
+
 	{#each projectsData as project (project.id)}
 		<ProjectCard {project} />
 	{/each}
@@ -15,6 +17,12 @@
 		gap: 2.5em;
 		padding: 5em 1em;
 		background-color: var(--color);
+
+		h2 {
+			grid-column: 1/-1;
+			justify-self: center;
+			color: var(--color-primary);
+		}
 
 		@media (min-width: 420px) {
 			grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
