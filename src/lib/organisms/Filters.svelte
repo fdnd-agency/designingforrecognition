@@ -4,14 +4,14 @@
 </script>
 
 <div class="form-container">
-	<p class="sr-only" aria-live="polite">
-		{projectCount} <a href="#project-container">projecten gevonden klik enter om filters over te slaan en naar projecten te gaan</a>
+	<p class="skip-link">
+		<a href="#project-container">klik enter om filters over te slaan en naar projecten te gaan</a>
 	</p>
 
 	<form {...filter}>
 		<h2>Filteren</h2>
 
-		<p class="keyboard-info">Druk op spatie om filter te schakelen</p>
+		<p class="keyboard-info">Klik op de spatiebalk om het filter aan te vinken</p>
 
 		<fieldset>
 			{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
@@ -44,11 +44,33 @@
 
 		<button>Activeer filters</button>
 	</form>
+
+	<p class="filter-results">{projectCount} projecten gevonden</p>
 </div>
 
 <style>
 	.form-container {
 		container: filters / inline-size;
+	}
+
+	.skip-link {
+		position: absolute;
+		top: 4em;
+		left: 1em;
+		background-color: var(--color-accent-primary);
+		padding: 0.5em;
+		border-radius: 20px;
+		opacity: 0;
+		pointer-events: none;
+
+		&:focus-within {
+			opacity: 1;
+		}
+
+		a {
+			color: var(--color-dark);
+			text-decoration: none;
+		}
 	}
 
 	form {
@@ -113,6 +135,10 @@
 
 	button {
 		border: none;
+	}
+
+	.filter-results {
+		opacity: 0;
 	}
 
 	@container filters (min-width: 545px) {
