@@ -7,8 +7,14 @@
 	let projects = $state(data.projects)
 
 	$effect(async () => {
-		if (await filterProjects.result?.data?.projects) {
-			projects = filterProjects.result.data.projects
+		if (filterProjects.result?.data?.projects) {
+			if (document.startViewTransition) {
+				document.startViewTransition(() => {
+					projects = filterProjects.result.data.projects
+				})
+			} else {
+				projects = filterProjects.result.data.projects
+			}
 		}
 	})
 </script>
