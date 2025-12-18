@@ -4,7 +4,7 @@
 	const { title, slug, img, date, end_date, description } = project
 </script>
 
-<article class="neutral card-container">
+<article class="neutral card-container" style="view-transition-name: project-{project.id}">
 	<a class="card-info" href="/project-{slug}">
 		{#if title}
 			<h3>{title}</h3>
