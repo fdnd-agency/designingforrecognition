@@ -34,9 +34,15 @@ export const filterProjects = form(
 			})
 		);
 
+		const activeFilters = Object.fromEntries(
+			Object.entries(filters).filter(
+				([key, values]) => Array.isArray(values) && values.length > 0
+			)
+		)
+
 		return {
 			data: {
-				projects: filteredProjects
+				projects: filteredProjects, activeFilters
 			}
 		};
 	}

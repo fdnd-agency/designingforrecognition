@@ -1,12 +1,28 @@
 <script>
 	import { ProjectCard } from '$lib'
-	export let projectsData
+	import { filterProjects } from '$lib/remote-functions/filter.remote'
+
+	let { projectsData = [] } = $props()
+
+	let Allprojects = $state(projectsData)
+
+	$effect(() => {
+		if (filterProjects.result?.data?.projects) {
+			if (document.startViewTransition) {
+				document.startViewTransition(() => {
+					Allprojects = filterProjects.result.data.projects
+				})
+			} else {
+				Allprojects = filterProjects.result.data.projects
+			}
+		}
+	})
 </script>
 
 <section class="neutral projects-grid">
 	<h2 id="project-container" tabindex="-1">Projecten</h2>
 
-	{#each projectsData as project (project.id)}
+	{#each Allprojects as project (project.id)}
 		<ProjectCard {project} />
 	{/each}
 </section>
