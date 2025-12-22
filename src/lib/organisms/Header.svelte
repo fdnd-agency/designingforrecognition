@@ -25,7 +25,7 @@
 		</div>
 
 		<nav class:open-nav={openNav}>
-			<ul>
+			<ul class="accent-primary">
 				<li><a href="/">Home</a></li>
 				<li><a href="/projects">Projects</a></li>
 				<li><a href="/researcher">Researchers</a></li>
@@ -36,6 +36,10 @@
 
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		box-shadow: 0 2px 4px #0000001a;
+		z-index: 100;
 		container: header-nav / inline-size;
 	}
 
@@ -102,9 +106,20 @@
 		list-style: none;
 
 		a {
-			text-decoration: none;
 			color: var(--color-dark);
 			font-weight: bold;
+			text-decoration: none;
+
+			background-image: linear-gradient(currentColor, currentColor);	
+			background-size: 0% 2px;
+			background-position: 0 100%;
+			background-repeat: no-repeat;
+
+			transition: background-size 0.3s ease;
+
+			&:hover {
+				background-size: 100% 2px;
+			}
 		}
 	}
 
