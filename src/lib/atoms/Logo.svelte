@@ -21,7 +21,6 @@
 
 		font-size: clamp(0.95rem, calc(5vw + 1rem), 1.7rem);
 		line-height: 1;
-		/* white-space: nowrap; */
 		overflow: hidden;
 		text-overflow: ellipsis;
 		align-self: center;
