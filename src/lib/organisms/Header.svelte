@@ -5,28 +5,40 @@
 </script>
 
 <header>
-	<div class="header-mobile">
-		<Logo />
+	<div class="container-layout">
+		<div class="header-mobile">
+			<Logo />
 
-		<button class="menu-toggle" aria-label="Toggle menu" aria-expanded={openNav} on:click={() => (openNav = !openNav)} class:open-menu-icon={openNav}>
-			<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-				<rect class="top-line" x="0.5" y="2.5" width="11" height="1" />
-				<rect class="middle-line" x="0.5" y="5.5" width="11" height="1" />
-				<rect class="bottom-line" x="0.5" y="8.5" width="11" height="1" />
-			</svg>
-		</button>
+			<button
+				class="menu-toggle"
+				aria-label="Toggle menu"
+				aria-expanded={openNav}
+				on:click={() => (openNav = !openNav)}
+				class:open-menu-icon={openNav}
+			>
+				<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+					<rect class="top-line" x="0.5" y="2.5" width="11" height="1" />
+					<rect class="middle-line" x="0.5" y="5.5" width="11" height="1" />
+					<rect class="bottom-line" x="0.5" y="8.5" width="11" height="1" />
+				</svg>
+			</button>
+		</div>
+
+		<nav class:open-nav={openNav}>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/projects">Projects</a></li>
+				<li><a href="/researcher">Researchers</a></li>
+			</ul>
+		</nav>
 	</div>
-
-	<nav class:open-nav={openNav}>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/projects">Projects</a></li>
-			<li><a href="/researcher">Researchers</a></li>
-		</ul>
-	</nav>
 </header>
 
 <style>
+	header {
+		container: header-nav / inline-size;
+	}
+
 	.header-mobile {
 		display: flex;
 		flex-direction: row;
@@ -79,7 +91,6 @@
 	}
 
 	.open-nav {
-		/* position: static; */
 		transform: translateY(0);
 		transition: transform 0.45s ease-out;
 	}
@@ -94,6 +105,35 @@
 			text-decoration: none;
 			color: var(--color-dark);
 			font-weight: bold;
+		}
+	}
+
+	@container header-nav (min-width: 885px) {
+		.container-layout {
+			display: flex;
+			justify-content: space-between;
+			align-items: end;
+			background-color: var(--color-accent-secondary);
+			padding: 1em;
+		}
+
+		.header-mobile {
+			display: contents;
+		}
+
+		button {
+			display: none;
+		}
+
+		nav {
+			position: static;
+			transform: translateY(0);
+			padding: 0;
+
+			ul {
+				display: flex;
+				flex-direction: row;
+			}
 		}
 	}
 </style>

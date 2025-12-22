@@ -1,14 +1,25 @@
 <a href="/" aria-label="Designing for recognition">
-	<span class="logo-text">
-		<span>Designing</span>
-		<span>for</span>
-		<span>Recognition</span>
+	<span class="logo-container">
+		<span class="logo-text">
+			<span>Designing</span>
+			<span>for</span>
+			<span>Recognition</span>
+		</span>
 	</span>
 </a>
 
 <style>
 	a {
+		display: block;
+		width: 100%;
 		text-decoration: none;
+	}
+
+	.logo-container {
+		display: block;
+		width: 100%;
+		container-name: row-logo;
+		container-type: inline-size;
 	}
 
 	.logo-text {
@@ -42,7 +53,7 @@
 		line-height: 1.1;
 	}
 
-	@media (min-width: 680px) {
+	@container row-logo (min-width: 600px) {
 		.logo-text {
 			flex-direction: row;
 		}
