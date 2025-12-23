@@ -22,7 +22,8 @@
 
 			<button
 				class="menu-toggle"
-				aria-label="Toggle menu"
+				aria-label={openNav ? 'Menu sluiten' : 'Menu openen'}
+				aria-controls="main-navigation"
 				aria-expanded={openNav}
 				on:click={() => (openNav = !openNav)}
 				class:open-menu-icon={openNav}
@@ -34,7 +35,7 @@
 			</button>
 		</div>
 
-		<nav class:open-nav={openNav}>
+		<nav id="main-navigation" class:open-nav={openNav}>
 			<ul class="accent-primary">
 				<li><a href="/">Home</a></li>
 				<li><a href="/projects">Projects</a></li>

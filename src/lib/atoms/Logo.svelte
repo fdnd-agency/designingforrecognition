@@ -2,8 +2,8 @@
 	export let scrolled
 </script>
 
-<a href="/" aria-label="Designing for recognition">
-	<span class="logo-container" class:scrolled>
+<a href="/" aria-label="Designing for recognition" lang="en">
+	<span class="logo-container" aria-hidden="true"class:scrolled>
 		<span class="logo-text full">
 			<span>Designing</span>
 			<span>for</span>
@@ -18,6 +18,7 @@
 	a {
 		display: block;
 		width: 100%;
+		max-width: 580px;
 		text-decoration: none;
 	}
 
@@ -49,7 +50,7 @@
 		display: none;
 	}
 
-	@container row-logo (min-width: 600px) {
+	@container row-logo (min-width: 580px) {
 		.logo-text {
 			flex-direction: row;
 		}
