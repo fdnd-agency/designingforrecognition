@@ -22,7 +22,7 @@
 
 			<button
 				class="menu-toggle"
-				aria-label={openNav ? 'Menu sluiten' : 'Menu openen'}
+				aria-label={openNav ? 'Menu sluiten' : 'Menu open maken'}
 				aria-controls="main-navigation"
 				aria-expanded={openNav}
 				on:click={() => (openNav = !openNav)}
