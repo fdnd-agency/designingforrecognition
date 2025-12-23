@@ -1,13 +1,24 @@
 <script>
 	import Logo from '$lib/atoms/Logo.svelte'
+	import { onMount } from 'svelte'
 
 	let openNav = false
+	let scrolled = false
+
+	onMount(() => {
+		const onScroll = () => {
+			scrolled = window.scrollY > 20
+		}
+
+		window.addEventListener('scroll', onScroll)
+		return () => window.removeEventListener('scroll', onScroll)
+	})
 </script>
 
-<header>
+<header class:scrolled={scrolled}>
 	<div class="container-layout">
 		<div class="header-mobile">
-			<Logo />
+			<Logo scrolled={scrolled} />
 
 			<button
 				class="menu-toggle"
@@ -17,8 +28,7 @@
 				class:open-menu-icon={openNav}
 			>
 				<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-					<rect class="top-line" x="0.5" y="2.5" width="11" height="1" />
-					<rect class="middle-line" x="0.5" y="5.5" width="11" height="1" />
+					<rect class="top-line" x="0.5" y="2.5" width="11" height="1" /> <rect class="middle-line" x="0.5" y="5.5" width="11" height="1" />
 					<rect class="bottom-line" x="0.5" y="8.5" width="11" height="1" />
 				</svg>
 			</button>
@@ -110,7 +120,7 @@
 			font-weight: bold;
 			text-decoration: none;
 
-			background-image: linear-gradient(currentColor, currentColor);	
+			background-image: linear-gradient(currentColor, currentColor);
 			background-size: 0% 2px;
 			background-position: 0 100%;
 			background-repeat: no-repeat;
