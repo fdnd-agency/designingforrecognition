@@ -102,6 +102,10 @@
 		align-items: center;
 		margin: var(--spacing-l) 2em var(--spacing-m) 2em;
 		gap: var(--spacing-s);
+
+		h2 {
+			margin-bottom: var(--spacing-s);
+		}
 	}
 
 	form:has(input:focus-visible) .keyboard-info {

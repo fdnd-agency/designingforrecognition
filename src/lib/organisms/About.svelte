@@ -32,7 +32,11 @@
 		flex-direction: column;
 		align-items: center;
 		background-color: var(--color);
-		margin-bottom: 2rem;
+		padding: var(--spacing-l) 0 var(--spacing-m) 0;
+
+		h2 {
+			margin-bottom: var(--spacing-m);
+		}
 	}
 
 	p {
@@ -46,7 +50,7 @@
 		align-items: center;
 		gap: 1em;
 		padding: 0;
-		margin: 0 1em;
+		margin: var(--spacing-m) 1em 0 1em;
 
 		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
 			flex-direction: row;
@@ -81,7 +85,7 @@
 			width: 250px;
 
 			@media (min-width: 350px) {
-				width: 290px;
+				width: 310px;
 			}
 
 			h3 {
