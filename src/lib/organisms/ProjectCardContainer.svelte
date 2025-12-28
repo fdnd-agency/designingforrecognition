@@ -19,7 +19,7 @@
 	})
 </script>
 
-<section class="neutral projects-grid">
+<section class="neutral">
 	<h2 id="project-container" tabindex="-1">Projecten</h2>
 
 	{#each Allprojects as project (project.id)}
@@ -30,8 +30,8 @@
 <style>
 	section {
 		display: grid;
-		gap: 2.5em;
-		padding: 5em 1em;
+		gap: var(--spacing-m);
+		padding: var(--spacing-l) 1em var(--spacing-m) 1em;
 		background-color: var(--color);
 
 		h2 {
@@ -43,12 +43,12 @@
 		@media (min-width: 420px) {
 			grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
 			align-items: stretch;
-			padding: 5em clamp(1rem, 5vw, 5rem);
+			padding: var(--spacing-l) clamp(1rem, 5vw, 5rem);
 		}
 
 		@media (min-width: 1225px) {
-			grid-template-columns: repeat(2, minmax(375px, 1fr));
-			padding: 5em clamp(1rem, 15vw, 7rem);
+			grid-template-columns: repeat(3, 1fr);
+			padding: var(--spacing-l) clamp(1rem, 15vw, 7rem);
 		}
 	}
 </style>
