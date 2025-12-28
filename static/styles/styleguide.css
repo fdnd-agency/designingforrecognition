@@ -30,6 +30,14 @@ body {
     /* font-weight */
     --font-weight-regular: 400;
     --font-weight-bold: 600;
+
+    /* spacing */
+    --spacing-xl: 5rem;
+    --spacing-l: 4rem;
+    --spacing-m: 2rem;
+    --spacing-s: 1rem;
+    --spacing-xs: 0.5rem;
+
 }
 
 /* ====================================================== COLORS ====================================================== */

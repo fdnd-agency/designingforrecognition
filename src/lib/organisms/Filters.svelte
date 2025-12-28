@@ -33,8 +33,6 @@
 	<form {...filterProjects}>
 		<h2>Filteren</h2>
 
-		<p class="keyboard-info">Klik op de spatiebalk om het filter aan te vinken</p>
-
 		<fieldset>
 			{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
 				<label>
@@ -102,18 +100,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 5em 2em 2em 2em;
-		gap: 2em;
-	}
-
-	.keyboard-info {
-		padding: 0.5em;
-		font-size: 1.3rem;
-		background: var(--color-accent-secondary);
-		color: var(--color-dark);
-		border-radius: 20px;
-		white-space: nowrap;
-		opacity: 0;
+		margin: var(--spacing-l) 2em var(--spacing-m) 2em;
+		gap: var(--spacing-s);
 	}
 
 	form:has(input:focus-visible) .keyboard-info {
@@ -124,7 +112,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		border: none;
-		gap: 0.5em;
+		gap: var(--spacing-s);
 	}
 
 	label {
@@ -162,19 +150,16 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0.5em;
+		gap: var(--spacing-s);
 
 		button {
 			border: none;
-
-			&:nth-of-type(1) {
-				margin-bottom: 1.2em;
-			}
 		}
 	}
 
 	.filter-results {
 		opacity: 0;
+		position: absolute;
 	}
 
 	@container filters (min-width: 545px) {
@@ -184,6 +169,10 @@
 			flex-wrap: wrap;
 			justify-content: center;
 			gap: 2em;
+		}
+
+		.form-buttons {
+			flex-direction: row;
 		}
 	}
 </style>

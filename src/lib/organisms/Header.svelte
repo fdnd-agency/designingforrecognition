@@ -62,7 +62,7 @@
 		position: relative;
 		justify-content: space-between;
 		background-color: var(--color-accent-secondary);
-		padding: 1em;
+		padding: var(--spacing-s);
 		z-index: 10;
 	}
 
