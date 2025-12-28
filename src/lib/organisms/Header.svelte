@@ -1,122 +1,181 @@
 <script>
 	import Logo from '$lib/atoms/Logo.svelte'
+	import { onMount } from 'svelte'
 
-	// Menu functionality
-	let isMenuOpen = false
-	const toggleMenu = () => (isMenuOpen = !isMenuOpen)
-	const closeMenu = () => (isMenuOpen = false)
+	let toggleNav = false
+	let scrolled = false
+
+	onMount(() => {
+		toggleNav = true
+
+		const onScroll = () => {
+			scrolled = window.scrollY > 20
+		}
+
+		window.addEventListener('scroll', onScroll)
+		return () => window.removeEventListener('scroll', onScroll)
+	})
 </script>
 
-<header>
-	<nav>
-		<Logo />
-		<button type="button" class="menu-mobile" on:click={toggleMenu} aria-label="Toggle menu" aria-expanded={isMenuOpen} aria-controls="main-menu">
-			<span class:open={isMenuOpen}></span>
-			<span class:open={isMenuOpen}></span>
-			<span class:open={isMenuOpen}></span>
-		</button>
-		<ul id="main-menu" class:open={isMenuOpen}>
-			<li><a href="/" on:click={closeMenu}>Home</a></li>
-			<li><a href="/projects" on:click={closeMenu}>Projects</a></li>
-			<li><a href="/researcher" on:click={closeMenu}>Researchers</a></li>
-		</ul>
-	</nav>
+<header class:scrolled>
+	<div class="container-layout">
+		<div class="header-mobile">
+			<Logo {scrolled} />
+
+			<button
+				class="menu-toggle"
+				aria-controls="main-navigation"
+				aria-expanded={!toggleNav}
+				aria-label={!toggleNav ? 'Menu sluiten' : 'Menu open maken'}
+				on:click={() => (toggleNav = !toggleNav)}
+				class:open-menu-icon={toggleNav}
+			>
+				<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+					<rect class="top-line" x="0.5" y="2.5" width="11" height="1" /> <rect class="middle-line" x="0.5" y="5.5" width="11" height="1" />
+					<rect class="bottom-line" x="0.5" y="8.5" width="11" height="1" />
+				</svg>
+			</button>
+		</div>
+
+		<nav id="main-navigation" class:close-nav={toggleNav}>
+			<ul class="accent-primary">
+				<li><a href="/">Home</a></li>
+				<li><a href="/projects">Projects</a></li>
+				<li><a href="/researcher">Researchers</a></li>
+			</ul>
+		</nav>
+	</div>
 </header>
 
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		box-shadow: 0 2px 4px #0000001a;
+		z-index: 100;
+		container: header-nav / inline-size;
+	}
+
+	.header-mobile {
 		display: flex;
-		position: fixed;
-		inset: 0 0 auto 0;
-		align-items: center;
+		flex-direction: row;
+		position: relative;
 		justify-content: space-between;
 		background-color: var(--color-accent-secondary);
-		padding: 1rem 2rem;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		z-index: 1000;
-		font-family: var(--font-size-primary);
+		padding: 1em;
+		z-index: 10;
+	}
+
+	button {
+		width: 3em;
+		background-color: inherit;
+		border: none;
+		cursor: pointer;
+		justify-self: end;
+		align-self: start;
+
+		.top-line {
+			transform: translateY(3px) rotate(45deg);
+		}
+
+		.middle-line {
+			opacity: 0;
+		}
+
+		.bottom-line {
+			transform: translateY(-3px) rotate(-45deg);
+		}
+	}
+
+	svg rect {
+		transform-box: fill-box;
+		transform-origin: center;
+		transition:
+			transform 0.25s ease-out,
+			opacity 0.2s ease-out;
+	}
+
+	.open-menu-icon {
+		.top-line,
+		.bottom-line {
+			transform: translateY(0) rotate(0);
+		}
+
+		.middle-line {
+			opacity: 1;
+		}
 	}
 
 	nav {
+		background-color: var(--color-accent-secondary);
+		transform: translateY(0);
+
+		position: absolute;
+		left: 0;
+		right: 0;
+		transition: transform 0.45s ease-out;
+		padding: 1em;
+	}
+
+	.close-nav {
+		transform: translateY(-300%);
+		transition: transform 0.45s ease-out;
+	}
+
+	ul {
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	nav ul {
-		list-style: none;
-		display: flex;
-		gap: 1.5rem;
-
-		/* Mobile behavior: hide menu, show when .open */
-		@media (max-width: 544px) {
-			display: none;
-			flex-direction: column;
-			position: absolute;
-			inset: 100% 0 auto 0;
-			background: var(--color-accent-secondary);
-			gap: 0;
-			padding: 1rem 1.5rem;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-			&.open {
-				display: flex;
-			}
-
-			li {
-				padding: 0.5rem 0;
-			}
-		}
-	}
-
-	a {
-		text-decoration: none;
-		color: var(--color-dark);
-		font-weight: 600;
-		font-size: 1rem;
-		transition: color 0.3s ease;
-	}
-
-	a:focus,
-	a:hover {
-		color: var(--color-accent-primary);
-	}
-
-	.menu-mobile {
-		display: inline-flex;
 		flex-direction: column;
-		gap: 4px;
-		width: 36px;
-		height: 36px;
-		padding: 6px;
-		border: none;
-		background: transparent;
-		cursor: pointer;
+		gap: 1em;
+		list-style: none;
 
-		/* Tablet + Desktop: hide hamburger menu and show buttons*/
-		@media (min-width: 545px) {
-			display: none;
+		a {
+			color: var(--color-dark);
+			font-weight: bold;
+			text-decoration: none;
+
+			background-image: linear-gradient(currentColor, currentColor);
+			background-size: 0% 2px;
+			background-position: 0 100%;
+			background-repeat: no-repeat;
+
+			transition: background-size 0.3s ease;
+
+			&:hover {
+				background-size: 100% 2px;
+			}
 		}
 	}
 
-	.menu-mobile span {
-		display: block;
-		height: 2px;
-		background: var(--color-dark);
-		border-radius: 2px;
-		transition:
-			transform 0.25s ease,
-			opacity 0.25s ease;
-	}
+	@container header-nav (min-width: 885px) {
+		.container-layout {
+			display: flex;
+			justify-content: space-between;
+			align-items: end;
+			background-color: var(--color-accent-secondary);
+			padding: 1em;
+		}
 
-	.menu-mobile span.open:nth-child(1) {
-		transform: translateY(6px) rotate(45deg);
-	}
-	.menu-mobile span.open:nth-child(2) {
-		opacity: 0;
-	}
-	.menu-mobile span.open:nth-child(3) {
-		transform: translateY(-6px) rotate(-45deg);
+		.header-mobile {
+			display: contents;
+		}
+
+		button {
+			display: none;
+		}
+
+		nav {
+			position: static;
+			transform: translateY(0);
+			padding: 0;
+
+			ul {
+				display: flex;
+				flex-direction: row;
+			}
+		}
+
+		nav.close-nav {
+			transform: translateY(0);
+		}
 	}
 </style>

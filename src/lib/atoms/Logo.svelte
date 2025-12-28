@@ -1,27 +1,68 @@
-<a href="/" class="logo" aria-label="Civic Interaction Design">
-	<span class="logo-text">Designing for Recognition</span>
+<script>
+	export let scrolled
+</script>
+
+<a href="/" aria-label="Designing for recognition" lang="en">
+	<span class="logo-container" aria-hidden="true"class:scrolled>
+		<span class="logo-text full">
+			<span>Designing</span>
+			<span>for</span>
+			<span>Recognition</span>
+		</span>
+
+		<span class="logo-text short" aria-hidden="true">DFR</span>
+	</span>
 </a>
 
 <style>
-	.logo {
+	a {
+		display: block;
+		width: 100%;
+		max-width: 580px;
 		text-decoration: none;
-		display: inline-block;
-		margin: 0 15px 0 0;
+	}
+
+	.logo-container {
+		display: block;
+		width: 100%;
+		container-name: row-logo;
+		container-type: inline-size;
 	}
 
 	.logo-text {
-		font-weight: 700;
-		text-transform: uppercase;
-		background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(13, 56, 79, 1) 44%, rgba(139, 203, 189, 1) 100%);
+		--gradient: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(13, 56, 79, 1) 15%, rgba(139, 203, 189, 1) 50%);
+
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+		background: var(--gradient);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
+		text-transform: uppercase;
+		font-size: clamp(1rem, calc(4vw + 1rem), 2.5rem);
+		font-weight: bold;
+		line-height: 1.1;
+	}
 
-		font-size: clamp(0.95rem, 2.6vw, 1.7rem);
-		line-height: 1;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		align-self: center;
+	.logo-text.short {
+		--gradient: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(13, 56, 79, 1) 5%, rgba(139, 203, 189, 1) 13%);
+		display: none;
+	}
+
+	@container row-logo (min-width: 580px) {
+		.logo-text {
+			flex-direction: row;
+		}
+	}
+
+	@media (max-width: 692px) {
+		.logo-container.scrolled .logo-text.full {
+			display: none;
+		}
+
+		.logo-container.scrolled .logo-text.short {
+			display: block;
+		}
 	}
 </style>
