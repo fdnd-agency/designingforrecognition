@@ -38,8 +38,9 @@
 				href="#partners"
 				on:click|preventDefault={toggleSponsors}
 				style="font-weight: 600; color: black; font-style:italic; text-decoration:none;"
-				role="button">Onze Partners</a
-			>
+				role="button"
+				>Onze Partners
+			</a>
 		</section>
 
 		<section class="footer-right">
@@ -63,47 +64,50 @@
 <style>
 	.footer {
 		background-color: var(--color-accent-secondary);
+		padding: var(--spacing-l) 3em;
+
+		.footer-left h2,
+		.footer-right h2 {
+			margin-top: var(--spacing-l);
+			margin-bottom: var(--spacing-s);
+		}
 
 		@media (min-width: 768px) {
-			padding: 0rem 0vw;
+			padding: 0 0 3em 0;
 		}
 	}
 
 	.footer-container {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
-		max-width: 1400px;
+		gap: var(--spacing-l);
 		margin-inline: auto;
-		padding: 0 3em;
 
 		@media (min-width: 768px) {
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: flex-start;
-			gap: 16rem;
+			gap: 8rem;
+			margin: 0 3em;
 		}
 
 		@media (min-width: 1024px) {
 			justify-content: center;
+			margin: 0;
 		}
 	}
 
-	/* kolommen */
 	.footer-left,
 	.footer-right {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
-		margin-top: 1em;
-		margin-bottom: 2em;
+		gap: var(--spacing-s);
 
 		@media (min-width: 768px) {
 			max-width: 500px;
 		}
 	}
 
-	/* titels & tekst */
 	.project-title,
 	.community-heading {
 		font-size: var(--font-size-title-paragraph);
@@ -114,7 +118,6 @@
 		max-width: clamp(40ch, 80vw, 50ch);
 	}
 
-	/* contact */
 	.contact-block {
 		display: flex;
 		flex-direction: column;
@@ -127,7 +130,6 @@
 		}
 	}
 
-	/* nav */
 	.footer-nav {
 		display: flex;
 		flex-direction: column;
@@ -154,13 +156,11 @@
 		}
 	}
 
-	/* brandblok + logo */
 	.brand-block {
 		display: flex;
 		align-items: flex-start;
 		flex-wrap: wrap;
 		gap: 1rem;
-		margin-top: 1.5rem;
 	}
 
 	.brand-left {
