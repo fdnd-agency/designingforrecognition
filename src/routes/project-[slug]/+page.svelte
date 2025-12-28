@@ -1,7 +1,5 @@
 <script>
 	import { DetailsMain } from '$lib'
-	// export let data
-	// const projectsDetails = 
 	let { data } = $props()
 </script>
 
