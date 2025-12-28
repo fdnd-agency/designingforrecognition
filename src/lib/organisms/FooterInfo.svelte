@@ -5,18 +5,16 @@
 	export let sponsorsData
 
 	// JS disabled functie
-	import { onMount } from 'svelte';
-let showSponsors = true    
-onMount(() => {
-showSponsors = false
-});
-const toggleSponsors = () => {
-showSponsors = !showSponsors
-if (showSponsors)
-    requestAnimationFrame(() =>
-    document.querySelector('.sponsors')?.scrollIntoView({ behavior: 'smooth' })
-    )
-}
+	import { onMount } from 'svelte'
+	let showSponsors = true
+	onMount(() => {
+		showSponsors = false
+	})
+	// toggle
+	const toggleSponsors = () => {
+		showSponsors = !showSponsors
+		if (showSponsors) requestAnimationFrame(() => document.querySelector('.sponsors')?.scrollIntoView({ behavior: 'smooth' }))
+	}
 </script>
 
 <footer class="footer">
@@ -32,17 +30,16 @@ if (showSponsors)
 			</address>
 
 			<nav class="footer-nav">
-				<a href="partners">About this project</a>
-				<a
-				href="partners"
-				on:click|preventDefault={toggleSponsors}
-				role="button"
-				
-			>
-				Partners
-			</a>
+				<a href="about">About this project</a>
 				<a href="signal">Signal</a>
 			</nav>
+
+			<a
+				href="#partners"
+				on:click|preventDefault={toggleSponsors}
+				style="font-weight: 600; color: black; font-style:italic; text-decoration:none;"
+				role="button">Onze Partners</a
+			>
 		</section>
 
 		<section class="footer-right">
@@ -60,13 +57,8 @@ if (showSponsors)
 			</section>
 		</section>
 	</section>
-	<SponsorCarousel
-	{sponsorsData} 
-	visible={showSponsors}
-	/>
+	<SponsorCarousel {sponsorsData} visible={showSponsors} />
 </footer>
-
-
 
 <style>
 	.footer {
@@ -77,7 +69,6 @@ if (showSponsors)
 		}
 	}
 
-	/* layout */
 	.footer-container {
 		display: flex;
 		flex-direction: column;
@@ -106,7 +97,7 @@ if (showSponsors)
 		gap: 1.5rem;
 		margin-top: 1em;
 		margin-bottom: 2em;
-		
+
 		@media (min-width: 768px) {
 			max-width: 500px;
 		}
@@ -143,12 +134,12 @@ if (showSponsors)
 		gap: 1rem;
 
 		@media (min-width: 768px) {
-			gap: 2rem;
+			gap: 0.5rem;
 		}
 
 		@media (min-width: 1024px) {
 			flex-direction: row;
-			gap: 2.5rem;
+			gap: 1em;
 			white-space: nowrap;
 		}
 
@@ -177,8 +168,4 @@ if (showSponsors)
 		flex-direction: column;
 		font-weight: 600;
 	}
-
-	
 </style>
-
-
