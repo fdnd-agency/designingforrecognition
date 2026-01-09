@@ -69,7 +69,6 @@
 		.footer-left h2,
 		.footer-right h2 {
 			margin-top: var(--spacing-l);
-			margin-bottom: var(--spacing-s);
 		}
 
 		@media (min-width: 768px) {
@@ -114,8 +113,8 @@
 	}
 
 	.community-text {
-		line-height: 1.5;
 		max-width: clamp(40ch, 80vw, 50ch);
+		margin-bottom: 2em;
 	}
 
 	.contact-block {

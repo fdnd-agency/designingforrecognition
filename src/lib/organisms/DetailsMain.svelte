@@ -180,13 +180,14 @@
 		align-items: center;
 
 		p {
-			width: clamp(25ch, 75%, 85ch);
+			width: clamp(25ch, 85%, 85ch);
+			margin-bottom: 2em;
 		}
 
 		strong {
 			display: inline-block;
 			font-size: var(--font-size-title-paragraph);
-			margin: 0.5em 0 0.5em 0;
+			margin-bottom: 0.5em;
 		}
 	}
 
