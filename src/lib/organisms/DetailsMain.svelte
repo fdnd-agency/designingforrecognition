@@ -180,7 +180,7 @@
 		align-items: center;
 
 		p {
-			width: clamp(25ch, 85%, 85ch);
+			width: clamp(25ch, 90%, 85ch);
 			margin-bottom: 2em;
 		}
 

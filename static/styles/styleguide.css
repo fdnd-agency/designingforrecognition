@@ -11,11 +11,13 @@ body {
     --color-accent-primary: #8bcbbd;
     --color-accent-secondary: #ebdac4;
 
-    /* font */
+    /* text */
     font-family: 'Geomanist', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: var(--font-weight-regular);
     line-height: 1.5;
+    letter-spacing: 0.06em;
+    word-spacing: 0.16em;
     
     /* font-size */
     /* 64px */
