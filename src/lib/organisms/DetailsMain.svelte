@@ -2,7 +2,6 @@
 	import { backButton } from '$lib'
 	export let projectsDetails
 	const { title, img, date, end_date, content } = projectsDetails
-
 </script>
 
 <section class="content-container primary">
@@ -120,7 +119,7 @@
 		}
 
 		span {
-			font-size: var(--font-size-primary);
+			font-size: 18px;
 			font-style: italic;
 		}
 	}

@@ -13,11 +13,11 @@ body {
 
     /* font */
     font-family: 'Geomanist', sans-serif;
-    font-size: var(--font-size-primary);
+    font-size: 18px;
     font-weight: var(--font-weight-regular);
+    line-height: 1.5;
     
     /* font-size */
-    --font-size-primary: 1.125rem;
     /* 64px */
     --font-size-title-page: clamp(3rem, calc(8.5vw + 1rem), 4rem);
     /* 48px */
