@@ -194,6 +194,10 @@
 	.text-fallback {
 		text-align: center;
 
+		h3 {
+			text-wrap: balance;
+		}
+
 		p {
 			line-height: 1.5rem;
 		}
