@@ -78,7 +78,7 @@
 
 	.skip-link {
 		position: absolute;
-		top: 4em;
+		top: 5em;
 		left: 1em;
 		background-color: var(--color-accent-primary);
 		padding: 0.5em;
@@ -123,7 +123,7 @@
 		transition: background-color 0.2s ease-out;
 		position: relative;
 		background-color: var(--color-accent-secondary);
-		width: clamp(6em, 30vw, 9em);
+		width: clamp(6em, 100%, 8.5em);
 
 		&:has(input:checked),
 		&:has(input:focus-visible),
@@ -144,6 +144,7 @@
 	button {
 		font-size: 1.3rem;
 		padding: 0.5em;
+		min-height: 52px;
 		border-radius: 20px;
 		text-align: center;
 		align-self: center;
@@ -158,6 +159,7 @@
 		gap: var(--spacing-s);
 
 		button {
+			width: 8.5em;
 			border: none;
 			background-color: var(--color-accent-primary);
 
@@ -185,7 +187,6 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: center;
-			gap: 2em;
 		}
 
 		.form-buttons {
