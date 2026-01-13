@@ -34,7 +34,7 @@
 		<h2>Filteren</h2>
 
 		<fieldset>
-			{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
+			{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
 				<label>
 					<input {...filterProjects.fields.execution.as('checkbox', value)} />
 					{value}
@@ -122,6 +122,16 @@
 	label {
 		transition: background-color 0.2s ease-out;
 		position: relative;
+		background-color: var(--color-accent-secondary);
+		width: clamp(6em, 30vw, 9em);
+
+		&:has(input:checked),
+		&:has(input:focus-visible),
+		&:hover,
+		&:focus-visible {
+			background-color: var(--color-accent-primary);
+			transition: background-color 0.2s ease-out;
+		}
 
 		input {
 			position: absolute;
@@ -137,17 +147,8 @@
 		border-radius: 20px;
 		text-align: center;
 		align-self: center;
-		background-color: var(--color-accent-secondary);
 		color: var(--color-dark);
 		cursor: pointer;
-
-		&:has(input:checked),
-		&:has(input:focus-visible),
-		&:hover,
-		&:focus-visible {
-			background-color: var(--color-accent-primary);
-			transition: background-color 0.2s ease-out;
-		}
 	}
 
 	.form-buttons {
@@ -158,6 +159,18 @@
 
 		button {
 			border: none;
+			background-color: var(--color-accent-primary);
+
+			&:hover,
+			&:focus-visible {
+				scale: 1.05;
+				transition: 0.5 ease-in;
+			}
+
+			&:active {
+				scale: 1;
+				transition: 0.5 ease-in;
+			}
 		}
 	}
 
