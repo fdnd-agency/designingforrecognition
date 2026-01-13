@@ -1,7 +1,6 @@
 <script>
 	import { filterProjects } from '$lib/remote-functions/filter.remote'
 	import { onMount, tick } from 'svelte'
-	import { goto } from '$app/navigation'
 
 	let { projectCount } = $props()
 

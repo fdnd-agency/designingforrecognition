@@ -2,14 +2,19 @@
 	import Logo from '$lib/atoms/Logo.svelte'
 	import { onMount } from 'svelte'
 
-	let toggleNav = false
+	let menuOpen = false
 	let scrolled = false
 
+	const closeMenu = () => (menuOpen = true)
+
 	onMount(() => {
-		toggleNav = true
+		menuOpen = true
 
 		const onScroll = () => {
 			scrolled = window.scrollY > 20
+			if (!menuOpen) {
+				closeMenu()
+			}
 		}
 
 		window.addEventListener('scroll', onScroll)
@@ -25,10 +30,10 @@
 			<button
 				class="menu-toggle"
 				aria-controls="main-navigation"
-				aria-expanded={!toggleNav}
-				aria-label={!toggleNav ? 'Menu sluiten' : 'Menu open maken'}
-				on:click={() => (toggleNav = !toggleNav)}
-				class:open-menu-icon={toggleNav}
+				aria-expanded={!menuOpen}
+				aria-label={!menuOpen ? 'Menu sluiten' : 'Menu open maken'}
+				on:click={() => (menuOpen = !menuOpen)}
+				class:open-menu-icon={menuOpen}
 			>
 				<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
 					<rect class="top-line" x="0.5" y="2.5" width="11" height="1" /> <rect class="middle-line" x="0.5" y="5.5" width="11" height="1" />
@@ -37,13 +42,17 @@
 			</button>
 		</div>
 
-		<nav id="main-navigation" class:close-nav={toggleNav}>
+		<nav id="main-navigation" class:close-nav={menuOpen}>
 			<ul class="accent-primary">
-				<li><a href="/">Home</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/researcher">Researchers</a></li>
+				<li><a href="#" on:click={closeMenu}>Home</a></li>
+				<li><a href="#" on:click={closeMenu}>Projects</a></li>
+				<li><a href="#" on:click={closeMenu}>Researchers</a></li>
 			</ul>
 		</nav>
+
+		{#if !menuOpen}
+			<div class="backdrop" on:click={closeMenu} aria-hidden="true" />
+		{/if}
 	</div>
 </header>
 
@@ -109,6 +118,7 @@
 	nav {
 		background-color: var(--color-accent-secondary);
 		transform: translateY(0);
+		z-index: 9;
 
 		position: absolute;
 		left: 0;
@@ -146,6 +156,14 @@
 		}
 	}
 
+	.backdrop {
+		cursor: pointer;
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 8;
+	}
+
 	@container header-nav (min-width: 885px) {
 		.container-layout {
 			display: flex;
@@ -176,6 +194,10 @@
 
 		nav.close-nav {
 			transform: translateY(0);
+		}
+
+		.backdrop {
+			display: none;
 		}
 	}
 </style>
