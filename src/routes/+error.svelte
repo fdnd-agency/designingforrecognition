@@ -27,7 +27,7 @@
 	<section>
 		<h2>{page.error?.message}</h2>
 		<p>Deze pagina bestaat helaas niet.</p>
-		<a href="/">Terug naar de homepagina</a>
+		<a href="/">Terug naar de home pagina</a>
 		<button on:click={() => history.back()}> Terug naar de vorige pagina</button>
 	</section>
 </article>
@@ -45,4 +45,15 @@
 	article {
 		margin: 5em 0;
 	}
+
+    a, button {
+        color: #0000EE;
+        font-size: var(--font-size-primary);
+    }
+
+    button {
+        border: none;
+        background-color: inherit;
+        text-decoration: underline;
+    }
 </style>
