@@ -28,7 +28,7 @@
 		<h2>{page.error?.message}</h2>
 		<p>Deze pagina bestaat helaas niet.</p>
 		<a href="/">Terug naar de homepagina</a>
-		<a href="/">Terug naar de vorige pagina</a>
+		<button on:click={() => history.back()}> Terug naar de vorige pagina</button>
 	</section>
 </article>
 
@@ -39,10 +39,10 @@
 		flex-direction: column;
 		place-self: center;
 		text-align: center;
-        gap: 0.5em;
+		gap: 0.5em;
 	}
 
-    article {
-        margin: 5em 0;
-    }
+	article {
+		margin: 5em 0;
+	}
 </style>
