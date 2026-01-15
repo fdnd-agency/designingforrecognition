@@ -8,8 +8,10 @@
 		}
 	]
 </script>
+
 <!-- voor de toggle -->
-<section class="sponsors" style="display: {visible ? 'flex' : 'none'}">	<header class="title">
+<section class="sponsors" style="display: {visible ? 'flex' : 'none'}">
+	<header class="title">
 		<h2>Onze partners</h2>
 	</header>
 
@@ -96,20 +98,24 @@
 		width: auto;
 		object-fit: contain;
 
-		@media (min-width: 726px){
-			max-height: 5.5em; 
+		@media (min-width: 726px) {
+			max-height: 5.5em;
 		}
 	}
 
 	@keyframes marquee-left {
-	0%   { transform: translateX(0); }      
-	100% { transform: translateX(-50%); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.logo-strip-top {
-		animation: none;
-		transform: none;
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
 	}
-}
+
+	@media (prefers-reduced-motion: reduce) {
+		.logo-strip-top {
+			animation: none;
+			transform: none;
+		}
+	}
 </style>
