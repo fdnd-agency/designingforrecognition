@@ -11,21 +11,19 @@ body {
     --color-accent-primary: #8bcbbd;
     --color-accent-secondary: #ebdac4;
 
-    /* font */
+    /* text */
     font-family: 'Geomanist', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: var(--font-weight-regular);
     line-height: 1.5;
+    letter-spacing: 0.06em;
+    word-spacing: 0.16em;
     
     /* font-size */
-    /* 64px */
-    --font-size-title-page: clamp(3rem, calc(8.5vw + 1rem), 4rem);
-    /* 48px */
-    --font-size-title-section: clamp(2.25rem, calc(6vw + 1rem), 3rem);
-    /* 36px */
-    --font-size-title-card: clamp(2rem, calc(5vw + 1rem), 2.25rem);
-    /* 28px */
-    --font-size-title-paragraph: clamp(1.35rem, calc(3vw + 1rem), 1.75rem);
+    --font-size-title-page: clamp(3.129rem, calc(8.5vw + 1rem), 4.162rem);
+    --font-size-title-section: clamp(2.353rem, calc(6vw + 1rem), 3.129rem);
+    --font-size-title-card: clamp(1.769rem, calc(5vw + 1rem), 2.353rem);
+    --font-size-title-paragraph: clamp(1.33rem, calc(3vw + 1rem), 1.769rem);
 
     /* font-weight */
     --font-weight-regular: 400;

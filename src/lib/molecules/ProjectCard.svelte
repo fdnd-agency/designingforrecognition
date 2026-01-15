@@ -70,6 +70,7 @@
 
 		h3 {
 			grid-row: 2;
+			text-wrap: balance;
 		}
 
 		img {

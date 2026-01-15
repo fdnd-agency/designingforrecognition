@@ -42,6 +42,7 @@
 	p {
 		width: clamp(25ch, 90%, 85ch);
 		line-height: 1.5rem;
+		margin-bottom: var(--spacing-m);
 	}
 
 	ul {
@@ -50,7 +51,7 @@
 		align-items: center;
 		gap: 1em;
 		padding: 0;
-		margin: var(--spacing-m) 1em 0 1em;
+		margin: 0 1em 0 1em;
 
 		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
 			flex-direction: row;

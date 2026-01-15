@@ -180,18 +180,23 @@
 		align-items: center;
 
 		p {
-			width: clamp(25ch, 75%, 85ch);
+			width: clamp(25ch, 90%, 85ch);
+			margin-bottom: 2em;
 		}
 
 		strong {
 			display: inline-block;
 			font-size: var(--font-size-title-paragraph);
-			margin: 0.5em 0 0.5em 0;
+			margin-bottom: 0.5em;
 		}
 	}
 
 	.text-fallback {
 		text-align: center;
+
+		h3 {
+			text-wrap: balance;
+		}
 
 		p {
 			line-height: 1.5rem;
