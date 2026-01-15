@@ -18,7 +18,7 @@
 	a {
 		display: block;
 		width: 100%;
-		max-width: 580px;
+		max-width: 590px;
 		text-decoration: none;
 	}
 
@@ -50,7 +50,7 @@
 		display: none;
 	}
 
-	@container row-logo (min-width: 580px) {
+	@container row-logo (min-width: 590px) {
 		.logo-text {
 			flex-direction: row;
 		}
