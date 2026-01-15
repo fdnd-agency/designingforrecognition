@@ -1,39 +1,49 @@
 # Team MIV
 
 ## Team canvas
+
 <img width="1493" height="1065" alt="image" src="https://github.com/user-attachments/assets/17ea5337-e26f-4cec-972e-94cabaf74c31" />
 
-
-
 ## Afspraken over samenwerking
+
 - Commits altijd linken aan issues
-- Pull request template volgen 
-- Issues labelen en assignen 
+- Pull request template volgen
+- Issues labelen en assignen
 - Moscow principe hanteren
 - Pull request controleren als de code conventies aangehouden zijn
-- Voor elke vrijdag alle issues met must have label af hebben 
-- pull request niet langer 1 dag open laten 
-- min 1 persoon pull request nakijken en max 2 
-- Issues wegen en als de issue nogsteeds te groot dan wegen we de issue opnieuw en evt verdeling 
- 
-
+- Voor elke vrijdag alle issues met must have label af hebben
+- pull request niet langer 1 dag open laten
+- min 1 persoon pull request nakijken en max 2
+- Issues wegen en als de issue nogsteeds te groot dan wegen we de issue opnieuw en evt verdeling
 
 ## Code conventies
+
 Voor dit project zullen wij de [code conventies](https://docs.fdnd.nl/conventies.html) volgen van FDND.
 
-
-
 ## git flow
+
 ### Branching strategy
+
 De main branch wordt gebruikt voor het hosten van de live website. hierin werken wij niet.
 
 Wij werken in een branch branch, deze branch heet `dev`. Wanneer je iets aan het bouwen bent, maak je een nieuwe branch vanuit de dev branch. Zodra de feature klaar is, kun je een pull request aanmaken. Als deze wordt goedgekeurd door het team, mag de branch worden gemerged met de dev branch.
 
-Nadat een branch gemerged is, moet deze worden verwijderd om overzicht te houden over de actieve branches.
+Nadat een branch is gemerged, moet deze worden gearchiveerd om overzicht te houden over de actieve branches.  
+[Hier](https://docs.fdnd.nl/conventies.html#archiving-branches) staat hoe je dit kunt doen, met een voorbeeld van het archiveren van branches:
+<img width="952" height="256" alt="Image" src="https://github.com/user-attachments/assets/062cb3bc-264f-4594-b2f3-bebbebd59e38" />
+
+De namen van branches worden aangemaakt door GitHub.
+In een issue kun je aan de rechterkant een branch laten maken:  
+<img width="480" height="136" alt="image" src="https://github.com/user-attachments/assets/c472f00a-63d3-4081-a57d-426ffdfac02d" />
 
 
+Wanneer je op deze manier een branch aanmaakt, voegt GitHub automatisch het issue nummer met de issue titel toe aan de branchnaam. Als de titel die erbij staat erg lang is, mag je deze inkorten, maar de naam moet wel blijven overeenkomen met de titel van het issue:  
+<img width="513" height="457" alt="Image" src="https://github.com/user-attachments/assets/2208071a-7252-4ce9-bbfe-f7a0cf61e111" />
+
+Door branches op deze manier te maken, blijft het altijd consistent.
 
 ## commit strategy
+
 Wij gebruiken conventional commits, dit zijn regels die gevolgd moeten worden bij het schrijven van een commit message.
 
 Toegestane commit types kun je vinden [hier](https://docs.fdnd.nl/conventies.html#allowed-commit-types).
@@ -42,61 +52,52 @@ Aan het eind van de commit message vermeld je ook altijd het issue-nummer.
 
 Voorbeelden van correcte commit messages zijn te vinden [hier](https://docs.fdnd.nl/conventies.html#example-commits).
 
-
-
 ## naamgeving
+
 regels voor naamgeving in HTML, CSS en JavaScript staan [hier beschreven](https://docs.fdnd.nl/conventies.html#naamgeving)
 
-
-
 ## issues toegewezen
-Issues worden eerst besproken voordat ze worden toegewezen (assigned). Op deze manier zorgen we ervoor dat niet één persoon meer werk krijgt dan de ander, of dat iemand alleen de makkelijke issues oppakt.
-De issues worden toegewezen op maandag, woensdag en vrijdag. Tijdens de bespreking zorgen we ervoor dat al het werk duidelijk besproken wordt.
+### Huidige werkwijze (vanaf sprint 17)
+Vanaf sprint 17 hebben we onze werkwijze aangepast. Aan het begin van de sprint worden alle issues die binnen de sprint opgepakt moeten worden in de To Do kolom geplaatst. Teamleden pakken steeds de eerstvolgende beschikbare issue op en starten pas met een nieuwe issue wanneer de vorige is afgerond.
+
+### Oude werkwijze (tot en met sprint 16)
+Issues werden eerst besproken voordat ze werden toegewezen (assigned). Op deze manier zorgden we ervoor dat het werk eerlijk werd verdeeld en dat niemand alleen de makkelijkste issues oppakte.  
+
 
 
 
 
 ## Definition of Ready
+
 - the user story is written as `as ... I would like ... so that ...`
 - Weigh User stories
 - Create sub issues to split each user story into tasks
 - A task (or sub-issue) should include everything that belongs to it. For example, fetching data and loading it into the HTML should be one
 - Prioritize the user stories (MoSCoW)
 
-
-
 ## Definition of Done
+
 - **Testing**
-  - HTML validator test
-  - Browser test
-  - lighthouse test
-  - device test
-  - user test
-  - responsiveness
-  - accessibilty test ([a11y checklist](https://www.a11yproject.com/checklist/))
+    - HTML validator test
+    - Browser test
+    - lighthouse test
+    - device test
+    - user test
+    - responsiveness
+    - accessibilty test ([a11y checklist](https://www.a11yproject.com/checklist/))
 - **code**
-  - followed FDND conventies
-  - delete commented code
-  - prevent repeated code (DRY)
+    - followed FDND conventies
+    - delete commented code
+    - prevent repeated code (DRY)
 - **pull requests**
-  - close sub issues when finished
-  - add the user story to the review column
-  - write a detailed pull request, and ask feedback on specific parts
-    - add all needed information, for the review, in the pull request
-  - check if you're merging into the correct branch (`dev`)
-  - archive closed branches
-
-
-
-
-
-
-
-
-
+    - close sub issues when finished
+    - add the user story to the review column
+    - write a detailed pull request, and ask feedback on specific parts
+        - add all needed information, for the review, in the pull request
+    - check if you're merging into the correct branch (`dev`)
+    - archive closed branches
 
 ## Retrospects
-
 
 <details>
   <summary>Retrospect 1 (Sprint 14)</summary>  
@@ -196,8 +197,8 @@ De issues worden toegewezen op maandag, woensdag en vrijdag. Tijdens de bespreki
    Ik vond de samenwerking heel fijn en de samenwerking gaf mij ook meer motivatie om inzet te tonen in het project en in de komende sprints hoop ik dat we een ruimte kunnen creeeren waar we elk probleem doorgrondig bespreekbaar kunnen maken
 </details>
 
-
 ### Afspraken uit retrospect Sprint 14
+
 1. **Verbeterde communicatiekanalen:**
     - Gebruik WhatsApp of Discord voor snellere communicatie.
     - Maak duidelijke kanalen (bijv. voor PR-links, hulpbronnen, algemene chat).
@@ -208,21 +209,16 @@ De issues worden toegewezen op maandag, woensdag en vrijdag. Tijdens de bespreki
     - Elkaar aanspreken als afspraken niet worden nagekomen.
 4. **Betere benutting van projectboard:**
     - Dagelijks even checken wat openstaat en prioriteren wat belangrijk is.
-5.	**Open feedbackcultuur:**
+5. **Open feedbackcultuur:**
     - Problemen sneller bespreekbaar maken zonder ze uit te stellen.
     - Creëer een ruimte waar iedereen zich comfortabel voelt om iets aan te kaarten.
-5.	**Samenwerken:**
+6. **Samenwerken:**
     - Ik vind dat we meer als team moeten samenwerken inplaats van dat iedereen zijn eigen taken heeft: hierdoor kom je tekort met de inzet die je in het project hebt en weeg je taken niet goed af. **Juist** als we als team per onderdeel samen aanpakken hebben we meer overzicht in ons project en kunnen we elkaar beter helpen.
 
-
 ### Afspraken uit Retrospect Sprint 15
+
 - na elke niet behaalde deadline kijken naar de open issues/user stories om haalbaarheid te meten
 - bespreken wat er gedaan moet worden en als team besluiten als we de volgende dag langer op school blijven
-
-
-
-
-
 
 <details>
  <summary>Retrospect 1 (Sprint 14)</summary>
@@ -233,32 +229,34 @@ De issues worden toegewezen op maandag, woensdag en vrijdag. Tijdens de bespreki
  Viresh:  
  mijn smart goal is: In de komende twee sprints plannen we alle taken/issues door de user stories opnieuw te evalueren, te categoriseren en te voorzien van harde deadlines. Elke week tot het einde van het project wordt volledig ingepland. We weten dat we succesvol zijn wanneer de website aan het einde van sprint 2 een visueel aantrekkelijke en consistente look-and-feel heeft.
 
- Inez:  
+Inez:  
  Om goede resultaten te behalen bij complexe code, zal ik iteratief werken tijdens het bouwen en onderzoeken, vóór het einde van de week. Ik weet dat ik succesvol ben wanneer het onderwerp is opgelost.
 
-   #### [Starfish](https://retromat.org/en/?id=49)
- <img height="750" width="750" src="https://github.com/user-attachments/assets/52a69b9e-4a52-4d00-8a98-d3a2ae8cb024" />  
+#### [Starfish](https://retromat.org/en/?id=49)
+
+ <img height="750" width="750" src="https://github.com/user-attachments/assets/52a69b9e-4a52-4d00-8a98-d3a2ae8cb024" />
 
 We hebben allebei punten benoemd over communicatie en het gebruik van het projectboard:
+
 - Meld zo snel mogelijk wanneer er iets mis gaat (wacht niet tot het laatste moment om iets te melden of vragen)
 - Stel gezamenlijk regels op voor het beheren van het projectboard
-  - Idee: elke week wordt een persoon iemand aangewezen die controleert of het projectboard wordt bijgehouden door de team
-  - De backlog bevat alle issues die in de sprint opgepakt moeten worden. Er mag maximaal één user story per persoon assigned zijn
-  - Een user story blijft in `To Do` totdat je eraan begint, bij de start van het werk verplaats je deze naar `In Progress`
-  - Zodra je een pull request aanmaakt, verplaats je zowel de user story als de pull request naar `Review`. (Let op: een nieuwe pull request komt automatisch in No Status terecht.)
-  - De kolom No Status mag nooit open blijven, alle issues moeten altijd meteen naar de juiste kolom worden verplaatst
+    - Idee: elke week wordt een persoon iemand aangewezen die controleert of het projectboard wordt bijgehouden door de team
+    - De backlog bevat alle issues die in de sprint opgepakt moeten worden. Er mag maximaal één user story per persoon assigned zijn
+    - Een user story blijft in `To Do` totdat je eraan begint, bij de start van het werk verplaats je deze naar `In Progress`
+    - Zodra je een pull request aanmaakt, verplaats je zowel de user story als de pull request naar `Review`. (Let op: een nieuwe pull request komt automatisch in No Status terecht.)
+    - De kolom No Status mag nooit open blijven, alle issues moeten altijd meteen naar de juiste kolom worden verplaatst
 
-   #### [Pessimize](https://retromat.org/en/?id=74)
- <img height="750" width="750" src="https://github.com/user-attachments/assets/e582eb45-6bfd-4359-bc81-aca2450aa048" />  
-</details>
+    #### [Pessimize](https://retromat.org/en/?id=74)
 
+       <img height="750" width="750" src="https://github.com/user-attachments/assets/e582eb45-6bfd-4359-bc81-aca2450aa048" />  
+      </details>
 
 ### Afspraken uit retrospect Sprint 16
+
 - Meld zo snel mogelijk wanneer er iets mis gaat (wacht niet tot het laatste moment om iets te melden of vragen)
 - Nieuwe projectboard regels:
-  - elke week wordt een persoon iemand aangewezen die controleert of het projectboard wordt bijgehouden door de team
-  - De backlog bevat alle issues die in de sprint opgepakt moeten worden. Er mag maximaal een user story per persoon assigned zijn
-  - Een user story blijft in `To Do` totdat je eraan begint, bij de start van het werk verplaats je deze naar `Progress`
-  - Zodra je een pull request aanmaakt, verplaats je zowel de user story als de pull request naar `Review`. (Let op: een nieuwe pull request komt automatisch in `No Status` terecht.)
-  - De kolom No Status mag nooit open blijven, alle issues moeten altijd meteen naar de juiste kolom worden verplaatst
-
+    - elke week wordt een persoon iemand aangewezen die controleert of het projectboard wordt bijgehouden door de team
+    - De backlog bevat alle issues die in de sprint opgepakt moeten worden. Er mag maximaal een user story per persoon assigned zijn
+    - Een user story blijft in `To Do` totdat je eraan begint, bij de start van het werk verplaats je deze naar `Progress`
+    - Zodra je een pull request aanmaakt, verplaats je zowel de user story als de pull request naar `Review`. (Let op: een nieuwe pull request komt automatisch in `No Status` terecht.)
+    - De kolom No Status mag nooit open blijven, alle issues moeten altijd meteen naar de juiste kolom worden verplaatst
