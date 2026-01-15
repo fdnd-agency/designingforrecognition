@@ -122,7 +122,7 @@
 		transition: background-color 0.2s ease-out;
 		position: relative;
 		background-color: var(--color-accent-secondary);
-		width: clamp(6em, 100%, 8.5em);
+		width: clamp(6em, 100%, 9.5em);
 
 		&:has(input:checked),
 		&:has(input:focus-visible),
