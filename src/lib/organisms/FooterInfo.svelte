@@ -5,18 +5,16 @@
 	export let sponsorsData
 
 	// JS disabled functie
-	import { onMount } from 'svelte';
-let showSponsors = true    
-onMount(() => {
-showSponsors = false
-});
-const toggleSponsors = () => {
-showSponsors = !showSponsors
-if (showSponsors)
-    requestAnimationFrame(() =>
-    document.querySelector('.sponsors')?.scrollIntoView({ behavior: 'smooth' })
-    )
-}
+	import { onMount } from 'svelte'
+	let showSponsors = true
+	onMount(() => {
+		showSponsors = false
+	})
+	// toggle
+	const toggleSponsors = () => {
+		showSponsors = !showSponsors
+		if (showSponsors) requestAnimationFrame(() => document.querySelector('.sponsors')?.scrollIntoView({ behavior: 'smooth' }))
+	}
 </script>
 
 <footer class="footer">
@@ -32,17 +30,17 @@ if (showSponsors)
 			</address>
 
 			<nav class="footer-nav">
-				<a href="partners">About this project</a>
-				<a
-				href="partners"
-				on:click|preventDefault={toggleSponsors}
-				role="button"
-				
-			>
-				Partners
-			</a>
+				<a href="about">About this project</a>
 				<a href="signal">Signal</a>
 			</nav>
+
+			<a
+				href="#partners"
+				on:click|preventDefault={toggleSponsors}
+				style="font-weight: 600; color: black; font-style:italic; text-decoration:none;"
+				role="button"
+				>Onze Partners
+			</a>
 		</section>
 
 		<section class="footer-right">
@@ -60,70 +58,65 @@ if (showSponsors)
 			</section>
 		</section>
 	</section>
-	<SponsorCarousel
-	{sponsorsData} 
-	visible={showSponsors}
-	/>
+	<SponsorCarousel {sponsorsData} visible={showSponsors} />
 </footer>
-
-
 
 <style>
 	.footer {
 		background-color: var(--color-accent-secondary);
 
-		@media (min-width: 768px) {
-			padding: 0rem 0vw;
+		.footer-left h2,
+		.footer-right h2 {
+			margin-top: var(--spacing-l);
+		}
+
+		.footer-left > *,
+		.footer-right > * {
+			padding: 0 var(--spacing-l);
 		}
 	}
 
-	/* layout */
 	.footer-container {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
-		max-width: 1400px;
+		gap: var(--spacing-l);
 		margin-inline: auto;
-		padding: 0 3em;
 
 		@media (min-width: 768px) {
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: flex-start;
-			gap: 16rem;
+			gap: 8rem;
+			margin: 0 3em;
 		}
 
 		@media (min-width: 1024px) {
 			justify-content: center;
+			margin: 0;
 		}
 	}
 
-	/* kolommen */
 	.footer-left,
 	.footer-right {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
-		margin-top: 1em;
-		margin-bottom: 2em;
-		
+		gap: var(--spacing-s);
+
 		@media (min-width: 768px) {
 			max-width: 500px;
 		}
 	}
 
-	/* titels & tekst */
 	.project-title,
 	.community-heading {
 		font-size: var(--font-size-title-paragraph);
 	}
 
 	.community-text {
-		line-height: 1.5;
 		max-width: clamp(40ch, 80vw, 50ch);
+		margin-bottom: 2em;
 	}
 
-	/* contact */
 	.contact-block {
 		display: flex;
 		flex-direction: column;
@@ -136,19 +129,18 @@ if (showSponsors)
 		}
 	}
 
-	/* nav */
 	.footer-nav {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 
 		@media (min-width: 768px) {
-			gap: 2rem;
+			gap: 0.5rem;
 		}
 
 		@media (min-width: 1024px) {
 			flex-direction: row;
-			gap: 2.5rem;
+			gap: 1em;
 			white-space: nowrap;
 		}
 
@@ -163,13 +155,11 @@ if (showSponsors)
 		}
 	}
 
-	/* brandblok + logo */
 	.brand-block {
 		display: flex;
 		align-items: flex-start;
 		flex-wrap: wrap;
 		gap: 1rem;
-		margin-top: 1.5rem;
 	}
 
 	.brand-left {
@@ -177,8 +167,4 @@ if (showSponsors)
 		flex-direction: column;
 		font-weight: 600;
 	}
-
-	
 </style>
-
-

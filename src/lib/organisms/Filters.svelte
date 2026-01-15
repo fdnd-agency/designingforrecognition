@@ -1,7 +1,6 @@
 <script>
 	import { filterProjects } from '$lib/remote-functions/filter.remote'
 	import { onMount, tick } from 'svelte'
-	import { goto } from '$app/navigation'
 
 	let { projectCount } = $props()
 
@@ -33,10 +32,8 @@
 	<form {...filterProjects}>
 		<h2>Filteren</h2>
 
-		<p class="keyboard-info">Klik op de spatiebalk om het filter aan te vinken</p>
-
 		<fieldset>
-			{#each ['Concept', 'Uitgevoerd', 'experiment', 'Methode'] as value}
+			{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
 				<label>
 					<input {...filterProjects.fields.execution.as('checkbox', value)} />
 					{value}
@@ -80,7 +77,7 @@
 
 	.skip-link {
 		position: absolute;
-		top: 4em;
+		top: 5em;
 		left: 1em;
 		background-color: var(--color-accent-primary);
 		padding: 0.5em;
@@ -102,18 +99,12 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 5em 2em 2em 2em;
-		gap: 2em;
-	}
+		margin: var(--spacing-l) 2em var(--spacing-m) 2em;
+		gap: var(--spacing-s);
 
-	.keyboard-info {
-		padding: 0.5em;
-		font-size: 1.3rem;
-		background: var(--color-accent-secondary);
-		color: var(--color-dark);
-		border-radius: 20px;
-		white-space: nowrap;
-		opacity: 0;
+		h2 {
+			margin-bottom: var(--spacing-s);
+		}
 	}
 
 	form:has(input:focus-visible) .keyboard-info {
@@ -124,12 +115,22 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		border: none;
-		gap: 0.5em;
+		gap: var(--spacing-s);
 	}
 
 	label {
 		transition: background-color 0.2s ease-out;
 		position: relative;
+		background-color: var(--color-accent-secondary);
+		width: clamp(6em, 100%, 8.5em);
+
+		&:has(input:checked),
+		&:has(input:focus-visible),
+		&:hover,
+		&:focus-visible {
+			background-color: var(--color-accent-primary);
+			transition: background-color 0.2s ease-out;
+		}
 
 		input {
 			position: absolute;
@@ -142,39 +143,41 @@
 	button {
 		font-size: 1.3rem;
 		padding: 0.5em;
+		min-height: 52px;
 		border-radius: 20px;
 		text-align: center;
 		align-self: center;
-		background-color: var(--color-accent-secondary);
 		color: var(--color-dark);
 		cursor: pointer;
-
-		&:has(input:checked),
-		&:has(input:focus-visible),
-		&:hover,
-		&:focus-visible {
-			background-color: var(--color-accent-primary);
-			transition: background-color 0.2s ease-out;
-		}
 	}
 
 	.form-buttons {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0.5em;
+		gap: var(--spacing-s);
 
 		button {
+			width: 8.5em;
 			border: none;
+			background-color: var(--color-accent-primary);
 
-			&:nth-of-type(1) {
-				margin-bottom: 1.2em;
+			&:hover,
+			&:focus-visible {
+				scale: 1.05;
+				transition: 0.5 ease-in;
+			}
+
+			&:active {
+				scale: 1;
+				transition: 0.5 ease-in;
 			}
 		}
 	}
 
 	.filter-results {
 		opacity: 0;
+		position: absolute;
 	}
 
 	@container filters (min-width: 545px) {
@@ -183,7 +186,10 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: center;
-			gap: 2em;
+		}
+
+		.form-buttons {
+			flex-direction: row;
 		}
 	}
 </style>
