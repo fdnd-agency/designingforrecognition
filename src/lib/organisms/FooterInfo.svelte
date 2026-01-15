@@ -58,23 +58,20 @@
 			</section>
 		</section>
 	</section>
-	<div class="carousel">
-		<SponsorCarousel {sponsorsData} visible={showSponsors} />
-	</div>
+	<SponsorCarousel {sponsorsData} visible={showSponsors} />
 </footer>
 
 <style>
 	.footer {
 		background-color: var(--color-accent-secondary);
-		/* padding: 0; */
 
 		.footer-left h2,
 		.footer-right h2 {
 			margin-top: var(--spacing-l);
 		}
 
-		.footer-left >*,
-		.footer-right >* {
+		.footer-left > *,
+		.footer-right > * {
 			padding: 0 var(--spacing-l);
 		}
 	}
@@ -169,8 +166,5 @@
 		display: flex;
 		flex-direction: column;
 		font-weight: 600;
-	}
-
-	.carousel {
 	}
 </style>
