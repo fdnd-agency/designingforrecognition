@@ -158,7 +158,7 @@
 		gap: var(--spacing-s);
 
 		button {
-			width: 8.5em;
+			width: 9.5em;
 			border: none;
 			background-color: var(--color-accent-primary);
 
