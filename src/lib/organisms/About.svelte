@@ -53,7 +53,7 @@
 		padding: 0;
 		margin: 0 1em 0 1em;
 
-		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
+		@media (min-width: 630px) and (prefers-reduced-motion: no-preference) {
 			flex-direction: row;
 		}
 	}
@@ -86,7 +86,7 @@
 			width: 250px;
 
 			@media (min-width: 350px) {
-				width: 310px;
+				width: 325px;
 			}
 
 			h3 {
