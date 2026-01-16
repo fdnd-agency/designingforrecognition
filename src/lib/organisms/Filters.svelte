@@ -122,7 +122,7 @@
 		transition: background-color 0.2s ease-out;
 		position: relative;
 		background-color: var(--color-accent-secondary);
-		width: clamp(6em, 100%, 8.5em);
+		width: clamp(6em, 100%, 9.5em);
 
 		&:has(input:checked),
 		&:has(input:focus-visible),
@@ -158,7 +158,7 @@
 		gap: var(--spacing-s);
 
 		button {
-			width: 8.5em;
+			width: 9.5em;
 			border: none;
 			background-color: var(--color-accent-primary);
 

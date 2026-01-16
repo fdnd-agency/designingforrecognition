@@ -4,8 +4,6 @@
 	let projects = $state(data.projects)
 </script>
 
-<main>
-	<Filters projectCount={projects.length} />
-	<ProjectCardContainer projectsData={data.projects} />
-	<About />
-</main>
+<Filters projectCount={projects.length} />
+<ProjectCardContainer projectsData={data.projects} />
+<About />
