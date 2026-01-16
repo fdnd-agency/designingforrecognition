@@ -60,6 +60,3 @@ The fetched project data is subsequently used by:
 Sponsor data is fetched directly in the `+layout.server.js` and is only used in the footer component.
 
 Fetching sponsor data in `+layout.server.js` is intentional, as the layout wraps all pages and ensures the data is fetched once per page load. This prevents unnecessary data fetching in individual components and avoids exposing the sponsor data globally where it is not needed.
-
-### Mermaid
-> _TODO: add datamodel / mermaid chart_
