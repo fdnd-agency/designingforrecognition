@@ -1,0 +1,92 @@
+# Key Components
+## Color System
+
+### Overview
+The project uses a custom CSS-based color system to generate consistent color palettes with lighter and darker variations. This system is designed to reduce code duplication and make color adjustments easier and more maintainable.
+
+### Base colors
+Base colors are defined as CSS custom properties in `.body`. These colors are defined using hexadecimal values to ensure broad browser compatibility.
+
+```css
+.body {
+  --color-primary: #ffffff;
+  --color-dark: #000000;
+  --color-neutral: #0d3951;
+  --color-accent-primary: #8bcbbd;
+  --color-accent-secondary: #ebdac4;
+}
+```
+
+### Color calculation logic
+Color variations are generated using relative color calculations. Each color context is activated by applying a class (.neutral, .accent-primary, or .accent-secondary) to an element.
+
+Within these classes, a shared --place-holder variable is used as the base color. From this base, darker and lighter variants are calculated.
+
+By default, the system uses HSL with color-mix() for broad browser compatibility. When supported, it enhances to OKLCH using relative color syntax.
+
+```CSS
+.neutral,
+.accent-primary,
+.accent-secondary {
+  --dark-2: color-mix(in hsl, var(--place-holder) 80%, black 20%);
+  --dark-1: color-mix(in hsl, var(--place-holder) 90%, black 10%);
+  --color: color-mix(in hsl, var(--place-holder) 100%, white 0%);
+  --light-1: color-mix(in hsl, var(--place-holder) 100%, white 2%);
+  --light-2: color-mix(in hsl, var(--place-holder) 100%, white 7%);
+
+  @supports (color: oklch(50% 0.1 120)) {
+    --dark-2: oklch(from var(--place-holder) calc(l - 0.10) calc(c + 0.02) h);
+    --dark-1: oklch(from var(--place-holder) calc(l - 0.04) calc(c + 0.01) h);
+    --color: oklch(from var(--place-holder) l c h);
+    --light-1: oklch(from var(--place-holder) calc(l + 0.02) calc(c + 0.01) h);
+    --light-2: oklch(from var(--place-holder) calc(l + 0.04) calc(c + 0.02) h);
+  }
+}
+```
+
+### Color context mapping
+Each color class assigns a specific base color to --place-holder. This determines which color palette is active within that element’s scope.
+
+```CSS
+.neutral {
+  --place-holder: var(--color-neutral);
+}
+
+.accent-primary {
+  --place-holder: var(--color-accent-primary);
+}
+
+.accent-secondary {
+  --place-holder: var(--color-accent-secondary);
+}
+```
+
+### Usage
+To use a color palette, apply one of the color classes to a container element. All color variants become available within that scope via the shared custom properties.
+```HTML
+<section class="neutral">
+  <div style="background-color: var(--dark-2)"></div>
+  <div style="background-color: var(--color)"></div>
+  <div style="background-color: var(--light-2)"></div>
+</section>
+```
+*Note: The CSS is written inline here to demonstrate how it works. In the actual project, this CSS is defined within the style blocks of the Svelte files.*
+
+When a class is applied to an HTML element, all color variations become available within that scope:
+```HTML
+<section class="primary">
+  <div style="background-color: var(--dark-2)"></div>
+</section>
+```
+
+### Advantages
+- Centralized color definitions
+- Automatic generation of lighter and darker variants
+- Progressive enhancement with OKLCH
+- Reduced code duplication
+- Consistent color behavior across the application
+
+### Points of attention
+- The color system is class-based; a color class must be applied in the HTML to activate a palette.
+- All color variants share the same custom property names (--dark-1, --light-1, etc.), scoped by the active class.
+- Developers should review the color system carefully before making changes, as adjustments affect all components using that color context.
