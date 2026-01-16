@@ -39,6 +39,9 @@
 - **Study the CSS color system carefully**  
   Review the CSS in the `styleguide.css` file. A custom color system is used that reduces the amount of code, but it works differently from standard CSS custom properties. It requires specific classes to be applied in the HTML in order to use the defined color variations, so it is important to understand this system before making changes.
 
+- **Refactor large Atomic Design components**  
+  The components are structured using the Atomic Design methodology (atoms, molecules, and organisms). This structure was applied after all components had already been created, which means some organism components are currently quite large. It is recommended to refactor these organisms by splitting them into smaller atoms and molecules to improve maintainability and reusability.
+
 - **Build a strong foundation in SvelteKit**  
   From the beginning, invest time in learning SvelteKit. The project uses remote functions, which are a more advanced feature and may not be immediately easy to understand. A solid understanding of SvelteKit is essential for maintaining and improving these features.
 
