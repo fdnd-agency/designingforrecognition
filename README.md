@@ -4,8 +4,35 @@
 Our Product owner, Tessa Steenkamp, wanted a website to showcase all her research results. She wanted to avoid having her work end up in a booklet that might eventually get lost in a drawer.
 The goal of the project is to create an online platform where her research can be easily accessed, organized, and shared
 
-Tessa asked us to keep the existing brand style, but gave us the freedom to design a new and improved layout. As a team, we worked on redesigning the structure, visuals, and user experience of the website using modern web technologies such as SvelteKit and design tools like Figma.
+Tessa asked us to keep the existing brand style, but gave us the freedom to design a new and improved layout. As a team, we worked on redesigning the structure, visuals, and user experience of the website using modern web technologies such as SvelteKit and design tools like Figma.  
+The redesigned website is available via the [live link](https://designingforrecognition.netlify.app/)
 
+## Technologies Used
+![SvelteKit 5](https://img.shields.io/badge/SvelteKit-5-red?logo=svelte&logoColor=white&style=for-the-badge)
+![Svelte](https://img.shields.io/badge/Svelte-4A4A55?logo=svelte&logoColor=white&style=for-the-badge)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
+![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white&style=for-the-badge)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white&style=for-the-badge)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black&style=for-the-badge)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&style=for-the-badge)
+
+## User Guide
+The Designing for Recognition website allows users to read academic research published by the Designing for Recognition team.
+
+Users can browse all available papers on the homepage and use the filter functionality to quickly find research by category. Selecting a paper opens a detail page with more information about the selected subject.
+
+The website is fully responsive and works on both desktop and mobile devices. Core functionality is available in all browsers, with enhanced features supported in modern browsers
+
+## Changelog
+This was the first iteration of the project, during which the following changes were implemented:
+- Complete redesign of the website while preserving the existing brand style
+- Improved information structure and user experience
+- Implemented responsive design for mobile and desktop
+- Applied modern web technologies including SvelteKit
+- Added progressive enhancement and performance optimizations
 
 ## Functionalities
 The Designing for Recognition website offers the following functionalities:
@@ -102,6 +129,19 @@ Once everything looks good, we’ll merge your pull request.
 
 [![](https://mermaid.ink/img/pako:eNqNUsFqwzAM_RWjc1qSukkT30YXGIOxke00AsHUWpptsYvqwLa0_744TdsUNqgOwnrv6UlgtbAyCkEA0m0lS5J1rlkXWfqc3mTLuzRju91kYlr2lD3ep8uXYsQIVhzUA3eNdIS1B8RFpS2rFDsDW0uVLhnhFiWt1kiFljUOgv3l1Ct8NmTecWXHJi6UtHjiXPGXf_H_ysfWi5GOGO1dqcEUPCipUiAsNehBjVRLV0JvmoNdY405iO6pJH3kkGvXs5H61Zj62EamKdcg3uTntquajdt6-LkTSqgV0tI02oIIot4DRAtfIDj3p3Ew8_0kCbrEFx37DSKMpjyex7PADxMexxEP9x789GM7_TwJ5wseJFESz3iw8ABVZQ09HC6nP6D9L0Ewq6A?type=png)](https://mermaid.live/edit#pako:eNqNUsFqwzAM_RWjc1qSukkT30YXGIOxke00AsHUWpptsYvqwLa0_744TdsUNqgOwnrv6UlgtbAyCkEA0m0lS5J1rlkXWfqc3mTLuzRju91kYlr2lD3ep8uXYsQIVhzUA3eNdIS1B8RFpS2rFDsDW0uVLhnhFiWt1kiFljUOgv3l1Ct8NmTecWXHJi6UtHjiXPGXf_H_ysfWi5GOGO1dqcEUPCipUiAsNehBjVRLV0JvmoNdY405iO6pJH3kkGvXs5H61Zj62EamKdcg3uTntquajdt6-LkTSqgV0tI02oIIot4DRAtfIDj3p3Ew8_0kCbrEFx37DSKMpjyex7PADxMexxEP9x789GM7_TwJ5wseJFESz3iw8ABVZQ09HC6nP6D9L0Ewq6A)
 
+
+## Links
+- [CONTRIBUTING.md](https://github.com/fdnd-agency/designingforrecognition/blob/dev/CONTRIBUTING.md)
+- [HANDOVER.md](https://github.com/fdnd-agency/designingforrecognition/blob/dev/HANDOVER.md)
+- [Color Pallete design choices](https://github.com/fdnd-agency/designingforrecognition/issues/35)
+- [Remote Function for Filtering](https://github.com/fdnd-agency/designingforrecognition/issues/58#issuecomment-3589140873)
+
+## Team
+| Name | Role | GitHub | School Year | Sprint |
+|--------|--------|--------|--------|--------|
+| Viresh  | Scrum Master | [@vsheo](https://github.com/vsheo) | 2025–2026 | Sprint 13–18 |
+| Mikiyas | Team Lead | [@Mikiyas-hs](https://github.com/Mikiyas-hs) | 2025–2026 | Sprint 13–18 |
+| Inez | Creative Lead | [@Pink-Mallow](https://github.com/Pink-Mallow) | 2025–2026 | Sprint 13–15 |
 
 
 
