@@ -16,14 +16,6 @@ body {
     --color-accent-primary: #8bcbbd;
     --color-accent-secondary: #ebdac4;
 
-    /* text */
-    font-family: 'Geomanist', sans-serif;
-    font-size: 16px;
-    font-weight: var(--font-weight-regular);
-    line-height: 1.5;
-    letter-spacing: 0.06em;
-    word-spacing: 0.16em;
-
     /* font-size */
     --font-size-title-page: clamp(3.129rem, calc(8.5vw + 1rem), 4.162rem);
     --font-size-title-section: clamp(2.353rem, calc(6vw + 1rem), 3.129rem);
@@ -33,6 +25,14 @@ body {
     /* font-weight */
     --font-weight-regular: 400;
     --font-weight-bold: 600;
+
+    /* text */
+    font-family: 'Geomanist', sans-serif;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+    word-spacing: 0.16em;
 
     /* spacing */
     --spacing-xl: 5rem;
@@ -101,6 +101,7 @@ body {
     src: url('/fonts/geomanist-regular-italic-webfont.woff2') format('woff2'),
         url('/fonts/geomanist-regular-italic-webfont.woff') format('woff');
     font-style: italic;
+    font-weight: 400;
     font-display: swap;
 }
 
