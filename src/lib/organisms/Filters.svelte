@@ -39,32 +39,42 @@
 		<h2>Filteren</h2>
 
 		<fieldset>
-			{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
-				<label>
-					<input {...filterProjects.fields.execution.as('checkbox', value)} />
-					{value}
-				</label>
-			{/each}
+			<ul>
+				{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
+					<li>
+						<label>
+							<input {...filterProjects.fields.execution.as('checkbox', value)} />
+							{value}
+						</label>
+					</li>
+				{/each}
 
-			<label>
-				<input {...filterProjects.fields.Participation_level.as('checkbox', 'Contestable')} />
-				Contestable
-			</label>
+				<li>
+					<label>
+						<input {...filterProjects.fields.Participation_level.as('checkbox', 'Contestable')} />
+						Contestable
+					</label>
+				</li>
 
-			<label>
-				<input {...filterProjects.fields.Process_phase.as('checkbox', 'Making')} />
-				Making
-			</label>
-
-			<label>
-				<input {...filterProjects.fields.results.as('checkbox', 'Niet beschikbaar')} />
-				Niet beschikbaar
-			</label>
-
-			<label>
-				<input {...filterProjects.fields.status.as('checkbox', 'draft')} />
-				Draft
-			</label>
+				<li>
+					<label>
+						<input {...filterProjects.fields.Process_phase.as('checkbox', 'Making')} />
+						Making
+					</label>
+				</li>
+				<li>
+					<label>
+						<input {...filterProjects.fields.results.as('checkbox', 'Niet beschikbaar')} />
+						Niet beschikbaar
+					</label>
+				</li>
+				<li>
+					<label>
+						<input {...filterProjects.fields.status.as('checkbox', 'draft')} />
+						Draft
+					</label>
+				</li>
+			</ul>
 		</fieldset>
 
 		<div class="form-buttons">
@@ -120,10 +130,18 @@
 	}
 
 	fieldset {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
 		border: none;
-		gap: var(--spacing-s);
+
+		ul {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--spacing-s);
+			list-style: none;
+
+			li {
+				display: contents;
+			}
+		}
 	}
 
 	label {
@@ -159,6 +177,7 @@
 
 	label,
 	button {
+		display: block;
 		font-size: 1.3rem;
 		padding: 0.5em;
 		min-height: 52px;
@@ -199,7 +218,7 @@
 	}
 
 	@container filters (min-width: 545px) {
-		fieldset {
+		fieldset ul {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
