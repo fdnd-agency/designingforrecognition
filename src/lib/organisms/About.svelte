@@ -10,17 +10,17 @@
 	<ul>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Tessa Steenkamp</h3>
+			<p>Tessa Steenkamp</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2023/08/Tessa-scaled-e1691482296190.jpg" alt="" width="100" height="100" />
 		</li>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Martijn de Waal</h3>
+			<p>Martijn de Waal</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2018/09/martijn-de-waal-1.jpg" alt="" width="100" height="100" />
 		</li>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Jorgen Karskens</h3>
+			<p>Jorgen Karskens</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2022/11/1539348613468.jpeg" alt="" width="100" height="100" />
 		</li>
 	</ul>
