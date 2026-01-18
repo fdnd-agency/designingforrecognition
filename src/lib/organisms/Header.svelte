@@ -32,7 +32,7 @@
 				aria-controls="main-navigation"
 				aria-expanded={!menuOpen}
 				aria-label={!menuOpen ? 'Menu sluiten' : 'Menu open maken'}
-				on:click={() => (menuOpen = !menuOpen)}
+				onclick={() => (menuOpen = !menuOpen)}
 				class:open-menu-icon={menuOpen}
 			>
 				<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -44,14 +44,14 @@
 
 		<nav id="main-navigation" class:close-nav={menuOpen}>
 			<ul class="accent-primary">
-				<li><a href="#" on:click={closeMenu}>Home</a></li>
-				<li><a href="#" on:click={closeMenu}>Projects</a></li>
-				<li><a href="#" on:click={closeMenu}>Researchers</a></li>
+				<li><a href="/" onclick={closeMenu}>Home</a></li>
+				<li><a href="/" onclick={closeMenu}>Projects</a></li>
+				<li><a href="/" onclick={closeMenu}>Researchers</a></li>
 			</ul>
 		</nav>
 
 		{#if !menuOpen}
-			<div class="backdrop" on:click={closeMenu} aria-hidden="true" />
+			<div class="backdrop" onclick={closeMenu} aria-hidden="true"></div>
 		{/if}
 	</div>
 </header>

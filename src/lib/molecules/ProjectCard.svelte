@@ -92,6 +92,7 @@
 			-webkit-box-orient: vertical;
 			text-overflow: ellipsis;
 			-webkit-line-clamp: 7;
+			line-clamp: 7;
 			height: calc(1.5em * 5.15);
 			margin: 0.5rem 0 1rem 0;
 		}
@@ -143,6 +144,7 @@
 
 			.description {
 				-webkit-line-clamp: 5;
+				line-clamp: 5;
 				height: calc(1.5em * 3.4);
 			}
 		}
