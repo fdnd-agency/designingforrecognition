@@ -1,26 +1,32 @@
-<script>
+<script lang="ts">
 	import { filterProjects } from '$lib/remote-functions/filter.remote'
 	import { onMount, tick } from 'svelte'
 
 	let { projectCount } = $props()
 
 	onMount(() => {
-		$effect(async () => {
-			const filters = filterProjects.result?.data?.activeFilters
-			if (!filters) return
+		$effect(() => {
+			;(async () => {
+				const filters = filterProjects.result?.data?.activeFilters
+				if (!filters) return
 
-			await tick()
+				await tick()
 
-			const activeValues = Object.values(filters).flat()
+				const activeValues = Object.values(filters).flat()
 
-			document.querySelectorAll('input[type="checkbox"]').forEach((input) => {
-				input.checked = activeValues.includes(input.value)
-			})
+				document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach((input) => {
+					input.checked = activeValues.includes(input.value)
+				})
+			})()
 		})
 	})
 
 	function resetFilters() {
-		document.querySelectorAll('input[type="checkbox"]').forEach((filter) => (filter.checked = false))
+		document.querySelectorAll('input[type="checkbox"]').forEach((element) => {
+			if (element instanceof HTMLInputElement) {
+				element.checked = false
+			}
+		})
 	}
 </script>
 
@@ -63,7 +69,7 @@
 
 		<div class="form-buttons">
 			<button>Activeer filters</button>
-			<button on:click={resetFilters}>Reset filters</button>
+			<button onclick={resetFilters}>Reset filters</button>
 		</div>
 	</form>
 
