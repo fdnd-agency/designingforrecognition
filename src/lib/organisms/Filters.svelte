@@ -90,6 +90,7 @@
 		border-radius: 20px;
 		opacity: 0;
 		pointer-events: none;
+		outline: 3px solid currentColor;
 
 		&:focus-within {
 			opacity: 1;
@@ -98,6 +99,7 @@
 		a {
 			color: var(--color-dark);
 			text-decoration: none;
+			outline: none;
 		}
 	}
 
@@ -129,13 +131,23 @@
 		position: relative;
 		background-color: var(--color-accent-secondary);
 		width: clamp(6em, 100%, 9.5em);
+		transform-origin: center;
 
-		&:has(input:checked),
 		&:has(input:focus-visible),
 		&:hover,
 		&:focus-visible {
 			background-color: var(--color-accent-primary);
-			transition: background-color 0.2s ease-out;
+			transition: background-color 0.3s ease-out;
+		}
+
+		&:has(input:checked) {
+			background-color: var(--color-accent-primary);
+			outline: 3px solid var(--color-dark);
+		}
+
+		&:active {
+			transform: scale(0.8);
+			transition: transform 0.05s ease-out;
 		}
 
 		input {
