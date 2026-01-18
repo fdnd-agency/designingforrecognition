@@ -1,26 +1,32 @@
-<script>
+<script lang="ts">
 	import { filterProjects } from '$lib/remote-functions/filter.remote'
 	import { onMount, tick } from 'svelte'
 
 	let { projectCount } = $props()
 
 	onMount(() => {
-		$effect(async () => {
-			const filters = filterProjects.result?.data?.activeFilters
-			if (!filters) return
+		$effect(() => {
+			;(async () => {
+				const filters = filterProjects.result?.data?.activeFilters
+				if (!filters) return
 
-			await tick()
+				await tick()
 
-			const activeValues = Object.values(filters).flat()
+				const activeValues = Object.values(filters).flat()
 
-			document.querySelectorAll('input[type="checkbox"]').forEach((input) => {
-				input.checked = activeValues.includes(input.value)
-			})
+				document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach((input) => {
+					input.checked = activeValues.includes(input.value)
+				})
+			})()
 		})
 	})
 
 	function resetFilters() {
-		document.querySelectorAll('input[type="checkbox"]').forEach((filter) => (filter.checked = false))
+		document.querySelectorAll('input[type="checkbox"]').forEach((element) => {
+			if (element instanceof HTMLInputElement) {
+				element.checked = false
+			}
+		})
 	}
 </script>
 
@@ -33,37 +39,47 @@
 		<h2>Filteren</h2>
 
 		<fieldset>
-			{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
-				<label>
-					<input {...filterProjects.fields.execution.as('checkbox', value)} />
-					{value}
-				</label>
-			{/each}
+			<ul>
+				{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
+					<li>
+						<label>
+							<input {...filterProjects.fields.execution.as('checkbox', value)} />
+							{value}
+						</label>
+					</li>
+				{/each}
 
-			<label>
-				<input {...filterProjects.fields.Participation_level.as('checkbox', 'Contestable')} />
-				Contestable
-			</label>
+				<li>
+					<label>
+						<input {...filterProjects.fields.Participation_level.as('checkbox', 'Contestable')} />
+						Contestable
+					</label>
+				</li>
 
-			<label>
-				<input {...filterProjects.fields.Process_phase.as('checkbox', 'Making')} />
-				Making
-			</label>
-
-			<label>
-				<input {...filterProjects.fields.results.as('checkbox', 'Niet beschikbaar')} />
-				Niet beschikbaar
-			</label>
-
-			<label>
-				<input {...filterProjects.fields.status.as('checkbox', 'draft')} />
-				Draft
-			</label>
+				<li>
+					<label>
+						<input {...filterProjects.fields.Process_phase.as('checkbox', 'Making')} />
+						Making
+					</label>
+				</li>
+				<li>
+					<label>
+						<input {...filterProjects.fields.results.as('checkbox', 'Niet beschikbaar')} />
+						Niet beschikbaar
+					</label>
+				</li>
+				<li>
+					<label>
+						<input {...filterProjects.fields.status.as('checkbox', 'draft')} />
+						Draft
+					</label>
+				</li>
+			</ul>
 		</fieldset>
 
 		<div class="form-buttons">
 			<button>Activeer filters</button>
-			<button on:click={resetFilters}>Reset filters</button>
+			<button onclick={resetFilters}>Reset filters</button>
 		</div>
 	</form>
 
@@ -84,6 +100,7 @@
 		border-radius: 20px;
 		opacity: 0;
 		pointer-events: none;
+		outline: 3px solid currentColor;
 
 		&:focus-within {
 			opacity: 1;
@@ -92,6 +109,7 @@
 		a {
 			color: var(--color-dark);
 			text-decoration: none;
+			outline: none;
 		}
 	}
 
@@ -112,10 +130,18 @@
 	}
 
 	fieldset {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
 		border: none;
-		gap: var(--spacing-s);
+
+		ul {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--spacing-s);
+			list-style: none;
+
+			li {
+				display: contents;
+			}
+		}
 	}
 
 	label {
@@ -123,13 +149,23 @@
 		position: relative;
 		background-color: var(--color-accent-secondary);
 		width: clamp(6em, 100%, 9.5em);
+		transform-origin: center;
 
-		&:has(input:checked),
 		&:has(input:focus-visible),
 		&:hover,
 		&:focus-visible {
 			background-color: var(--color-accent-primary);
-			transition: background-color 0.2s ease-out;
+			transition: background-color 0.3s ease-out;
+		}
+
+		&:has(input:checked) {
+			background-color: var(--color-accent-primary);
+			outline: 3px solid var(--color-dark);
+		}
+
+		&:active {
+			transform: scale(0.8);
+			transition: transform 0.05s ease-out;
 		}
 
 		input {
@@ -141,6 +177,7 @@
 
 	label,
 	button {
+		display: block;
 		font-size: 1.3rem;
 		padding: 0.5em;
 		min-height: 52px;
@@ -181,7 +218,7 @@
 	}
 
 	@container filters (min-width: 545px) {
-		fieldset {
+		fieldset ul {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8em;
+}
+
 body {
     --color-primary: #ffffff;
     --color-dark: #000000;

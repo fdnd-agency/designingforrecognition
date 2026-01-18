@@ -1,20 +1,28 @@
-<script>
+<script lang="ts">
 	import { ProjectCard } from '$lib'
 	import { filterProjects } from '$lib/remote-functions/filter.remote'
 
-	let { projectsData = [] } = $props()
+	const props = $props()
+	const projectsData = $derived(() => props.projectsData ?? [])
 
-	let Allprojects = $state(projectsData)
+	let allProjects = $state<ReturnType<typeof projectsData>>([])
 
 	$effect(() => {
-		if (filterProjects.result?.data?.projects) {
-			if (document.startViewTransition) {
-				document.startViewTransition(() => {
-					Allprojects = filterProjects.result.data.projects
-				})
-			} else {
-				Allprojects = filterProjects.result.data.projects
-			}
+		if (!filterProjects.result?.data?.projects) {
+			allProjects = projectsData()
+		}
+	})
+
+	$effect(() => {
+		const filteredProjects = filterProjects.result?.data?.projects
+		if (!filteredProjects) return
+
+		if (document.startViewTransition) {
+			document.startViewTransition(() => {
+				allProjects = filteredProjects
+			})
+		} else {
+			allProjects = filteredProjects
 		}
 	})
 </script>
@@ -22,7 +30,7 @@
 <section class="neutral">
 	<h2 id="project-container" tabindex="-1">Projecten</h2>
 
-	{#each Allprojects as project (project.id)}
+	{#each allProjects as project (project.id)}
 		<ProjectCard {project} />
 	{/each}
 </section>

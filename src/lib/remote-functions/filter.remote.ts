@@ -11,13 +11,39 @@ export const filterProjects = form(
 		status: v.optional(v.array(v.string()))
 	}),
 	async (filters) => {
-		let projects = await getProjects();
+		const projects = (await getProjects()) as {
+			// Define types for each field to prevent: Element implicitly has an 'any' type
+			id: number;
+			title: string;
+			description: string;
+			content: string;
+			slug: string;
+			sort: number;
+
+			project_lead: string | null;
+
+			execution: string[];
+			case_study: string[];
+			researchers: null;
+
+			Participation_level: string;
+			Process_phase: string;
+
+			results: string;
+			status: 'draft' | 'published';
+
+			date: string;
+			end_date: string | null;
+
+			website_url: string | null;
+			img: string | null;
+		}[];
 
 		const filteredProjects = projects.filter((project) =>
 			Object.entries(filters).every(([key, values]) => {
 				if (!values || values.length === 0) return true;
 
-				const field = project[key];
+				const field = project[key as keyof typeof project];
 				if (!field) return false;
 
 				if (Array.isArray(field)) {
@@ -38,11 +64,12 @@ export const filterProjects = form(
 			Object.entries(filters).filter(
 				([key, values]) => Array.isArray(values) && values.length > 0
 			)
-		)
+		);
 
 		return {
 			data: {
-				projects: filteredProjects, activeFilters
+				projects: filteredProjects,
+				activeFilters
 			}
 		};
 	}

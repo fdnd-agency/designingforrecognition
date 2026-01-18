@@ -8,19 +8,16 @@
 	</p>
 
 	<ul>
-		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Tessa Steenkamp</h3>
+			<p class="researcher-name">Tessa Steenkamp</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2023/08/Tessa-scaled-e1691482296190.jpg" alt="" width="100" height="100" />
 		</li>
-		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Martijn de Waal</h3>
+			<p class="researcher-name">Martijn de Waal</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2018/09/martijn-de-waal-1.jpg" alt="" width="100" height="100" />
 		</li>
-		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Jorgen Karskens</h3>
+			<p class="researcher-name">Jorgen Karskens</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2022/11/1539348613468.jpeg" alt="" width="100" height="100" />
 		</li>
 	</ul>
@@ -89,7 +86,7 @@
 				width: 325px;
 			}
 
-			h3 {
+			.researcher-name {
 				opacity: 1;
 				transform: translateX(0);
 
@@ -101,7 +98,7 @@
 		}
 	}
 
-	h3 {
+	.researcher-name {
 		opacity: 0;
 		transform: translateX(-20px);
 		transition:
