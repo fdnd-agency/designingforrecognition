@@ -8,21 +8,15 @@
 	let allProjects = $state<ReturnType<typeof projectsData>>([])
 
 	$effect(() => {
-		if (!filterProjects.result?.data?.projects) {
-			allProjects = projectsData()
-		}
-	})
+		const filtered = filterProjects.result?.data?.projects
+		const nextProjects = filtered ?? projectsData()
 
-	$effect(() => {
-		const filteredProjects = filterProjects.result?.data?.projects
-		if (!filteredProjects) return
-
-		if (document.startViewTransition) {
+		if (document.startViewTransition && filtered) {
 			document.startViewTransition(() => {
-				allProjects = filteredProjects
+				allProjects = nextProjects
 			})
 		} else {
-			allProjects = filteredProjects
+			allProjects = nextProjects
 		}
 	})
 </script>

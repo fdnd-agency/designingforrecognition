@@ -50,7 +50,7 @@
 		padding: 0;
 		margin: 0 1em 0 1em;
 
-		@media (min-width: 630px) and (prefers-reduced-motion: no-preference) {
+		@media (min-width: 630px) {
 			flex-direction: row;
 		}
 	}
@@ -69,7 +69,6 @@
 		justify-content: start;
 
 		@media (prefers-reduced-motion: reduce) {
-			transform: none;
 			transition: none;
 			width: 250px;
 
@@ -115,10 +114,6 @@
 			transform: none;
 			transition: none;
 			opacity: 1;
-
-			@media (min-width: 980px) {
-				white-space: nowrap;
-			}
 		}
 	}
 

@@ -23,7 +23,7 @@ body {
     line-height: 1.5;
     letter-spacing: 0.06em;
     word-spacing: 0.16em;
-    
+
     /* font-size */
     --font-size-title-page: clamp(3.129rem, calc(8.5vw + 1rem), 4.162rem);
     --font-size-title-section: clamp(2.353rem, calc(6vw + 1rem), 3.129rem);
@@ -41,25 +41,28 @@ body {
     --spacing-s: 1rem;
     --spacing-xs: 0.5rem;
 
+    /* border */
+    --radius: 15px;
+    --child-radius: calc(var(--radius) / 2);
 }
 
 /* ====================================================== COLORS ====================================================== */
 .neutral,
 .accent-primary,
 .accent-secondary {
-	--dark-2: color-mix(in hsl, var(--place-holder) 80%, black 20%);
-	--dark-1: color-mix(in hsl, var(--place-holder) 90%, black 10%);
-	--color: color-mix(in hsl, var(--place-holder) 100%, white 0%);
-	--light-1: color-mix(in hsl, var(--place-holder) 100%, white 2%);
-	--light-2: color-mix(in hsl, var(--place-holder) 100%, white 7%);
+    --dark-2: color-mix(in hsl, var(--place-holder) 80%, black 20%);
+    --dark-1: color-mix(in hsl, var(--place-holder) 90%, black 10%);
+    --color: color-mix(in hsl, var(--place-holder) 100%, white 0%);
+    --light-1: color-mix(in hsl, var(--place-holder) 100%, white 2%);
+    --light-2: color-mix(in hsl, var(--place-holder) 100%, white 7%);
 
-	@supports (color: oklch(50% 0.1 120)) {
-		--dark-2: oklch(from var(--place-holder) calc(l - 0.10) calc(c + 0.02) h);
-		--dark-1: oklch(from var(--place-holder) calc(l - 0.04) calc(c + 0.01) h);
-		--color: oklch(from var(--place-holder) l c h);
-		--light-1: oklch(from var(--place-holder) calc(l + 0.02) calc(c + 0.01) h);
-		--light-2: oklch(from var(--place-holder) calc(l + 0.04) calc(c + 0.02) h);
-	}
+    @supports (color: oklch(50% 0.1 120)) {
+        --dark-2: oklch(from var(--place-holder) calc(l - 0.10) calc(c + 0.02) h);
+        --dark-1: oklch(from var(--place-holder) calc(l - 0.04) calc(c + 0.01) h);
+        --color: oklch(from var(--place-holder) l c h);
+        --light-1: oklch(from var(--place-holder) calc(l + 0.02) calc(c + 0.01) h);
+        --light-2: oklch(from var(--place-holder) calc(l + 0.04) calc(c + 0.02) h);
+    }
 }
 
 .neutral {

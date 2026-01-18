@@ -9,7 +9,6 @@
 	]
 </script>
 
-<!-- voor de toggle -->
 <section class="sponsors" style="display: {visible ? 'flex' : 'none'}">
 	<header class="title">
 		<h2>Onze partners</h2>
@@ -60,8 +59,6 @@
 		background: var(--color-accent-primary);
 	}
 
-	/* logo's top en bottom */
-
 	.logo-top {
 		position: relative;
 		width: 100%;
@@ -69,7 +66,6 @@
 		overflow: hidden;
 		padding-block: 12px;
 		display: flex;
-		/* margin-bottom: 16px; */
 		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 0%, transparent) 0%, var(--color-neutral) 100%);
 	}
 

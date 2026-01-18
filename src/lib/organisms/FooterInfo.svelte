@@ -1,16 +1,14 @@
 <script>
-	// @ts-nocheck
-
 	import { SponsorCarousel } from '$lib'
+	import { onMount } from 'svelte'
 	export let sponsorsData
 
-	// JS disabled functie
-	import { onMount } from 'svelte'
 	let showSponsors = true
+
 	onMount(() => {
 		showSponsors = false
 	})
-	// toggle
+
 	const toggleSponsors = () => {
 		showSponsors = !showSponsors
 		if (showSponsors) requestAnimationFrame(() => document.querySelector('.sponsors')?.scrollIntoView({ behavior: 'smooth' }))
