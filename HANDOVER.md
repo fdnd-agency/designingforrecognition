@@ -36,6 +36,9 @@
 - **Review and further develop the detail pages**  
   During our work, the main focus was largely on the homepage. It is recommended to review the detail pages together with the client to determine how they should look and how they can be improved.
 
+- **Client-provided content**  
+Check whether the client has content available for the detail pages. At the time we were working on this assignment, the client was still in the process of writing this content.
+
 - **Study the CSS color system carefully**  
   Review the CSS in the `styleguide.css` file. A custom color system is used that reduces the amount of code, but it works differently from standard CSS custom properties. It requires specific classes to be applied in the HTML in order to use the defined color variations, so it is important to understand this system before making changes.
 
