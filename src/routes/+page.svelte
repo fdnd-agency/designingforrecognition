@@ -1,17 +1,15 @@
 <script>
-	import { HeroSection, Filters, ProjectCardContainer, About, SponsorCarousel, } from '$lib'
+	import { HeroSection, Filters, ProjectCardContainer, About } from '$lib'
 	let { data } = $props()
+	let projects = $state(data.projects)
 </script>
 
-<header>
-	<HeroSection 
-	project={data.projects[2]}
-	callout={data.projects[5]}
-	/>
-</header>
+<HeroSection 
+project={data.projects[2]}
+callout={data.projects[5]}
+/>
 
-<main>
-	<Filters />
-	<ProjectCardContainer projectsData={data.projects} />
-	<About />
-</main>
+
+<Filters projectCount={projects.length} />
+<ProjectCardContainer projectsData={data.projects} />
+<About />

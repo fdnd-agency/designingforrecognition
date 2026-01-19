@@ -8,19 +8,16 @@
 	</p>
 
 	<ul>
-		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Tessa Steenkamp</h3>
+			<p class="researcher-name">Tessa Steenkamp</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2023/08/Tessa-scaled-e1691482296190.jpg" alt="" width="100" height="100" />
 		</li>
-		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Martijn de Waal</h3>
+			<p class="researcher-name">Martijn de Waal</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2018/09/martijn-de-waal-1.jpg" alt="" width="100" height="100" />
 		</li>
-		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li>
-			<h3>Jorgen Karskens</h3>
+			<p class="researcher-name">Jorgen Karskens</p>
 			<img src="https://civicinteractiondesign.com/wp-content/uploads/2022/11/1539348613468.jpeg" alt="" width="100" height="100" />
 		</li>
 	</ul>
@@ -32,12 +29,17 @@
 		flex-direction: column;
 		align-items: center;
 		background-color: var(--color);
-		margin-bottom: 2rem;
+		padding: var(--spacing-l) 0 var(--spacing-m) 0;
+
+		h2 {
+			margin-bottom: var(--spacing-m);
+		}
 	}
 
 	p {
 		width: clamp(25ch, 90%, 85ch);
 		line-height: 1.5rem;
+		margin-bottom: var(--spacing-m);
 	}
 
 	ul {
@@ -46,9 +48,9 @@
 		align-items: center;
 		gap: 1em;
 		padding: 0;
-		margin: 0 1em;
+		margin: 0 1em 0 1em;
 
-		@media (min-width: 600px) and (prefers-reduced-motion: no-preference) {
+		@media (min-width: 630px) and (prefers-reduced-motion: no-preference) {
 			flex-direction: row;
 		}
 	}
@@ -81,10 +83,10 @@
 			width: 250px;
 
 			@media (min-width: 350px) {
-				width: 290px;
+				width: 325px;
 			}
 
-			h3 {
+			.researcher-name {
 				opacity: 1;
 				transform: translateX(0);
 
@@ -96,7 +98,7 @@
 		}
 	}
 
-	h3 {
+	.researcher-name {
 		opacity: 0;
 		transform: translateX(-20px);
 		transition:

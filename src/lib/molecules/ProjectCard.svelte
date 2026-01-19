@@ -4,7 +4,7 @@
 	const { title, slug, img, date, end_date, description } = project
 </script>
 
-<article class="neutral card-container">
+<article class="neutral card-container" style="view-transition-name: project-{project.id}">
 	<a class="card-info" href="/project-{slug}">
 		{#if title}
 			<h3>{title}</h3>
@@ -18,18 +18,18 @@
 			<img src={fallBackimg} width="270px" height="250px" alt="image die te maken heeft met {img}" loading="lazy" />
 		</picture>
 
+		{#if description}
+			<p class="description">{description}</p>
+		{:else}
+			<p class="description"><i>Description is missing</i></p>
+		{/if}
+
 		{#if date && !end_date}
 			<p class="date">{new Date(date).getFullYear()}</p>
 		{:else if date && end_date}
 			<p class="date">{new Date(date).getFullYear()} / {new Date(end_date).getFullYear()}</p>
 		{:else}
 			<p class="empty-element"></p>
-		{/if}
-
-		{#if description}
-			<p class="description">{description}</p>
-		{:else}
-			<p class="description"><i>Description is missing</i></p>
 		{/if}
 	</a>
 </article>
@@ -45,6 +45,7 @@
 	.card-info {
 		display: grid;
 		width: 100%;
+		height: 100%;
 		text-decoration: none;
 		background-color: var(--light-2);
 		color: var(--color-primary);
@@ -68,7 +69,8 @@
 		}
 
 		h3 {
-			grid-row: 3;
+			grid-row: 2;
+			text-wrap: balance;
 		}
 
 		img {
@@ -76,45 +78,36 @@
 			object-fit: cover;
 			object-position: top;
 			border-radius: var(--radius) var(--radius) 0 0;
-			margin-bottom: 1rem;
 		}
 
 		h3,
 		.date,
 		.description {
-			padding: 0 1rem 1rem 1rem;
+			padding: 0 1rem;
 		}
 
 		.description {
-			overflow: hidden;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			text-overflow: ellipsis;
 			-webkit-line-clamp: 7;
-			height: calc(1.5em * 5.8);
-			margin: 1em 0;
+			line-clamp: 7;
+			max-height: 7lh;
+			overflow: hidden;
+			margin: 0.5rem 0 1rem 0;
+		}
+
+		.date {
+			margin: 0 0 1rem 0;
 		}
 	}
 
 	@container project-card (min-width: 385px) {
 		.card-info {
-			height: 34em;
-
-			h3 {
-				padding: 0 1rem;
-			}
+			grid-template-rows: min-content min-content min-content min-content;
 
 			img {
 				margin-bottom: 0;
-				height: 100%;
-			}
-
-			.date {
-				padding: 1rem 1rem 0 1rem;
-			}
-
-			.description {
-				margin: 0;
+				height: 250px;
 			}
 		}
 	}
@@ -126,7 +119,7 @@
 			height: 100%;
 
 			h3 {
-				grid-row: 2/3;
+				grid-row: 1/2;
 				grid-column: 2;
 				align-self: end;
 				padding: 0 1rem;
@@ -145,18 +138,12 @@
 			}
 
 			.date {
-				margin-top: 1rem;
-				padding: 0 1rem;
 				align-self: end;
 			}
 
 			.description {
-				grid-column: 2;
-				grid-row: 3;
-				margin-bottom: 1rem;
-				padding-top: 0.5rem;
-				-webkit-line-clamp: 5;
-				height: calc(1.5em * 4.4);
+				-webkit-line-clamp: 7;
+				line-clamp: 7;
 			}
 		}
 	}

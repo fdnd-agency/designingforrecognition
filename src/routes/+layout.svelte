@@ -1,10 +1,7 @@
 <script>
 	import { favicon, FooterInfo, Header, SponsorCarousel } from '$lib'
-	// export let data
 	let { children, data } = $props()
 	const sponsorsData = data.sponsors
-	// export let data
-	// const {data} = $props()
 </script>
 
 <svelte:head>
@@ -12,8 +9,24 @@
 	<link rel="stylesheet" href="styles/styleguide.css" />
 </svelte:head>
 
-<Header />
+<div class="page-layout">
+	<Header />
 
-{@render children?.()}
+	<main>
+		{@render children?.()}
+	</main>
 
-<FooterInfo {sponsorsData} />
+	<FooterInfo {sponsorsData} />
+</div>
+
+<style>
+	.page-layout {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	main {
+		flex: 1;
+	}
+</style>

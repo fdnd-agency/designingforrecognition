@@ -5,15 +5,13 @@
 		{
 			position: 'logo-top',
 			animation: 'logo-strip-top'
-		},
-		// {
-		// 	position: 'logo-bottom',
-		// 	animation: 'logo-strip-bottom'
-		// }
+		}
 	]
 </script>
+
 <!-- voor de toggle -->
-<section class="sponsors" style="display: {visible ? 'flex' : 'none'}">	<header class="title">
+<section class="sponsors" style="display: {visible ? 'flex' : 'none'}">
+	<header class="title">
 		<h2>Onze partners</h2>
 	</header>
 
@@ -34,21 +32,10 @@
 <style>
 	.sponsors {
 		display: flex;
-		/* background: linear-gradient(
-	to top,
-	var(--color-neutral) 0%,    
-	var(--oklch-accent-secondary) 100%      
-); */
-
-
-		/* background: var(--oklch-neutral); */
 		color: var(--color-accent-primary);
-		/* min-height: 57vh; */
-		/* display: none; */
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		/* padding-block: 1.5em; */
 		text-align: center;
 		overflow-x: hidden;
 		margin-top: 2em;
@@ -81,7 +68,6 @@
 		max-width: 100vw;
 		overflow: hidden;
 		padding-block: 12px;
-		/* border-bottom: 1px solid var(--color-accent-secondary); */
 		display: flex;
 		/* margin-bottom: 16px; */
 		background: linear-gradient(to bottom, color-mix(in srgb, var(--color-accent-secondary) 0%, transparent) 0%, var(--color-neutral) 100%);
@@ -112,31 +98,24 @@
 		width: auto;
 		object-fit: contain;
 
-		@media (min-width: 726px){
-			max-height: 5.5em; 
+		@media (min-width: 726px) {
+			max-height: 5.5em;
 		}
 	}
 
-	/* Animatie auto carousel */
-	/* .logo-strip-top {
-		animation: scroll-left-to-right 30s linear infinite;
-	}
-
-	.logo-strip-bottom {
-		animation: scroll-right-to-left 30s linear infinite;
-	} */
-
 	@keyframes marquee-left {
-	0%   { transform: translateX(0); }      /* start meteen zichtbaar */
-	100% { transform: translateX(-50%); }   /* schuift eerste helft exact weg */
-}
-
-/* optioneel: bestaande .logo-bottom/.logo-strip-bottom mogen blijven staan maar worden niet meer gebruikt */
-
-@media (prefers-reduced-motion: reduce) {
-	.logo-strip-top {
-		animation: none;
-		transform: none;
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
 	}
-}
+
+	@media (prefers-reduced-motion: reduce) {
+		.logo-strip-top {
+			animation: none;
+			transform: none;
+		}
+	}
 </style>
