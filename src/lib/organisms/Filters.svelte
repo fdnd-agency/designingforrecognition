@@ -26,6 +26,12 @@
 			}
 		})
 	}
+
+	function scrollTo() {
+		setTimeout(() => {
+			document.getElementById('project-container')?.scrollIntoView({ behavior: 'smooth' })
+		}, 1000)
+	}
 </script>
 
 <div class="form-container">
@@ -76,7 +82,7 @@
 		</fieldset>
 
 		<div class="form-buttons">
-			<button>Activeer filters</button>
+			<button onclick={scrollTo}>Activeer filters</button>
 			<button onclick={resetFilters}>Reset filters</button>
 		</div>
 	</form>
