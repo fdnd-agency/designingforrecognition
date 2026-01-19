@@ -4,6 +4,9 @@
 export { default as Logo } from './atoms/Logo.svelte';
 // Header component for the Website
 export { default as Header } from './organisms/Header.svelte';
+
+//Component responsible for the hero-section
+export { default as HeroSection} from './organisms/HeroSection.svelte'
 // These filters sort the Project cards
 export { default as Filters } from './organisms/Filters.svelte';
 // Component responsible for rendering project subjects on the home page
