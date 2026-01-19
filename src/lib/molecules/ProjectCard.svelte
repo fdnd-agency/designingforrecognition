@@ -141,8 +141,9 @@
 			}
 
 			.description {
-				-webkit-line-clamp: 7;
-				line-clamp: 7;
+				-webkit-line-clamp: 5;
+				line-clamp: 5;
+				max-height: 5lh;
 			}
 		}
 	}
