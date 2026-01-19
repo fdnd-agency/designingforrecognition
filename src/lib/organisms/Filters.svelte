@@ -148,6 +148,7 @@
 		background-color: var(--color-accent-secondary);
 		width: clamp(6em, 100%, 9.5em);
 		transform-origin: center;
+		height: 100%;
 
 		&:has(input:focus-visible),
 		&:hover,
@@ -175,13 +176,14 @@
 
 	label,
 	button {
-		display: block;
+		display: flex;
 		font-size: 1.3rem;
 		padding: 0.5em;
 		min-height: 52px;
 		border-radius: 20px;
 		text-align: center;
-		align-self: center;
+		align-items: center;
+		justify-content: center;
 		color: var(--color-dark);
 		cursor: pointer;
 	}
