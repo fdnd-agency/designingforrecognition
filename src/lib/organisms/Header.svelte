@@ -42,7 +42,7 @@
 			</button>
 		</div>
 
-		<nav id="main-navigation" class:close-nav={menuOpen}>
+		<nav id="main-navigation" class:close-nav={menuOpen} lang="en">
 			<ul class="accent-primary">
 				<li><a href="/" onclick={closeMenu}>Home</a></li>
 				<li><a href="/" onclick={closeMenu}>Projects</a></li>
