@@ -18,9 +18,8 @@
 
 	<picture>
 		<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{img}?format=avif&width=270&height=250" />
-		<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{img}?format=webp&width=250&height=165" />
-		<!-- change to {fallBackimg} before merging, this image if already on de dev branch -->
-		<img src={img} width="270px" height="250px" alt="image die te maken heeft met {title}" fetchpriority="high" />
+		<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{img}?format=webp&width=270&height=250" />
+		<img src="/assets/fallBackImg.png" width="270" height="250" alt="image die te maken heeft met {title}" fetchpriority="high" />
 	</picture>
 
 	{#if date && !end_date}
@@ -54,11 +53,7 @@
 
 <style>
 	.content-container {
-		--radius: 15px;
-		--child-radius: calc(var(--radius) / 2);
 		--left-margin-810px: 2em;
-		--box-shadow-img-article: 1px 1px 10px 0 var(--dark-2);
-
 		padding: 5em 0;
 
 		display: grid;
@@ -81,7 +76,7 @@
 		}
 
 		@media (min-width: 810px) {
-			grid-template-rows: 7.5em;
+			grid-template-rows: 11em;
 
 			picture {
 				grid-column: 2 / 3;
@@ -102,6 +97,11 @@
 		align-self: start;
 		margin-top: 0.5em;
 		font-size: clamp(1.35rem, calc(3vw + 1rem), 3rem);
+
+		@media (min-width: 810px) {
+			text-align: center;
+			text-wrap: balance;
+		}
 	}
 
 	button {
@@ -126,7 +126,6 @@
 
 	picture img {
 		border-radius: var(--child-radius);
-		box-shadow: var(--box-shadow-img-article);
 		width: clamp(270px, 75vw, 400px);
 		height: auto;
 
@@ -150,7 +149,6 @@
 		flex-direction: column;
 		background-color: var(--oklch-accent-secondary);
 		border-radius: var(--child-radius);
-		box-shadow: var(--box-shadow-img-article);
 		padding: 0.8em;
 		margin-top: 0.5em;
 

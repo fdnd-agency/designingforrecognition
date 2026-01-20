@@ -1,24 +1,22 @@
 <script lang="ts">
 	import { filterProjects } from '$lib/remote-functions/filter.remote'
-	import { onMount, tick } from 'svelte'
+	import { tick } from 'svelte'
 
 	let { projectCount } = $props()
 
-	onMount(() => {
-		$effect(() => {
-			;(async () => {
-				const filters = filterProjects.result?.data?.activeFilters
-				if (!filters) return
+	$effect(() => {
+		;(async () => {
+			const filters = filterProjects.result?.data?.activeFilters
+			if (!filters) return
 
-				await tick()
+			await tick()
 
-				const activeValues = Object.values(filters).flat()
+			const activeValues = Object.values(filters).flat()
 
-				document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach((input) => {
-					input.checked = activeValues.includes(input.value)
-				})
-			})()
-		})
+			document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach((input) => {
+				input.checked = activeValues.includes(input.value)
+			})
+		})()
 	})
 
 	function resetFilters() {
@@ -164,7 +162,7 @@
 		}
 
 		&:active {
-			transform: scale(0.8);
+			transform: scale(0.9);
 			transition: transform 0.05s ease-out;
 		}
 
@@ -202,12 +200,10 @@
 			&:hover,
 			&:focus-visible {
 				scale: 1.05;
-				transition: 0.5 ease-in;
 			}
 
 			&:active {
 				scale: 1;
-				transition: 0.5 ease-in;
 			}
 		}
 	}

@@ -1,7 +1,6 @@
 <script>
-	import { favicon, FooterInfo, Header, SponsorCarousel } from '$lib'
+	import { favicon, FooterInfo, Header } from '$lib'
 	let { children, data } = $props()
-	const sponsorsData = data.sponsors
 </script>
 
 <svelte:head>
@@ -16,7 +15,7 @@
 		{@render children?.()}
 	</main>
 
-	<FooterInfo {sponsorsData} />
+	<FooterInfo sponsorsData={data.sponsors} />
 </div>
 
 <style>

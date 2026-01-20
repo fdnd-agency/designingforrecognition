@@ -1,10 +1,10 @@
 <script>
 	import { fallBackimg } from '$lib'
 	export let project
-	const { title, slug, img, date, end_date, description } = project
+	const { title, slug, img, date, end_date, description, id } = project
 </script>
 
-<article class="neutral card-container" style="view-transition-name: project-{project.id}">
+<article class="neutral card-container" style="view-transition-name: project-{id}">
 	<a class="card-info" href="/project-{slug}">
 		{#if title}
 			<h3>{title}</h3>
@@ -61,7 +61,6 @@
 			outline: 2px solid var(--light-2);
 			box-shadow: 1px 1px 5px 10px var(--dark-1);
 			scale: 1.01;
-			transition: scale 0.2s ease-in;
 
 			h3 {
 				color: var(--color-accent-secondary);
@@ -97,6 +96,7 @@
 		}
 
 		.date {
+			font-style: italic;
 			margin: 0 0 1rem 0;
 		}
 	}
@@ -106,7 +106,6 @@
 			grid-template-rows: min-content min-content min-content min-content;
 
 			img {
-				margin-bottom: 0;
 				height: 250px;
 			}
 		}
