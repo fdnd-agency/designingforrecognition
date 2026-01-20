@@ -49,37 +49,27 @@
 			<ul>
 				{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
 					<li>
-						<label>
-							<input {...filterProjects.fields.execution.as('checkbox', value)} />
-							{value}
-						</label>
+						<input id={`${value}`} {...filterProjects.fields.execution.as('checkbox', value)} />
+						<label for={`${value}`}>{value}</label>
 					</li>
 				{/each}
 
 				<li>
-					<label>
-						<input {...filterProjects.fields.Participation_level.as('checkbox', 'Contestable')} />
-						Contestable
-					</label>
+					<input id="Contestable" {...filterProjects.fields.Participation_level.as('checkbox', 'Contestable')} />
+					<label for="Contestable"> Contestable </label>
 				</li>
 
 				<li>
-					<label>
-						<input {...filterProjects.fields.Process_phase.as('checkbox', 'Making')} />
-						Making
-					</label>
+					<input id="Making" {...filterProjects.fields.Process_phase.as('checkbox', 'Making')} />
+					<label for="Making"> Making </label>
 				</li>
 				<li>
-					<label>
-						<input {...filterProjects.fields.results.as('checkbox', 'Niet beschikbaar')} />
-						Niet beschikbaar
-					</label>
+					<input id="Niet-beschikbaar" {...filterProjects.fields.results.as('checkbox', 'Niet beschikbaar')} />
+					<label for="Niet-beschikbaar"> Niet beschikbaar </label>
 				</li>
 				<li>
-					<label>
-						<input {...filterProjects.fields.status.as('checkbox', 'draft')} />
-						Draft
-					</label>
+					<input id="Draft" {...filterProjects.fields.status.as('checkbox', 'draft')} />
+					<label for="Draft"> Draft </label>
 				</li>
 			</ul>
 		</fieldset>
@@ -151,6 +141,17 @@
 		}
 	}
 
+	li {
+		> input:checked + label {
+			outline: 3px solid var(--color-dark);
+		}
+
+		> label:hover,
+		> input:focus-visible + label {
+			background-color: var(--color-accent-primary);
+		}
+	}
+
 	label {
 		transition: background-color 0.2s ease-out;
 		position: relative;
@@ -159,28 +160,17 @@
 		transform-origin: center;
 		height: 100%;
 
-		&:has(input:focus-visible),
-		&:hover,
-		&:focus-visible {
-			background-color: var(--color-accent-primary);
-			transition: background-color 0.3s ease-out;
-		}
-
-		&:has(input:checked) {
-			background-color: var(--color-accent-primary);
-			outline: 3px solid var(--color-dark);
-		}
-
 		&:active {
 			transform: scale(0.9);
 			transition: transform 0.05s ease-out;
 		}
+	}
 
-		input {
-			position: absolute;
-			opacity: 0;
-			pointer-events: none;
-		}
+	input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+		clip-path: 0;
 	}
 
 	label,
