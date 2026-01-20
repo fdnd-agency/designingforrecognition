@@ -13,9 +13,9 @@
 		{/if}
 
 		<picture>
-			<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{img}?format=avif&width=570&height=250" />
-			<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{img}?format=webp&width=570&height=250" />
-			<img src={fallBackimg} width="270px" height="250px" alt="image die te maken heeft met {img}" loading="lazy" />
+			<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{img}?format=avif&width=270&height=250&fit=cover&quality=70" />
+			<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{img}?format=webp&width=270&height=250&fit=cover&quality=70" />
+			<img src={fallBackimg} width="270" height="250" alt="image die te maken heeft met {img}" loading="lazy" />
 		</picture>
 
 		{#if description}
