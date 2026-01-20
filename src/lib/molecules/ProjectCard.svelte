@@ -43,7 +43,7 @@
 		--_dark-10: var(--dark-1, #0d3951);
 		--_light-10: var(--light-1, #0d3951);
 		--_light-20: var(--light-2, #0d3951);
-		--_border: var(--_light-20, black);
+		--_border: var(--light-2, black);
 
 		--radius: 15px;
 		--child-radius: calc(var(--radius) / 2);
