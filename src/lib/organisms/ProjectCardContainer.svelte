@@ -30,6 +30,14 @@
 </section>
 
 <style>
+	@media (prefers-reduced-motion: reduce) {
+		::view-transition-group(*),
+		::view-transition-old(*),
+		::view-transition-new(*) {
+			animation: none;
+		}
+	}
+
 	section {
 		display: grid;
 		gap: var(--spacing-m);

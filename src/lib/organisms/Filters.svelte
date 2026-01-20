@@ -29,6 +29,9 @@
 
 	function scrollTo() {
 		setTimeout(() => {
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+			if (reduceMotion) return
+
 			document.getElementById('project-container')?.scrollIntoView({ behavior: 'smooth' })
 		}, 1000)
 	}
