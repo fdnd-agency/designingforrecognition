@@ -42,7 +42,7 @@
 		display: grid;
 		gap: var(--spacing-m);
 		padding: var(--spacing-l) 1em var(--spacing-m) 1em;
-		background-color: var(--color);
+		background-color: var(--color, #0d3951);
 
 		h2 {
 			grid-column: 1/-1;
