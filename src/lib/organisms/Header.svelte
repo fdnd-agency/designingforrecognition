@@ -49,10 +49,6 @@
 				<li><a href="/" onclick={closeMenu}>Researchers</a></li>
 			</ul>
 		</nav>
-
-		{#if !menuOpen}
-			<div class="backdrop" onclick={closeMenu} aria-hidden="true"></div>
-		{/if}
 	</div>
 </header>
 
@@ -173,14 +169,6 @@
 		}
 	}
 
-	.backdrop {
-		cursor: pointer;
-		position: fixed;
-		inset: 0;
-		background: rgba(0, 0, 0, 0.5);
-		z-index: 8;
-	}
-
 	@container header-nav (min-width: 885px) {
 		.container-layout {
 			display: flex;
@@ -211,10 +199,6 @@
 
 		nav.close-nav {
 			transform: translateY(0);
-		}
-
-		.backdrop {
-			display: none;
 		}
 	}
 </style>
