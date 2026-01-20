@@ -11,9 +11,9 @@
 		<h2><i>Title is missing</i></h2>
 	{/if}
 
-	<button on:click={() => history.back()}>
-		<img src={backButton} width="36px" height="36px" alt="Terug naar de vorige pagina" />
-		<span>Terug</span>
+	<button type="button" on:click={() => history.back()} aria-label="Terug naar de vorige pagina">
+		<img src={backButton} width="36px" height="36px" aria-hidden="true" />
+		<span aria-hidden="true">Terug</span>
 	</button>
 
 	<picture>

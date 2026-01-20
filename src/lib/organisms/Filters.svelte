@@ -29,6 +29,9 @@
 
 	function scrollTo() {
 		setTimeout(() => {
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+			if (reduceMotion) return
+
 			document.getElementById('project-container')?.scrollIntoView({ behavior: 'smooth' })
 		}, 1000)
 	}
@@ -36,7 +39,7 @@
 
 <div class="form-container">
 	<p class="skip-link">
-		<a href="#project-container">klik enter om filters over te slaan en naar projecten te gaan</a>
+		<a href="#project-container">Skip Naar projecten</a>
 	</p>
 
 	<form {...filterProjects}>
