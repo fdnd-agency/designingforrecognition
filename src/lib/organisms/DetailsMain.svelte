@@ -1,5 +1,5 @@
 <script>
-	import { backButton } from '$lib'
+	import { backButton, fallBackimg } from '$lib'
 	export let projectsDetails
 	const { title, img, date, end_date, content } = projectsDetails
 </script>
@@ -12,14 +12,14 @@
 	{/if}
 
 	<button type="button" on:click={() => history.back()} aria-label="Terug naar de vorige pagina">
-		<img src={backButton} width="36px" height="36px" aria-hidden="true" />
+		<img src={backButton} width="36px" height="36px" alt="" aria-hidden="true" />
 		<span aria-hidden="true">Terug</span>
 	</button>
 
 	<picture>
 		<source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{img}?format=avif&width=270&height=250" />
 		<source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{img}?format=webp&width=270&height=250" />
-		<img src="/assets/fallBackImg.png" width="270" height="250" alt="image die te maken heeft met {title}" fetchpriority="high" />
+		<img src={fallBackimg} width="270" height="250" alt="image die te maken heeft met {title}" fetchpriority="high" />
 	</picture>
 
 	{#if date && !end_date}

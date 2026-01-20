@@ -20,7 +20,11 @@
 			<ul class={row.animation}>
 				{#each sponsorsData as sponsor}
 					<li>
-						<img src={`https://fdnd-agency.directus.app/assets/${sponsor.logo}`} alt={sponsor.name} />
+						<picture>
+							<source type="image/avif" srcset={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=avif&fit=contain&quality=50`} />
+							<source type="image/webp" srcset={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=webp&fit=contain&quality=50`} />
+							<img src={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=png&fit=contain&quality=50`} alt={sponsor.name} loading="lazy" />
+						</picture>
 					</li>
 				{/each}
 			</ul>

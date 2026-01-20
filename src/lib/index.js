@@ -23,3 +23,6 @@ export { default as FooterInfo } from './organisms/FooterInfo.svelte';
 export { default as favicon } from './assets/favicon.svg';
 export { default as fallBackimg } from './assets/fallBackimg.png';
 export { default as backButton } from './assets/backButton.svg';
+export { default as researcher1 } from './assets/researcher-1.webp';
+export { default as researcher2 } from './assets/researcher-2.webp';
+export { default as researcher3 } from './assets/researcher-3.webp';
