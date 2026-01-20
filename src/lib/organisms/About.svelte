@@ -50,7 +50,11 @@
 		padding: 0;
 		margin: 0 1em 0 1em;
 
-		@media (min-width: 630px) {
+		@media (min-width: 630px) and (prefers-reduced-motion: no-preference) {
+			flex-direction: row;
+		}
+
+		@media (prefers-reduced-motion: reduce) and (min-width: 1060px) {
 			flex-direction: row;
 		}
 	}
@@ -73,7 +77,7 @@
 			width: 250px;
 
 			@media (min-width: 350px) {
-				width: 290px;
+				width: 325px;
 			}
 		}
 
