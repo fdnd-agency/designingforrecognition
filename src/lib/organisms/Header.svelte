@@ -102,6 +102,10 @@
 		transition:
 			transform 0.25s ease-out,
 			opacity 0.2s ease-out;
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
 	}
 
 	.open-menu-icon {
@@ -132,6 +136,13 @@
 		transition: transform 0.45s ease-out;
 	}
 
+	@media (prefers-reduced-motion: reduce) {
+		nav,
+		.close-nav {
+			transition: none;
+		}
+	}
+
 	ul {
 		display: flex;
 		flex-direction: column;
@@ -153,6 +164,12 @@
 			&:hover {
 				background-size: 100% 2px;
 			}
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		ul a {
+			transition: none;
 		}
 	}
 
