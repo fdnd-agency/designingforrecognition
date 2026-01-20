@@ -2,8 +2,8 @@
 	export let scrolled
 </script>
 
-<a href="/" aria-label="Designing for recognition" lang="en">
-	<span class="logo-container" aria-hidden="true"class:scrolled>
+<a href="/" aria-label="Home - Designing for Recognition" lang="en">
+	<span class="logo-container" aria-hidden="true" class:scrolled>
 		<span class="logo-text full">
 			<span>Designing</span>
 			<span>for</span>
