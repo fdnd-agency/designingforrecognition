@@ -54,7 +54,7 @@
 <style>
 	.content-container {
 		--left-margin-810px: 2em;
-		padding: 5em 0;
+		padding: var(--spacing-l) 0;
 
 		display: grid;
 		grid-template-columns: 1fr;
