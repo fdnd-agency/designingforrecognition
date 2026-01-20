@@ -126,3 +126,7 @@ h4 {
     font-weight: var(--font-weight-bold);
     font-style: italic;
 }
+
+i {
+    font-style: oblique;
+}
