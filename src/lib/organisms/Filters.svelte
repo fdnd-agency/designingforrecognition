@@ -94,7 +94,7 @@
 		left: 1em;
 		background-color: var(--color-accent-primary);
 		padding: 0.5em;
-		border-radius: 20px;
+		/* border-radius: 5px; */
 		opacity: 0;
 		pointer-events: none;
 		outline: 3px solid currentColor;
@@ -179,7 +179,7 @@
 		font-size: 1.3rem;
 		padding: 0.5em;
 		min-height: 52px;
-		border-radius: 20px;
+		/* border-radius: 0px; */
 		text-align: center;
 		align-items: center;
 		justify-content: center;
