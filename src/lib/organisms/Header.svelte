@@ -1,6 +1,7 @@
 <script>
 	import Logo from '$lib/atoms/Logo.svelte'
 	import { onMount } from 'svelte'
+	import { page } from '$app/stores'
 
 	let menuOpen = false
 	let scrolled = false
@@ -44,7 +45,7 @@
 
 		<nav id="main-navigation" class:close-nav={menuOpen} lang="en">
 			<ul class="accent-primary">
-				<li><a href="/" onclick={closeMenu}>Home</a></li>
+				<li><a href="/" class:currentPage={$page.url.pathname === '/'} onclick={closeMenu}>Home</a></li>
 				<li><a href="/" onclick={closeMenu}>Projects</a></li>
 				<li><a href="/" onclick={closeMenu}>Researchers</a></li>
 			</ul>
@@ -160,6 +161,10 @@
 			&:hover {
 				background-size: 100% 2px;
 			}
+		}
+
+		.currentPage {
+			color:#0000FF;
 		}
 	}
 
