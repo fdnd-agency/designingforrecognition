@@ -75,6 +75,7 @@
 		width: 120px;
 		transition: width 0.5s ease;
 		justify-content: start;
+		cursor: default;
 
 		@media (prefers-reduced-motion: reduce) {
 			transition: none;
