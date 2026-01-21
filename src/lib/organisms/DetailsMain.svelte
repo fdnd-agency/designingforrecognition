@@ -11,8 +11,15 @@
 		<h2><i>Title is missing</i></h2>
 	{/if}
 
-	<button type="button" on:click={() => history.back()} aria-label="Terug naar de vorige pagina">
-		<img src={backButton} width="36px" height="36px" alt="" aria-hidden="true" />
+	<button type="button" class="neutral" on:click={() => history.back()} aria-label="Terug naar de vorige pagina">
+		<!-- <img src={backButton} width="36px" height="36px" alt="" aria-hidden="true" /> -->
+		<svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M16 14L18.85 16.8L9.65 26L18.85 35.2L16 38L4 26L16 14ZM44 10V18C44 20.7667 43.0333 23.1167 41.1 25.05C39.1333 27.0167 36.7667 28 34 28H21.65L28.85 35.2L26 38L14 26L26 14L28.85 16.8L21.65 24H34C35.6667 24 37.0833 23.4167 38.25 22.25C39.4167 21.0833 40 19.6667 40 18V10H44Z"
+				fill="black"
+			/>
+		</svg>
+
 		<span aria-hidden="true">Terug</span>
 	</button>
 
@@ -108,10 +115,24 @@
 		display: flex;
 		flex-direction: column;
 		justify-self: start;
+		align-items: center;
 		width: min-content;
 		border: none;
 		background-color: inherit;
 		margin: 0.5em 0;
+
+		&:hover, &:focus-visible {
+			scale: 1.1;
+			color: var(--light-2);
+
+			svg path {
+				fill: var(--light-2);
+			}
+		}
+
+		&:active {
+			scale: 1;
+		}
 
 		@media (min-width: 810px) {
 			grid-row: 1;
