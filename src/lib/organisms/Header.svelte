@@ -164,7 +164,8 @@
 		}
 
 		.currentPage {
-			color:#0000FF;
+			color: #5f6f7a;
+			background-size: 100% 2px;
 		}
 	}
 
