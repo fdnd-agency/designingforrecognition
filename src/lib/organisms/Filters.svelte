@@ -85,8 +85,8 @@
 		</fieldset>
 
 		<div class="form-buttons">
-			<button onclick={scrollTo}>Activeer filters</button>
 			<button onclick={resetFilters}>Reset filters</button>
+			<button onclick={scrollTo}>Activeer filters</button>
 		</div>
 	</form>
 
