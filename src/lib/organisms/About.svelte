@@ -12,15 +12,15 @@
 	</p>
 
 	<ul>
-		<li>
+		<li tabindex="0">
 			<p class="researcher-name">Tessa Steenkamp</p>
 			<img src={researcher1} alt="" width="100" height="100" />
 		</li>
-		<li>
+		<li tabindex="0">
 			<p class="researcher-name">Martijn de Waal</p>
 			<img src={researcher2} alt="" width="100" height="100" />
 		</li>
-		<li>
+		<li tabindex="0">
 			<p class="researcher-name">Jorgen Karskens</p>
 			<img src={researcher3} alt="" width="100" height="100" />
 		</li>
