@@ -1,5 +1,5 @@
 <script>
-	import { backButton, fallBackimg } from '$lib'
+	import { fallBackimg } from '$lib'
 	export let projectsDetails
 	const { title, img, date, end_date, content } = projectsDetails
 </script>
@@ -12,7 +12,6 @@
 	{/if}
 
 	<button type="button" class="neutral" on:click={() => history.back()} aria-label="Terug naar de vorige pagina">
-		<!-- <img src={backButton} width="36px" height="36px" alt="" aria-hidden="true" /> -->
 		<svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
 			<path
 				d="M16 14L18.85 16.8L9.65 26L18.85 35.2L16 38L4 26L16 14ZM44 10V18C44 20.7667 43.0333 23.1167 41.1 25.05C39.1333 27.0167 36.7667 28 34 28H21.65L28.85 35.2L26 38L14 26L26 14L28.85 16.8L21.65 24H34C35.6667 24 37.0833 23.4167 38.25 22.25C39.4167 21.0833 40 19.6667 40 18V10H44Z"

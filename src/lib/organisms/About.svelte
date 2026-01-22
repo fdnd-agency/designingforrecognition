@@ -69,7 +69,6 @@
 		align-items: center;
 		gap: 0.5em;
 		padding: 0.5em;
-		border-radius: 25px;
 		background-color: var(--color-accent-secondary);
 		overflow: hidden;
 		width: 120px;

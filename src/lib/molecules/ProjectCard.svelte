@@ -37,16 +37,9 @@
 <style>
 	/* https://ishadeed.com/article/css-container-query-guide/#its-not-possible-to-query-a-container-against-itself */
 	.card-container {
-		--_color-0: var(--color, #0d3951);
-		/* derived tokens met fallback-keten */
 		--_dark-20: var(--dark-2, #0d3951);
-		--_dark-10: var(--dark-1, #0d3951);
-		--_light-10: var(--light-1, #0d3951);
 		--_light-20: var(--light-2, #0d3951);
 		--_border: var(--light-2, black);
-
-		--radius: 15px;
-		--child-radius: calc(var(--radius) / 2);
 		container: project-card / inline-size;
 	}
 
@@ -57,9 +50,6 @@
 		text-decoration: none;
 		background-color: var(--_light-20);
 		color: var(--color-primary);
-		border-radius: var(--radius);
-		box-shadow: 1px 1px 10px 0 var(--_dark-20);
-		outline: 1px solid var(--_border);
 		transition: scale 0.2s ease-in;
 		cursor: pointer;
 		overflow: hidden;
@@ -67,8 +57,6 @@
 		&:hover,
 		&:focus-within {
 			background-color: var(--_dark-20);
-			outline: 2px solid var(--_light-20);
-			box-shadow: 1px 1px 5px 10px var(--_dark-10);
 			scale: 1.01;
 
 			h3 {
@@ -85,7 +73,6 @@
 			width: 100%;
 			object-fit: cover;
 			object-position: top;
-			border-radius: var(--radius) var(--radius) 0 0;
 		}
 
 		h3,
@@ -142,12 +129,12 @@
 
 			img {
 				height: 100%;
-				border-radius: var(--radius) 0 0 var(--radius);
 				margin: 0;
 			}
 
 			.date {
 				align-self: end;
+				justify-self: start;
 			}
 
 			.description {
