@@ -11,11 +11,14 @@
 		well-being
 	</p>
 
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 	<ul>
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li tabindex="0">
 			<p class="researcher-name">Tessa Steenkamp</p>
 			<img src={researcher1} alt="" width="100" height="100" />
 		</li>
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li tabindex="0">
 			<p class="researcher-name">Martijn de Waal</p>
 			<img src={researcher2} alt="" width="100" height="100" />
