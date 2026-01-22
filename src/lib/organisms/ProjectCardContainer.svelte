@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ProjectCard } from '$lib'
-	import { filterProjects } from '$lib/remote-functions/filter.remote'
+	import { filterProjects } from '$lib/remote-functions/filterProjects.remote'
 
 	const props = $props()
 	// Creates a reactive projects list derived from props that updates when props change,
