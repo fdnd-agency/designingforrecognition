@@ -1,5 +1,5 @@
 <script>
-	import { researcher1, researcher2, researcher3 } from '$lib'
+	import { researcherTessa, researcherMartijn, researcherJorgen } from '$lib'
 </script>
 
 <section class="primary">
@@ -16,16 +16,16 @@
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li tabindex="0">
 			<p class="researcher-name">Tessa Steenkamp</p>
-			<img src={researcher1} alt="" width="100" height="100" />
+			<img src={researcherTessa} alt="" width="100" height="100" />
 		</li>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<li tabindex="0">
 			<p class="researcher-name">Martijn de Waal</p>
-			<img src={researcher2} alt="" width="100" height="100" />
+			<img src={researcherMartijn} alt="" width="100" height="100" />
 		</li>
 		<li tabindex="0">
 			<p class="researcher-name">Jorgen Karskens</p>
-			<img src={researcher3} alt="" width="100" height="100" />
+			<img src={researcherJorgen} alt="" width="100" height="100" />
 		</li>
 	</ul>
 </section>
