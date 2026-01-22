@@ -46,7 +46,7 @@
 		<h2>Filteren</h2>
 
 		<fieldset>
-			<ul>
+			<ul class="form-labels">
 				{#each ['Concept', 'Uitgevoerd', 'Experiment', 'Methode'] as value}
 					<li>
 						<input id={`${value}`} {...filterProjects.fields.execution.as('checkbox', value)} />
@@ -72,12 +72,50 @@
 					<label for="Draft"> Draft </label>
 				</li>
 			</ul>
-		</fieldset>
 
-		<div class="form-buttons">
-			<button onclick={resetFilters}>Reset filters</button>
-			<button onclick={scrollTo}>Activeer filters</button>
-		</div>
+			<ul class="form-buttons">
+				<li>
+					<button onclick={resetFilters}>
+						<span>Reset filters</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="icon icon-tabler icons-tabler-outline icon-tabler-restore"
+							><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3.06 13a9 9 0 1 0 .49 -4.087" /><path d="M3 4.001v5h5" /><path
+								d="M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+							/></svg
+						>
+					</button>
+				</li>
+				<li>
+					<button type="submit" onclick={scrollTo}>
+						<span>Activeer filters</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="icon icon-tabler icons-tabler-outline icon-tabler-filter"
+							><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path
+								d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227"
+							/></svg
+						>
+					</button>
+				</li>
+			</ul>
+		</fieldset>
 	</form>
 
 	<p class="filter-results">{projectCount} projecten gevonden</p>
@@ -94,7 +132,6 @@
 		left: 1em;
 		background-color: var(--color-accent-primary);
 		padding: 0.5em;
-		/* border-radius: 5px; */
 		opacity: 0;
 		pointer-events: none;
 		outline: 3px solid currentColor;
@@ -113,64 +150,56 @@
 	form {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		margin: var(--spacing-l) 2em var(--spacing-m) 2em;
 		gap: var(--spacing-s);
 
 		h2 {
+			align-self: center;
 			margin-bottom: var(--spacing-s);
 		}
+
+		fieldset {
+			border: none;
+			align-self: center;
+			width: 100%;
+		}
 	}
 
-	form:has(input:focus-visible) .keyboard-info {
-		opacity: 1;
-	}
+	.form-labels {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-s);
+		list-style: none;
 
-	fieldset {
-		border: none;
+		li {
+			input:checked + label {
+				outline: 3px solid var(--color-dark);
+			}
 
-		ul {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: var(--spacing-s);
-			list-style: none;
+			label {
+				transition: background-color 0.2s ease-out;
+				background-color: var(--color-accent-secondary);
+				transform-origin: center;
+				height: 100%;
 
-			li {
-				display: contents;
+				&:active {
+					transform: scale(0.9);
+					transition: transform 0.05s ease-out;
+				}
+			}
+
+			label:hover,
+			input:focus-visible + label {
+				background-color: var(--color-accent-primary);
+			}
+
+			input {
+				position: absolute;
+				opacity: 0;
+				pointer-events: none;
+				clip-path: 0;
 			}
 		}
-	}
-
-	li {
-		> input:checked + label {
-			outline: 3px solid var(--color-dark);
-		}
-
-		> label:hover,
-		> input:focus-visible + label {
-			background-color: var(--color-accent-primary);
-		}
-	}
-
-	label {
-		transition: background-color 0.2s ease-out;
-		position: relative;
-		background-color: var(--color-accent-secondary);
-		width: clamp(6em, 100%, 9.5em);
-		transform-origin: center;
-		height: 100%;
-
-		&:active {
-			transform: scale(0.9);
-			transition: transform 0.05s ease-out;
-		}
-	}
-
-	input {
-		position: absolute;
-		opacity: 0;
-		pointer-events: none;
-		clip-path: 0;
 	}
 
 	label,
@@ -178,8 +207,8 @@
 		display: flex;
 		font-size: 1.3rem;
 		padding: 0.5em;
+		min-width: 140px;
 		min-height: 52px;
-		/* border-radius: 0px; */
 		text-align: center;
 		align-items: center;
 		justify-content: center;
@@ -189,22 +218,31 @@
 
 	.form-buttons {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: center;
+		margin-top: var(--spacing-s);
 		gap: var(--spacing-s);
+		list-style: none;
 
-		button {
-			width: 9.5em;
-			border: none;
-			background-color: var(--color-accent-primary);
+		li {
+			flex: 1 1 0;
+			display: flex;
+			justify-content: stretch;
 
-			&:hover,
-			&:focus-visible {
-				scale: 1.05;
-			}
+			button {
+				width: 100%;
+				border: none;
+				background-color: var(--color-accent-primary);
 
-			&:active {
-				scale: 1;
+				&:hover,
+				&:focus-visible {
+					scale: 1.05;
+				}
+
+				&:active {
+					scale: 1;
+				}
 			}
 		}
 	}
@@ -215,15 +253,68 @@
 	}
 
 	@container filters (min-width: 545px) {
-		fieldset ul {
+		.form-labels {
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		}
+
+		.form-buttons span {
+			margin-right: 0.3rem;
+		}
+	}
+
+	@container filters (min-width: 695px) {
+		.form-labels {
 			display: flex;
-			flex-direction: row;
 			flex-wrap: wrap;
-			justify-content: center;
+			gap: var(--spacing-s);
+
+			li {
+				flex: 1 1 200px;
+				display: flex;
+			}
+
+			label {
+				width: 100%;
+				min-width: 0;
+			}
 		}
 
 		.form-buttons {
-			flex-direction: row;
+			li:first-child {
+				justify-content: end;
+			}
+
+			li button {
+				width: 100%;
+				min-width: 307px;
+				max-width: 415px;
+			}
+		}
+	}
+
+	@container filters (min-width: 913px) {
+		.form-buttons li button {
+			min-width: 200px;
+			width: clamp(200px, 22cqi, 265px);
+		}
+	}
+
+	@container filters (min-width: 1128px) {
+		.form-labels {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 265px));
+			gap: var(--spacing-s);
+			justify-content: center;
+
+			li {
+				display: block;
+				flex: initial;
+				width: clamp(200px, 22cqi, 265px);
+			}
+
+			li label {
+				width: clamp(200px, 22cqi, 265px);
+			}
 		}
 	}
 </style>
