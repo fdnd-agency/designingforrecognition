@@ -22,6 +22,6 @@ export { default as FooterInfo } from './organisms/FooterInfo.svelte';
 // Images & Icons
 export { default as favicon } from './assets/favicon.svg';
 export { default as fallBackimg } from './assets/fallBackimg.png';
-export { default as researcher1 } from './assets/researcher-1.webp';
-export { default as researcher2 } from './assets/researcher-2.webp';
-export { default as researcher3 } from './assets/researcher-3.webp';
+export { default as researcherTessa } from './assets/researcher-tessa.webp';
+export { default as researcherMartijn} from './assets/researcher-martijn.webp';
+export { default as researcherJorgen } from './assets/researcher-jorgen.webp';
