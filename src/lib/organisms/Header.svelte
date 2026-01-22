@@ -9,7 +9,7 @@
 	// Closes the menu (used when scrolling)
 	const closeMenu = () => (menuOpen = true)
 
-	// Initializes menu state and updates scroll state on window scroll
+	// menu state that updates when scrolling in the window
 	onMount(() => {
 		menuOpen = true
 

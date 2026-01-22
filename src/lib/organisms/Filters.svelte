@@ -4,7 +4,7 @@
 
 	let { projectCount } = $props()
 
-	// Syncs checkbox states with the active filters returned from the server. selected filters stay selected after filtering
+	// Syncs checkbox states with the active filters that is returned from the server. (selected filters stay selected after filtering)
 	$effect(() => {
 		;(async () => {
 			const filters = filterProjects.result?.data?.activeFilters
@@ -29,7 +29,7 @@
 		})
 	}
 
-	// Smoothly scrolls to the project list, respecting reduced-motion preferences, works with onClick
+	// Smoothly scrolls to the project card section, respecting reduced-motion preferences, works with onClick
 	function scrollTo() {
 		setTimeout(() => {
 			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
