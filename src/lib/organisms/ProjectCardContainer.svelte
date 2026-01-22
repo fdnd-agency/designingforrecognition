@@ -3,10 +3,14 @@
 	import { filterProjects } from '$lib/remote-functions/filter.remote'
 
 	const props = $props()
+	// Creates a reactive projects list derived from props that updates when props change,
+	// falling back to an empty array when undefined
 	const projectsData = $derived(() => props.projectsData ?? [])
 
+	// Holds the currently displayed project list, this gets updated after filtering
 	let allProjects = $state<ReturnType<typeof projectsData>>([])
 
+	// Updates the allProjects list when filters change, using a view transition if supported
 	$effect(() => {
 		const filtered = filterProjects.result?.data?.projects
 		const nextProjects = filtered ?? projectsData()

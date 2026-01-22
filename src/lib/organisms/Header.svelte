@@ -6,8 +6,10 @@
 	let menuOpen = false
 	let scrolled = false
 
+	// Closes the menu (used when scrolling)
 	const closeMenu = () => (menuOpen = true)
 
+	// Initializes menu state and updates scroll state on window scroll
 	onMount(() => {
 		menuOpen = true
 
@@ -45,6 +47,7 @@
 
 		<nav id="main-navigation" class:close-nav={menuOpen} lang="en">
 			<ul class="accent-primary">
+				<!-- gives the link a class when the user is on that page -->
 				<li><a href="/" class:currentPage={$page.url.pathname === '/'} onclick={closeMenu}>Home</a></li>
 				<li><a href="/" onclick={closeMenu}>Projects</a></li>
 				<li><a href="/" onclick={closeMenu}>Researchers</a></li>

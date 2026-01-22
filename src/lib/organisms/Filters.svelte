@@ -4,6 +4,7 @@
 
 	let { projectCount } = $props()
 
+	// Syncs checkbox states with the active filters returned from the server. selected filters stay selected after filtering
 	$effect(() => {
 		;(async () => {
 			const filters = filterProjects.result?.data?.activeFilters
@@ -19,6 +20,7 @@
 		})()
 	})
 
+	// Clears all selected filter checkboxes, works with onClick
 	function resetFilters() {
 		document.querySelectorAll('input[type="checkbox"]').forEach((element) => {
 			if (element instanceof HTMLInputElement) {
@@ -27,6 +29,7 @@
 		})
 	}
 
+	// Smoothly scrolls to the project list, respecting reduced-motion preferences, works with onClick
 	function scrollTo() {
 		setTimeout(() => {
 			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches

@@ -35,7 +35,7 @@
 </article>
 
 <style>
-	/* https://ishadeed.com/article/css-container-query-guide/#its-not-possible-to-query-a-container-against-itself */
+	/* pseudo private custom properties as fallback for old browsers  */
 	.card-container {
 		--_dark-20: var(--dark-2, #0d3951);
 		--_light-20: var(--light-2, #0d3951);
