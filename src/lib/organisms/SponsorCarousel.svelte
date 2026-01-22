@@ -10,9 +10,7 @@
 </script>
 
 <section class="sponsors" style="display: {visible ? 'flex' : 'none'}">
-	<header class="title">
-		<h2>Onze partners</h2>
-	</header>
+	<h2>Onze partners</h2>
 
 	<!-- top and bottom row -->
 	{#each rowClasses as row}
@@ -21,9 +19,19 @@
 				{#each sponsorsData as sponsor}
 					<li>
 						<picture>
-							<source type="image/avif" srcset={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=avif&fit=contain&quality=50`} />
-							<source type="image/webp" srcset={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=webp&fit=contain&quality=50`} />
-							<img src={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=png&fit=contain&quality=50`} alt={sponsor.name} loading="lazy" />
+							<source
+								type="image/avif"
+								srcset={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=avif&fit=contain&quality=50`}
+							/>
+							<source
+								type="image/webp"
+								srcset={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=webp&fit=contain&quality=50`}
+							/>
+							<img
+								src={`https://fdnd-agency.directus.app/assets/${sponsor.logo}?format=png&fit=contain&quality=50`}
+								alt={sponsor.name}
+								loading="lazy"
+							/>
 						</picture>
 					</li>
 				{/each}
@@ -44,17 +52,14 @@
 		margin-top: 2em;
 	}
 
-	.title {
-		padding-bottom: 16px;
-	}
-
-	.title h2 {
+	h2 {
 		color: var(--color-primary);
 		line-height: 1.2;
 		height: 2em;
+		padding-bottom: 16px;
 	}
 
-	.title h2::after {
+	h2::after {
 		content: '';
 		display: block;
 		height: 3px;
