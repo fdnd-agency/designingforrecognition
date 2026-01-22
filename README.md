@@ -5,7 +5,10 @@ Our Product owner, Tessa Steenkamp, wanted a website to showcase all her researc
 The goal of the project is to create an online platform where her research can be easily accessed, organized, and shared
 
 Tessa asked us to keep the existing brand style, but gave us the freedom to design a new and improved layout. As a team, we worked on redesigning the structure, visuals, and user experience of the website using modern web technologies such as SvelteKit and design tools like Figma.  
-The redesigned website is available via the [live link](https://designingforrecognition.netlify.app/)
+The redesigned website is available via the [live link](https://designingforrecognition.dev.fdnd.nl/)  
+
+<img width="2844" height="1532" alt="image" src="https://github.com/user-attachments/assets/b9d30703-603e-404f-ba61-d641ab9b8490" />
+
 
 ## Technologies Used
 ![SvelteKit 5](https://img.shields.io/badge/SvelteKit-5-red?logo=svelte&logoColor=white&style=for-the-badge)
@@ -30,14 +33,14 @@ The website is fully responsive and works on both desktop and mobile devices. Co
 This was the first iteration of the project, during which the following changes were implemented:
 - Complete redesign of the website while preserving the existing brand style
 - Improved information structure and user experience
-- Implemented responsive design for mobile and desktop
-- Applied modern web technologies including SvelteKit
+- Implemented responsive design for mobile all the way to desktop
+- Applied modern web technologies including SvelteKit (Remote functions)
 - Added progressive enhancement and performance optimizations
 
 ## Functionalities
 The Designing for Recognition website offers the following functionalities:
 - Research Showcase: Users can explore and view all papers in a structured and easily accessible way.
-- Filter: Users can filter papers by category to quickly find what they are looking for.
+- Filters: Users can filter papers by category to quickly find what they are looking for.
 - Responsive Design: Optimized for both desktop and mobile devices.
 - High Performance: Fast loading times and smooth interactions for an efficient user experience.
 - Progressive Enhanced: Core functionality works on all browsers, with enhanced features available on modern browsers.
@@ -55,6 +58,10 @@ However, since OKLCH is still not supported in all browsers, we added a fallback
 
 This approach keeps the design consistent across all browsers while taking advantage of the newer, more advanced color system where possible
 
+### View Transitions for Filtered Project Cards
+We use View Transitions to create smooth visual updates when project cards change as a result of filtering. When a user applies a filter, the visible project cards on the screen are updated. Instead of removing and adding cards instantly, the View Transition API animates the transition between the previous and the new state of the interface.
+
+This approach improves the overall user experience by making state changes feel more natural and less abrupt. It also helps users maintain context, as they can clearly see how the list of projects adapts to their selected filters. Additionally, using View Transitions keeps the implementation clean and maintainable, since the animations are handled at a browser level rather than through complex custom animation logic.
 
 ### Designs
 We created two design versions:
