@@ -16,7 +16,7 @@
 </script>
 
 <footer class="footer">
-	<section class="footer-container">
+	<div class="footer-container">
 		<section class="footer-left">
 			<h2 class="project-title">Designing for recognition</h2>
 
@@ -48,14 +48,14 @@
 				other media that relate to the project.
 			</p>
 
-			<section class="brand-block">
+			<div class="brand-block">
 				<p class="brand-left">
 					<strong class="brand-line-1">CIVIC INTERACTION DESIGN</strong><br />
 					<em class="brand-line-2">RESEARCH GROUP</em>
 				</p>
-			</section>
+			</div>
 		</section>
-	</section>
+	</div>
 	<SponsorCarousel {sponsorsData} visible={showSponsors} />
 </footer>
 

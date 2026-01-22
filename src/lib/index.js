@@ -17,7 +17,7 @@ export { default as SponsorCarousel } from './organisms/SponsorCarousel.svelte';
 // component for loading in the details page content
 export { default as DetailsMain } from './organisms/DetailsMain.svelte';
 
-export { default as FooterInfo } from './organisms/FooterInfo.svelte';
+export { default as FooterInfo } from './organisms/Footer.svelte';
 
 // Images & Icons
 export { default as favicon } from './assets/favicon.svg';
