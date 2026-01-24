@@ -29,6 +29,13 @@ Between the header and footer, a `+page.svelte` file is rendered. This can be ei
 
 Each `+page.svelte` file imports and renders the components required for that specific page.
 
+We use `+layout.server.js` to fetch data that is needed across the entire website.  
+An example of this is the data for the sponsor carousel, which is displayed in the footer. Since the footer is part of the layout and appears on all pages, this data is fetched in `+layout.server.js` to ensure it is available globally on every page.
+
+The `+page.server.js` files are used only for route specific data.  
+This means that data which is required only for a specific route, such as the data for a project detail page, is fetched in the corresponding `+page.server.js`  
+In our implementation, `+page.server.js` is used only for the detail pages.
+
 ### Component exports
 
 All components are exported via an `index.js` file in `src/lib`. This allows for cleaner and more maintainable imports throughout the project.
