@@ -96,6 +96,9 @@ When a class is applied to an HTML element, all color variations become availabl
 - All color variants share the same custom property names (--dark-1, --light-1, etc.), scoped by the active class.
 - Developers should review the color system carefully before making changes, as adjustments affect all components using that color context.
 
+The reason we chose this structure is that we wanted to use multiple color variants on the page. We wanted to avoid excessive CSS and therefore looked for a way to prevent repetition (DRY). We also aimed to make it easy to use by relying only on custom properties. Unfortunately, this was not fully achievable with CSS alone, which is why adding classes to the HTML was necessary.  
+We do have an alternative version using SCSS, where adding classes to the HTML is not required.  
+if you'd like to see how, you can read [this article](https://github.com/vsheo/i-love-web/wiki/CSS-color-generator#solution)
 
 
 ## Remote Function Filtering
@@ -254,6 +257,5 @@ This structure improves maintainability and makes it easier to reuse the filteri
 - Remote functions are a relatively new feature in SvelteKit and rely on framework-level behavior that may not be immediately obvious.
 - A solid understanding of SvelteKit’s routing, forms, and server/client interaction is recommended before making changes to this system.
 
-leg nu uit dat de fetch plaats vindt in src/lib/server/projectData.js
-daarin staat de fetch deze moest ergens staat waar de data die opgehaald is  acessible is voor de filter component en ook de projectcard container component
+***Since this can be hard to understand, I wrote an article and created a [GitHub repository](https://github.com/vsheo/i-love-web/wiki/Sveltekit-remote-functions) with a minimal working example and commented code***
 
