@@ -89,6 +89,9 @@ Issues were first discussed before being assigned. This ensured that the workloa
     - Archive closed branches
 
 ## Retrospects
+We used detail elements to keep this document concise and maintain a clear overview.  
+The detail elements contain what was discussed during the retrospective, while outside of them we describe what we will do in the upcoming sprint.
+
 ### Agreements from Retrospective Sprint 14
 <details>
   <summary>Retrospect - Sprint 14</summary>  
@@ -251,3 +254,68 @@ Both of us mentioned points about communication and the use of the project board
     - A user story remains in `To Do` until work starts; once work begins, it is moved to `In Progress`.
     - As soon as a pull request is created, move both the user story and the pull request to `Review`. (Note: a new pull request is automatically placed in `No Status`.)
     - The `No Status` column should never remain open; all issues must always be moved to the correct column immediately.
+
+
+### Agreements from Retrospective Sprint 18
+<details>
+ <summary>Retrospect - Sprint 18</summary>
+
+### [Helped, Hindered, Hypothesis](https://retromat.org/en/?id=16)
+Viresh
+- Helped: You were good at planning. During sprint planning and our discussions, you often came up with good ideas on how to move forward. Collaborating together almost always went smoothly.
+- Hindered: Sometimes you spent too little time on school assignments or gave other tasks higher priority, which meant there was less time left for our project. As a result, agreements were not always met.
+- Hypothesis: I think planning fixed moments to work on school (for example, one hour per day) will help maintain progress and make this progress visible to your team.
+
+Mikiyas
+- Helped:
+  - Planning ahead
+  - Making good agreements
+  - Thinking along with ideas
+- Hindered:
+  - I did not work on this project at the same pace
+  - A bit distant
+- Hypothesis:
+  - Provide a better role distribution
+  - Better task distribution
+  - And more communication
+    
+### [Proud & Sorry](https://retromat.org/en/?id=33)
+Viresh
+- Proud: That even after we were only working with the two of us, we still managed to make a lot of progress. We divided Inez’s tasks and also managed to process our own feedback.
+- Sorry: In the last week, I started doing a lot of work without waiting for feedback before continuing, because I was afraid we wouldn’t meet our deadlines. This approach did not reflect good teamwork
+
+Mikiyas
+- Proud:
+  - Eventually delivering a well-developed project
+  - The collaboration
+- Sorry:
+  - That I was so absent during the last sprint.
+
+### [Dot Voting - Worked well, Do differently](https://retromat.org/en/?id=39)
+We did this for the next project instead of the next sprint, since this was our last sprint
+
+Viresh
+- Worked well:
+  - We first discussed who would do what. Picking up the next issue as soon as one was finished worked better than waiting to discuss task distribution again.
+  - Filling the backlog with everything you want to include in the project, so that in later sprints you spend less time coming up with tasks. Instead, you only need to review the user stories and decide whether to pick them up in that sprint or leave it in the backlog.
+  - Meeting outside of school to work on assignments together or to discuss next steps.
+
+- Do differently next time:
+  - Try to give PR feedback first before starting your own tasks.
+  - Take more time for tasks, issues, or user stories. Plan enough extra time to wait for and process feedback.
+  - During sprint planning, plan everything thoroughly. There were things we didn’t do, such as estimating together and applying MoSCoW prioritization together.
+
+
+Mikiyas
+- Planning ahead:
+  - Worked well: We were able to plan a sprint well, which gave us a clear structure for our goals.
+  - Do differently: We no longer divided the tasks that appeared in the sprints.
+- Worked well:
+  - We were able to plan a sprint well, which gave us a clear structure for our goals.
+  - Brainstorming
+  - Healthy discussions about ideas
+- Things to do differently:
+  - Keep each other better informed about each other’s progress
+  - Tighter task distribution so that everyone always has something to work on
+  - Set stricter deadlines for each other’s goals
+</details>
