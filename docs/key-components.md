@@ -96,6 +96,7 @@ When a class is applied to an HTML element, all color variations become availabl
 - All color variants share the same custom property names (--dark-1, --light-1, etc.), scoped by the active class.
 - Developers should review the color system carefully before making changes, as adjustments affect all components using that color context.
 
+### Why do it like this?
 The reason we chose this structure is that we wanted to use multiple color variants on the page. We wanted to avoid excessive CSS and therefore looked for a way to prevent repetition (DRY). We also aimed to make it easy to use by relying only on custom properties. Unfortunately, this was not fully achievable with CSS alone, which is why adding classes to the HTML was necessary.  
 We do have an alternative version using SCSS, where adding classes to the HTML is not required.  
 if you'd like to see how, you can read [this article](https://github.com/vsheo/i-love-web/wiki/CSS-color-generator#solution)
