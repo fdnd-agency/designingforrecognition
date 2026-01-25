@@ -94,7 +94,7 @@ The detail elements contain what was discussed during the retrospective, while o
 
 ### Agreements from Retrospective Sprint 14
 <details>
-  <summary>Retrospect - Sprint 14</summary>  
+  <summary>Retrospect - Sprint 14 (Click for details)</summary>  
  
    ## Viresh
 ### Round of Admiration
@@ -217,7 +217,7 @@ I really enjoyed the collaboration, and it also gave me more motivation to put e
 
 ### Agreements from Retrospective Sprint 16
 <details>
- <summary>Retrospect - Sprint 16</summary>
+ <summary>Retrospect - Sprint 16 (Click for details)</summary>
     #### [Smart Goals](https://retromat.org/en/?id=13)
 <img height="750" width="750" src="https://github.com/user-attachments/assets/3cd312e8-9b72-4138-950a-044aa380eaac" />  
 
@@ -258,7 +258,7 @@ Both of us mentioned points about communication and the use of the project board
 
 ### Agreements from Retrospective Sprint 18
 <details>
- <summary>Retrospect - Sprint 18</summary>
+ <summary>Retrospect - Sprint 18 (Click for details)</summary>
 
 ### [Helped, Hindered, Hypothesis](https://retromat.org/en/?id=16)
 Viresh
