@@ -1,5 +1,9 @@
 title: "Designing for Recognition"
-status: "in progress"
+client: "Lectoraat Civic Interaction Design"
+status: "inactive"
+years: [1, 2]
 main_link: "https://designingforrecognition.agency.fdnd.nl/"
 dev_link: "https://designingforrecognition.dev.fdnd.nl/"
 tech_stack: ["SvelteKit", "Directus"]
+
+
